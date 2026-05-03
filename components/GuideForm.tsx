@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { Analytics } from "@/lib/analytics"
 
 export default function GuideForm() {
   const [submitted, setSubmitted] = useState(false)
@@ -21,6 +22,7 @@ export default function GuideForm() {
         headers: { Accept: "application/json" },
       })
       if (!res.ok) throw new Error()
+      Analytics.guideDownloaded()
       setSubmitted(true)
     } catch {
       setError("Something went wrong. Email me at covercareTH@gmail.com instead.")

@@ -1,7 +1,11 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
+import { GoogleAnalytics } from "@next/third-parties/google"
+import { Suspense } from "react"
 import "./globals.css"
 import JsonLd from "@/components/JsonLd"
+import PostHogProvider from "@/components/PostHogProvider"
+import PageViewTracker from "@/components/PageViewTracker"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -46,12 +50,20 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const gaId = process.env.NEXT_PUBLIC_GA_ID
+
   return (
     <html lang="en" className={inter.className}>
       <body className="min-h-screen flex flex-col">
-        <JsonLd />
-        {children}
+        <PostHogProvider>
+          <JsonLd />
+          <Suspense fallback={null}>
+            <PageViewTracker />
+          </Suspense>
+          {children}
+        </PostHogProvider>
       </body>
+      {gaId && <GoogleAnalytics gaId={gaId} />}
     </html>
   )
 }

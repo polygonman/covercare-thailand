@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
 import { SEGMENT_LABELS, NEEDS_OPTIONS } from "@/types/lead"
 import type { Segment } from "@/types/lead"
+import { Analytics } from "@/lib/analytics"
 
 const schema = z.object({
   name: z.string().min(2, "Please enter your name"),
@@ -47,7 +48,10 @@ export default function ContactForm() {
     if (step === 0) valid = await trigger("segment")
     if (step === 1) valid = await trigger("needs")
     if (step === 2) valid = await trigger(["name", "email", "whatsapp"])
-    if (valid) setStep((s) => s + 1)
+    if (valid) {
+      if (step === 0) Analytics.formStarted()
+      setStep((s) => s + 1)
+    }
   }
 
   const onSubmit = async (data: FormData) => {
@@ -60,6 +64,8 @@ export default function ContactForm() {
         body: JSON.stringify(data),
       })
       if (!res.ok) throw new Error("Submission failed")
+      const json = await res.json()
+      Analytics.formCompleted(json.score ?? 0)
       setSubmitted(true)
     } catch {
       setError("Something went wrong. Please try WhatsApp instead.")
