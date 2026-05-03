@@ -15,22 +15,36 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "npm"
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: echo "store=$(pnpm store path --silent)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v4
+        with:
+          path: ${{ steps.pnpm-cache.outputs.store }}
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: ${{ runner.os }}-pnpm-
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Lint
-        run: npm run lint
+        run: pnpm lint
 
       - name: Type check
-        run: npx tsc --noEmit
+        run: pnpm exec tsc --noEmit
 
       - name: Unit tests
-        run: npm run test:ci
+        run: pnpm test:ci
 
       - name: Build
-        run: npm run build
+        run: pnpm build
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
 
@@ -52,10 +66,24 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "npm"
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: echo "store=$(pnpm store path --silent)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v4
+        with:
+          path: ${{ steps.pnpm-cache.outputs.store }}
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: ${{ runner.os }}-pnpm-
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Install Claude Code
         run: npm install -g @anthropic-ai/claude-code
@@ -83,7 +111,7 @@ jobs:
           $ERRORS
 
           Fix every error shown above directly in the source files in the current directory.
-          After fixing, run: npm run lint && npm run build
+          After fixing, run: pnpm lint && pnpm build
           If both pass, stage all changed files and commit with message:
           'fix: auto-fix CI errors [autofix]'
           Do not push — just commit.
@@ -95,7 +123,6 @@ jobs:
         run: |
           git config user.name "claude-autofix[bot]"
           git config user.email "claude-autofix@users.noreply.github.com"
-          # Only push if there's a new commit since checkout
           if git log --oneline origin/${{ github.ref_name }}..${{ github.ref_name }} | grep -q '\[autofix\]'; then
             git push origin HEAD:${{ github.ref_name }}
             echo "✅ Fix pushed"
