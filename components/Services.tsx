@@ -40,7 +40,7 @@ export default function Services() {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-3">What I Do For You</h2>
           <p className="text-gray-500 max-w-xl mx-auto">
-            More than selling insurance — I'm your long-term health advisor in Thailand.
+            More than selling insurance — I&apos;m your long-term health advisor in Thailand.
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -81,7 +81,7 @@ export default function ServicesPage() {
             </div>
             <div className="text-center mt-10">
               <a
-                href="/#contact"
+                href="#contact"
                 className="inline-block bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors"
               >
                 Get My Personalised Quote

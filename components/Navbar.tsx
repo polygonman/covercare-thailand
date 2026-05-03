@@ -29,12 +29,12 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <a
+          <Link
             href="/#contact"
             className="text-sm bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors"
           >
             Book Free Consult
-          </a>
+          </Link>
         </div>
 
         <button className="md:hidden p-2" onClick={() => setOpen(!open)} aria-label="Toggle menu">
@@ -54,13 +54,13 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <a
+          <Link
             href="/#contact"
             className="bg-teal-600 text-white text-center px-4 py-2 rounded-lg"
             onClick={() => setOpen(false)}
           >
             Book Free Consult
-          </a>
+          </Link>
         </div>
       )}
     </nav>

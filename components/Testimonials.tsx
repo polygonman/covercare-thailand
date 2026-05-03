@@ -38,7 +38,7 @@ export default function Testimonials() {
                   <span key={i} className="text-amber-400 text-lg">★</span>
                 ))}
               </div>
-              <p className="text-gray-600 italic mb-4">"{quote}"</p>
+              <p className="text-gray-600 italic mb-4">&ldquo;{quote}&rdquo;</p>
               <div>
                 <p className="font-semibold text-gray-900">{name}</p>
                 <p className="text-sm text-gray-400">{role}</p>

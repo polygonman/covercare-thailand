@@ -108,7 +108,7 @@ export default function BlogPage() {
                 Don&apos;t rely on generic articles — get personalised advice for your situation.
               </p>
               <a
-                href="/#contact"
+                href="#contact"
                 className="inline-block bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors"
               >
                 Ask Me Directly

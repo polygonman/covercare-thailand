@@ -1,4 +1,3 @@
-import Link from "next/link"
 import { Shield, Phone, Clock } from "lucide-react"
 
 export default function Hero() {
@@ -20,7 +19,7 @@ export default function Hero() {
             </p>
             <div className="flex flex-wrap gap-3">
               <a
-                href="/#contact"
+                href="#contact"
                 className="bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors"
               >
                 Book Free Consultation

@@ -80,7 +80,7 @@ export default function AboutPage() {
 
             <div className="text-center">
               <a
-                href="/#contact"
+                href="#contact"
                 className="inline-block bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors"
               >
                 Get in Touch
