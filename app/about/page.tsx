@@ -32,8 +32,8 @@ export default function AboutPage() {
 
             <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 mb-10">
               <div className="flex items-start gap-6">
-                <div className="w-20 h-20 bg-teal-100 rounded-full flex items-center justify-center text-3xl flex-shrink-0">
-                  🙏
+                <div className="w-20 h-20 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-teal-700 font-bold text-2xl">T</span>
                 </div>
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 mb-2">Hi, I&apos;m Tonkla</h2>

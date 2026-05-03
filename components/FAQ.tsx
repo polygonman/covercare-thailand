@@ -34,28 +34,28 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null)
 
   return (
-    <section id="faq" className="py-16 bg-white">
-      <div className="max-w-3xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-3">Frequently Asked Questions</h2>
-          <p className="text-gray-500">Everything you need to know before getting covered.</p>
+    <section id="faq" className="py-20 bg-white">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-14">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">Frequently Asked Questions</h2>
+          <p className="text-slate-500 text-lg">Everything you need to know before getting covered.</p>
         </div>
         <div className="flex flex-col gap-2">
           {faqs.map(({ q, a }, i) => (
-            <div key={i} className="border border-gray-200 rounded-xl overflow-hidden">
+            <div key={i} className="border border-slate-200 rounded-2xl overflow-hidden hover:border-teal-200 transition-colors">
               <button
-                className="w-full text-left px-6 py-4 flex items-center justify-between font-medium text-gray-900 hover:bg-gray-50 transition-colors"
+                className="w-full text-left px-6 py-4 flex items-center justify-between font-semibold text-slate-900 hover:bg-slate-50 transition-colors cursor-pointer"
                 onClick={() => setOpen(open === i ? null : i)}
                 aria-expanded={open === i}
               >
                 <span>{q}</span>
                 <ChevronDown
                   size={18}
-                  className={`text-teal-600 transition-transform flex-shrink-0 ml-4 ${open === i ? "rotate-180" : ""}`}
+                  className={`text-teal-700 transition-transform flex-shrink-0 ml-4 duration-200 ${open === i ? "rotate-180" : ""}`}
                 />
               </button>
               {open === i && (
-                <div className="px-6 pb-4 text-gray-600 text-sm leading-relaxed">{a}</div>
+                <div className="px-6 pb-5 text-slate-500 text-sm leading-relaxed border-t border-slate-100 pt-4">{a}</div>
               )}
             </div>
           ))}

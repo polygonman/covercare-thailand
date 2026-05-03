@@ -77,7 +77,11 @@ export default function ContactForm() {
   if (submitted) {
     return (
       <div className="text-center py-12">
-        <div className="text-5xl mb-4">🎉</div>
+        <div className="w-16 h-16 bg-teal-50 border border-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg viewBox="0 0 24 24" className="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" strokeWidth={2.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
         <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank you!</h3>
         <p className="text-gray-600 mb-6">
           I&apos;ll personally follow up within 24 hours. In the meantime, feel free to WhatsApp me directly.

@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter, Plus_Jakarta_Sans } from "next/font/google"
 import { GoogleAnalytics } from "@next/third-parties/google"
 import { Suspense } from "react"
 import "./globals.css"
@@ -7,7 +7,12 @@ import JsonLd from "@/components/JsonLd"
 import PostHogProvider from "@/components/PostHogProvider"
 import PageViewTracker from "@/components/PageViewTracker"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta",
+  weight: ["400", "500", "600", "700", "800"],
+})
 
 const BASE = "https://www.thaicovercare.com"
 
@@ -53,8 +58,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const gaId = process.env.NEXT_PUBLIC_GA_ID
 
   return (
-    <html lang="en" className={inter.className}>
-      <body className="min-h-screen flex flex-col">
+    <html lang="en" className={`${inter.variable} ${jakarta.variable}`}>
+      <body className={`${inter.className} min-h-screen flex flex-col`}>
         <PostHogProvider>
           <JsonLd />
           <Suspense fallback={null}>
