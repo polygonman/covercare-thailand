@@ -5,8 +5,15 @@ import FloatingCTA from "@/components/FloatingCTA"
 import { Shield, Heart, Globe } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "About Tonkla — CoverCare Thailand",
-  description: "Meet Tonkla, your dedicated English-speaking health insurance advisor in Thailand with Allianz Ayudhya.",
+  title: "About Tonkla — Your Expat Insurance Advisor in Thailand",
+  description:
+    "Meet Tonkla, your dedicated English-speaking Allianz Ayudhya advisor in Thailand. Hospital coordination background, personal service, and deep expat knowledge.",
+  openGraph: {
+    title: "About Tonkla — Your Expat Insurance Advisor in Thailand",
+    description: "English-speaking Allianz Ayudhya advisor with hospital coordination expertise. Personal service for expats across Thailand.",
+    url: "https://www.thaicovercare.com/about",
+  },
+  alternates: { canonical: "https://www.thaicovercare.com/about" },
 }
 
 export default function AboutPage() {

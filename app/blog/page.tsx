@@ -3,54 +3,19 @@ import Link from "next/link"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import FloatingCTA from "@/components/FloatingCTA"
+import { articles } from "@/lib/articles"
 
 export const metadata: Metadata = {
-  title: "Expat Health Insurance Resources — CoverCare Thailand",
-  description: "Guides and articles about health insurance in Thailand for expats, digital nomads, and retirees.",
+  title: "Expat Health Insurance Guides for Thailand",
+  description:
+    "Practical guides to health insurance in Thailand — plans, claims, hospital visits, and advice for expats, digital nomads, and retirees. Written in plain English.",
+  openGraph: {
+    title: "Expat Health Insurance Guides for Thailand",
+    description: "Practical, plain-English guides to health insurance in Thailand for expats, nomads, and retirees.",
+    url: "https://www.thaicovercare.com/blog",
+  },
+  alternates: { canonical: "https://www.thaicovercare.com/blog" },
 }
-
-const articles = [
-  {
-    slug: "best-expat-health-insurance-thailand-2025",
-    title: "Best Health Insurance Plans for Expats in Thailand 2025",
-    excerpt: "A practical breakdown of Allianz Ayudhya options for foreigners — what's covered, what's not, and how to choose.",
-    date: "April 2025",
-    readTime: "8 min",
-    tag: "Plans",
-  },
-  {
-    slug: "how-to-use-health-insurance-bangkok-hospital",
-    title: "How to Use Your Health Insurance at a Bangkok Hospital",
-    excerpt: "Step-by-step guide from arriving at the hospital to getting discharged — direct billing vs. reimbursement explained.",
-    date: "March 2025",
-    readTime: "6 min",
-    tag: "Guide",
-  },
-  {
-    slug: "digital-nomad-health-insurance-thailand",
-    title: "Digital Nomad Health Insurance in Thailand: What You Need to Know",
-    excerpt: "Visa-compatible plans, OPD coverage, and why being underinsured in Thailand is a bigger risk than you think.",
-    date: "March 2025",
-    readTime: "7 min",
-    tag: "Nomads",
-  },
-  {
-    slug: "how-to-file-health-insurance-claim-thailand",
-    title: "How to File a Health Insurance Claim in Thailand",
-    excerpt: "Documents you need, deadlines to remember, and common mistakes that delay reimbursement.",
-    date: "February 2025",
-    readTime: "5 min",
-    tag: "Claims",
-  },
-  {
-    slug: "retirement-visa-health-insurance-thailand",
-    title: "Health Insurance for Retirees on a Thailand Retirement Visa",
-    excerpt: "What the 50,000 THB bank deposit requirement means for your insurance, and the best coverage options for seniors.",
-    date: "February 2025",
-    readTime: "6 min",
-    tag: "Retirees",
-  },
-]
 
 const TAG_COLORS: Record<string, string> = {
   Plans: "bg-teal-50 text-teal-700",
@@ -88,15 +53,14 @@ export default function BlogPage() {
                     </span>
                     <span className="text-xs text-gray-400">{date} · {readTime} read</span>
                   </div>
-                  <h2 className="text-xl font-bold text-gray-900 mb-2 hover:text-teal-600 transition-colors">
-                    {title}
+                  <h2 className="text-xl font-bold text-gray-900 mb-2">
+                    <Link href={`/blog/${slug}`} className="hover:text-teal-600 transition-colors">
+                      {title}
+                    </Link>
                   </h2>
                   <p className="text-gray-500 text-sm mb-4">{excerpt}</p>
-                  <Link
-                    href={`/#contact`}
-                    className="text-sm text-teal-600 font-medium hover:underline"
-                  >
-                    Ask Tonkla about this →
+                  <Link href={`/blog/${slug}`} className="text-sm text-teal-600 font-medium hover:underline">
+                    Read article →
                   </Link>
                 </article>
               ))}
@@ -107,12 +71,12 @@ export default function BlogPage() {
               <p className="text-gray-600 mb-4">
                 Don&apos;t rely on generic articles — get personalised advice for your situation.
               </p>
-              <a
-                href="#contact"
+              <Link
+                href="/contact"
                 className="inline-block bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors"
               >
                 Ask Me Directly
-              </a>
+              </Link>
             </div>
           </div>
         </section>

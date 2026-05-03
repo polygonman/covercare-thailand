@@ -6,8 +6,15 @@ import Services from "@/components/Services"
 import { CheckCircle } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Services — CoverCare Thailand",
-  description: "Health insurance services for expats in Thailand: hospital coordination, claims assistance, plan selection, and ongoing English-speaking support.",
+  title: "Expat Health Insurance Services & Plans in Thailand",
+  description:
+    "Allianz Ayudhya health insurance plans for expats in Thailand. Hospital coordination, claims assistance, plan selection from 15,000 THB/year. English-speaking support.",
+  openGraph: {
+    title: "Expat Health Insurance Services & Plans in Thailand",
+    description: "Allianz Ayudhya plans from 15,000 THB/year. Hospital coordination, fast claims, personal English-speaking support.",
+    url: "https://www.thaicovercare.com/services",
+  },
+  alternates: { canonical: "https://www.thaicovercare.com/services" },
 }
 
 const plans = [
