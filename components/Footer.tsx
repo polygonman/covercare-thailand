@@ -40,7 +40,7 @@ export default function Footer() {
         </div>
         <div className="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center gap-2 text-xs">
           <p>© {new Date().getFullYear()} CoverCare Thailand. All rights reserved.</p>
-          <p>Authorised Allianz Ayudhya Life Insurance Advisor — Thailand's #1 expat "insurance" guide & advisor</p>
+          <p>Authorised Allianz Ayudhya Life Insurance Advisor — Thailand&apos;s #1 expat &quot;insurance&quot; guide &amp; advisor</p>
         </div>
       </div>
     </footer>
