@@ -54,19 +54,10 @@ export default function ContactForm() {
     setSubmitting(true)
     setError("")
     try {
-      // Submit to Formspree (verified working) + our API for lead scoring
-      const formspreeBody = new FormData()
-      formspreeBody.append("name", data.name)
-      formspreeBody.append("email", data.email)
-      formspreeBody.append("whatsapp", data.whatsapp)
-      formspreeBody.append("segment", data.segment)
-      formspreeBody.append("needs", data.needs.join(", "))
-      if (data.message) formspreeBody.append("message", data.message)
-
-      const res = await fetch("https://formspree.io/f/xzdodkda", {
+      const res = await fetch("/api/contact", {
         method: "POST",
-        body: formspreeBody,
-        headers: { Accept: "application/json" },
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
       })
       if (!res.ok) throw new Error("Submission failed")
       setSubmitted(true)

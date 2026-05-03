@@ -32,12 +32,37 @@ export async function POST(request: Request) {
     createdAt: new Date().toISOString(),
   }
 
+  // Fan out to all destinations in parallel
+  const tasks: Promise<unknown>[] = []
+
+  // Formspree — always on, delivers to covercareTH@gmail.com
+  tasks.push(
+    (async () => {
+      const form = new FormData()
+      Object.entries({ ...lead, needs: lead.needs.join(", ") }).forEach(([k, v]) =>
+        form.append(k, String(v))
+      )
+      await fetch("https://formspree.io/f/xzdodkda", {
+        method: "POST",
+        body: form,
+        headers: { Accept: "application/json" },
+      })
+    })()
+  )
+
+  // Notion CRM — when credentials are configured
+  tasks.push(import("@/lib/notion").then(({ createLeadRow }) => createLeadRow(lead)))
+
+  // Resend emails — when API key is configured
   if (process.env.RESEND_API_KEY) {
-    const { sendLeadNotification, sendLeadConfirmation } = await import("@/lib/email")
-    await Promise.all([sendLeadNotification(lead), sendLeadConfirmation(lead)])
-  } else {
-    console.log("[contact] Lead received (no email API key configured):", lead)
+    tasks.push(
+      import("@/lib/email").then(({ sendLeadNotification, sendLeadConfirmation }) =>
+        Promise.all([sendLeadNotification(lead), sendLeadConfirmation(lead)])
+      )
+    )
   }
+
+  await Promise.allSettled(tasks)
 
   return NextResponse.json({ success: true, score: lead.score })
 }
