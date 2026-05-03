@@ -1,0 +1,11 @@
+[build]
+  command = "pnpm build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# NEXT_PUBLIC_* variables are intentionally inlined into the JS bundle —
+# they are client-side keys, not server secrets.
+[build.environment]
+  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_POSTHOG_KEY,NEXT_PUBLIC_GA_ID,NEXT_PUBLIC_POSTHOG_HOST,NEXT_PUBLIC_CALENDLY_URL"
