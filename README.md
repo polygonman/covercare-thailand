@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CoverCare Thailand
 
-## Getting Started
+**English-speaking health insurance advisor in Thailand** — specialising in Allianz Ayudhya plans for expats, digital nomads, and retirees.
 
-First, run the development server:
+🌐 **Live site:** https://www.thaicovercare.com  
+📱 **WhatsApp:** +66 61 196 5363  
+📧 **Email:** covercareTH@gmail.com
+
+---
+
+## Stack
+
+- **Framework:** Next.js (App Router) + TypeScript
+- **Styling:** Tailwind CSS v4
+- **Forms:** React Hook Form + Zod validation
+- **Email:** Resend
+- **Testing:** Vitest + Playwright
+- **Deployment:** Netlify (auto-deploy from `main`)
+
+---
+
+## Local Setup
 
 ```bash
+# Clone the repo
+git clone https://github.com/YOUR_USERNAME/covercare-thailand.git
+cd covercare-thailand
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env.local
+# → Edit .env.local and add your RESEND_API_KEY
+
+# Start dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# → Open http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Variable | Required | Description |
+|---|---|---|
+| `RESEND_API_KEY` | Yes (production) | Email API key from [resend.com](https://resend.com) |
+| `NETLIFY_AUTH_TOKEN` | CI only | From Netlify user settings |
+| `NETLIFY_SITE_ID` | CI only | From your Netlify site settings |
 
-## Learn More
+Without `RESEND_API_KEY`, form submissions are logged to the console (useful for local dev).
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run dev        # Start development server
+npm run build      # Production build
+npm run lint       # ESLint check
+npm run test       # Vitest unit tests (watch mode)
+npm run test:ci    # Vitest (single run, for CI)
+npm run test:e2e   # Playwright E2E tests
+npm run test:coverage  # Coverage report
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Auto-deploy (GitHub → Netlify)
+
+1. Push to `main` → GitHub Actions builds and deploys to Netlify automatically
+2. Add these secrets in **GitHub → Settings → Secrets → Actions:**
+   - `RESEND_API_KEY`
+   - `NETLIFY_AUTH_TOKEN`
+   - `NETLIFY_SITE_ID`
+
+### Manual Netlify deploy
+
+```bash
+npm run build
+npx netlify-cli deploy --dir=.next --prod
+```
+
+---
+
+## Project Structure
+
+```
+covercare-thailand/
+├── app/
+│   ├── page.tsx          # Home / landing page
+│   ├── about/page.tsx    # About Tonkla
+│   ├── services/page.tsx # Services & plan overview
+│   ├── contact/page.tsx  # Contact page
+│   ├── blog/page.tsx     # Resources / articles
+│   └── api/contact/route.ts  # Form API → email
+├── components/           # Reusable React components
+├── lib/email.ts          # Resend email helpers
+├── types/lead.ts         # Lead type + scoring
+└── tests/
+    ├── unit/             # Vitest unit tests
+    └── e2e/              # Playwright E2E tests
+```
+
+---
+
+## Contact
+
+**Tonkla** — CoverCare Thailand  
+🌐 [www.thaicovercare.com](https://www.thaicovercare.com)  
+📱 WhatsApp: +66 61 196 5363  
+💬 LINE: @covercareTH
