@@ -12,7 +12,7 @@ const schema = z.object({
   name: z.string().min(2, "Please enter your name"),
   email: z.string().email("Please enter a valid email"),
   whatsapp: z.string().min(7, "Please enter your WhatsApp number"),
-  segment: z.enum(["corporate", "nomad", "tech", "retiree"] as const),
+  segment: z.enum(["corporate", "nomad", "tech", "retiree", "visitor"] as const),
   needs: z.array(z.string()).min(1, "Please select at least one option"),
   message: z.string().optional(),
 })
@@ -125,7 +125,7 @@ export default function ContactForm() {
         <div>
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Who are you?</h3>
           <div className="grid grid-cols-2 gap-3">
-            {(Object.entries(SEGMENT_LABELS) as [Segment, string][]).map(([value, label]) => (
+            {(Object.entries(SEGMENT_LABELS) as [Segment, string][]).map(([value, label], i, arr) => (
               <button
                 key={value}
                 type="button"
@@ -134,7 +134,7 @@ export default function ContactForm() {
                   selectedSegment === value
                     ? "border-teal-600 bg-teal-50"
                     : "border-gray-200 hover:border-teal-300"
-                }`}
+                } ${arr.length % 2 !== 0 && i === arr.length - 1 ? "col-span-2" : ""}`}
               >
                 <span className="text-sm font-medium text-gray-900">{label}</span>
               </button>
