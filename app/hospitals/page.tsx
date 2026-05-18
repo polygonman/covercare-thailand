@@ -45,7 +45,7 @@ export default function HospitalsPage() {
               {hospitals.length}+ Hospitals Across Thailand
             </h1>
             <p className="text-lg text-teal-100 max-w-2xl mx-auto mb-10">
-              Every hospital in the Allianz Ayudhya Life insurance network — from Bangkok's
+              Every hospital in the Allianz Ayudhya Life insurance network — from Bangkok&apos;s
               international hospitals to provincial clinics. Direct billing at all locations means
               you pay nothing upfront.
             </p>
