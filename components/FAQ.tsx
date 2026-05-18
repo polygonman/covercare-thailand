@@ -6,7 +6,7 @@ import { ChevronDown } from "lucide-react"
 const faqs = [
   {
     q: "Do I need a work permit to get health insurance in Thailand?",
-    a: "No. Allianz Ayudhya plans are available to any foreigner legally residing in Thailand, including tourist visa holders, retirement visa holders, and digital nomads.",
+    a: "No. Allianz Ayudhya plans are available to foreigners on most visa types — retirement, LTR, tourist, and work visas. In most cases no work permit is needed. If you're planning to stay long-term, a proper long-stay visa opens up the best plan options. Visitors can also get short-term insurance. Tell me your situation and I'll find the right fit.",
   },
   {
     q: "Can I use my insurance at any hospital?",
@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     q: "How does the claims process work?",
-    a: "I help you at every step: submitting the claim, gathering documents, following up with Allianz, and ensuring payment is issued correctly. Most claims are settled within 7–14 days.",
+    a: "For most OPD and IPD treatments at in-network hospitals, we use fax claim / direct billing — Allianz pays the hospital directly and you pay nothing out of pocket. If reimbursement is needed, our team helps you gather documents and submit correctly. Most claims are settled within 3–7 days.",
   },
   {
     q: "Are pre-existing conditions covered?",
@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "How much does expat health insurance cost in Thailand?",
-    a: "Basic plans start from around 15,000 THB/year. Comprehensive plans with OPD range from 40,000–100,000+ THB/year. I'll find the best value for your budget.",
+    a: "Basic plans start from around 15,000 THB/year. Comprehensive plans with OPD range from 40,000–100,000+ THB/year depending on age and coverage level. I'll give you an exact quote for your situation.",
   },
 ]
 

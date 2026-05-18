@@ -5,8 +5,8 @@ const items = [
   { icon: Hospital, label: "50+ Hospital Network" },
   { icon: Globe, label: "English Speaking" },
   { icon: Zap, label: "24hr Response" },
-  { icon: FileCheck, label: "Claims Support Included" },
-  { icon: Users, label: "Expat Specialist" },
+  { icon: FileCheck, label: "Direct Billing Available" },
+  { icon: Users, label: "Foreigner Specialist" },
 ]
 
 export default function TrustBar() {

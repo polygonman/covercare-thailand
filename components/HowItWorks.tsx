@@ -12,7 +12,7 @@ const steps = [
   {
     number: "03",
     title: "Stay Supported",
-    desc: "Once covered, I'm on-call for hospital visits, questions, and claims — for as long as you're in Thailand.",
+    desc: "Once covered, our team is on-call for hospital visits, direct billing coordination, and claims support — for as long as you're in Thailand.",
   },
 ]
 

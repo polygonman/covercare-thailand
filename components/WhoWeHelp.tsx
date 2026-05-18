@@ -4,14 +4,14 @@ const segments = [
   {
     icon: Building2,
     title: "Corporate Expats",
-    desc: "Relocation packages, work permit holders, and company-sponsored plans. I help you understand your coverage and coordinate with hospitals.",
+    desc: "Relocation packages, work permit holders, and company-sponsored plans. I find the right coverage and our team handles claims and hospital support.",
     tags: ["Work Permit", "Relocation", "Company Plans"],
   },
   {
     icon: Laptop,
     title: "Digital Nomads & Freelancers",
-    desc: "Flexible plans that follow your lifestyle. Coverage that works whether you're in Chiang Mai or Phuket.",
-    tags: ["Flexible Coverage", "Visa-Friendly", "Monthly Options"],
+    desc: "Flexible plans that follow your lifestyle — whether you're staying long-term or just visiting. Short-term options available for those on tourist visas.",
+    tags: ["Flexible Coverage", "Visa-Friendly", "Short-Term Plans"],
   },
   {
     icon: Rocket,

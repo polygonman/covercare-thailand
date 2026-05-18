@@ -5,12 +5,12 @@ import FloatingCTA from "@/components/FloatingCTA"
 import { Shield, Heart, Globe } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "About Tonkla — Your Expat Insurance Advisor in Thailand",
+  title: "About Tonkla — Your Health Insurance Advisor in Thailand",
   description:
-    "Meet Tonkla, your dedicated English-speaking Allianz Ayudhya advisor in Thailand. Hospital coordination background, personal service, and deep expat knowledge.",
+    "Meet Tonkla, your English-speaking Allianz Ayudhya advisor in Thailand. Backed by a team with 5+ years of claims experience and a nurse at Chulalongkorn Hospital.",
   openGraph: {
-    title: "About Tonkla — Your Expat Insurance Advisor in Thailand",
-    description: "English-speaking Allianz Ayudhya advisor with hospital coordination expertise. Personal service for expats across Thailand.",
+    title: "About Tonkla — Your Health Insurance Advisor in Thailand",
+    description: "Authorised Allianz Ayudhya advisor backed by a dedicated claims team. Personal service for foreigners across Thailand.",
     url: "https://www.thaicovercare.com/about",
   },
   alternates: { canonical: "https://www.thaicovercare.com/about" },
@@ -44,14 +44,15 @@ export default function AboutPage() {
                     you&apos;re covered and what to do next.
                   </p>
                   <p className="text-gray-600 leading-relaxed mb-4">
-                    My background is in hospital coordination and client care, which means I don&apos;t just sell policies.
-                    I sit with clients at the hospital, translate between medical staff and insurers, and follow every
-                    claim through to completion.
+                    What makes CoverCare Thailand different is our team. My partner has over 5 years of experience
+                    managing insurance claims across dozens of cases — and one of our team members is a practicing
+                    nurse at Chulalongkorn Hospital. Between us, we cover the full journey: plan selection,
+                    direct billing coordination, and claims support from start to finish.
                   </p>
                   <p className="text-gray-600 leading-relaxed">
-                    When I noticed how many expats and digital nomads were underinsured or confused about their
-                    options in Thailand, I created CoverCare Thailand — a service built specifically for the
-                    international community here.
+                    When I noticed how many foreigners — visitors, digital nomads, retirees, and long-stay residents —
+                    were underinsured or confused about their options in Thailand, I created CoverCare Thailand.
+                    A service built for anyone who needs real, English-speaking support navigating healthcare here.
                   </p>
                 </div>
               </div>
@@ -66,13 +67,13 @@ export default function AboutPage() {
                 },
                 {
                   icon: Heart,
-                  title: "Hospital-Backed",
-                  desc: "Years of hospital coordination experience means I understand what happens when you actually need to use your insurance.",
+                  title: "Experienced Claims Team",
+                  desc: "Our team includes an experienced nurse at Chulalongkorn Hospital and a claims specialist with 5+ years handling OPD and IPD cases across Thailand.",
                 },
                 {
                   icon: Globe,
-                  title: "Expat-Focused",
-                  desc: "English-speaking service designed specifically for the challenges expats, nomads, and retirees face in Thailand.",
+                  title: "Foreigner-Focused",
+                  desc: "English-speaking service for any foreigner in Thailand — whether you're visiting, working, retired, or calling Thailand home long-term.",
                 },
               ].map(({ icon: Icon, title, desc }) => (
                 <div key={title} className="bg-white border border-gray-100 rounded-xl p-6 text-center shadow-sm">

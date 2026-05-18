@@ -19,8 +19,8 @@ const features = [
   },
   {
     icon: Clock,
-    title: "Fast Claims Assistance",
-    desc: "Personal help from hospital admission to reimbursement",
+    title: "Direct Hospital Billing",
+    desc: "Most claims are fax-billed directly to Allianz — you pay nothing upfront",
   },
 ]
 
@@ -41,8 +41,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-lg text-slate-500 leading-relaxed mb-8">
-              English-speaking support, hospital coordination, and fast claims — so you can focus on
-              living in Thailand, not navigating paperwork.
+              English-speaking support, direct hospital billing, and a dedicated claims team with 5+ years of experience — so you can focus on living in Thailand, not navigating paperwork.
             </p>
 
             <div className="flex flex-wrap gap-3 mb-10">

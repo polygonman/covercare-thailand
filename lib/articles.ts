@@ -56,7 +56,7 @@ Best for: Most working expats, families, anyone who visits doctors regularly.
 - Physiotherapy (with limits)
 - Dental add-on available
 
-**Verdict:** The most popular tier among expats I work with. Covers everyday healthcare, not just emergencies.
+**Verdict:** The most popular tier among foreigners I work with. Covers everyday healthcare, not just emergencies.
 
 ### 3. Executive / International Plans — From 80,000 THB/year
 
@@ -178,7 +178,7 @@ If you went to a hospital outside the Allianz network, you'll need to claim reim
 - Copy of your passport / ID
 - Bank details for reimbursement transfer
 
-**Timeline:** Submit within 90 days of treatment. Reimbursement typically takes 7–14 business days once documents are complete.
+**Timeline:** Submit within 90 days of treatment. Reimbursement typically takes 3–7 days once documents are complete.
 
 I help every client I work with to gather documents and submit claims correctly — this is where having a personal advisor makes a real difference.
 
@@ -299,7 +299,7 @@ Understanding which type of claim you're making will save you time and frustrati
 ### 1. Direct Billing (Cashless)
 You're at an in-network Allianz Ayudhya hospital. The hospital bills Allianz directly. You pay only your co-pay or non-covered items at discharge.
 
-**You don't need to "file" anything** — the hospital handles it. Your job is to present your insurance card and policy number at the insurance desk before treatment begins.
+**You don't need to "file" anything** — the hospital handles it. Your job is to present your insurance card and policy number at the insurance desk before treatment begins. This is the most common scenario for in-network hospitals — you present your card, the hospital faxes Allianz, and treatment proceeds without you paying a cent.
 
 ### 2. Reimbursement Claim
 You paid for treatment yourself — either at an out-of-network hospital, an overseas clinic, or because direct billing wasn't set up in time.
@@ -341,8 +341,8 @@ Submit to the Allianz Ayudhya claims department directly by post or email. I can
 
 ## Processing Time
 
-- Standard claims: 7–14 business days after documents received
-- Complex claims (surgery, cancer treatment): up to 21 business days
+- Standard claims: 3–7 days after documents received
+- Complex claims (surgery, cancer treatment): up to 14 business days
 - Incomplete submissions: Clock stops until missing documents received
 
 ## Why Claims Get Delayed or Rejected

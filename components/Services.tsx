@@ -3,8 +3,8 @@ import { Hospital, FileText, Search, Users, MessageCircle, Globe } from "lucide-
 const services = [
   {
     icon: Hospital,
-    title: "Hospital Coordination",
-    desc: "I escort you through hospital admission, communicate with Thai-speaking staff, and make sure you're comfortable throughout.",
+    title: "Claims & Hospital Support",
+    desc: "Our team — including an experienced nurse — handles direct billing, coordinates with hospital staff, and guides every claim through to completion.",
   },
   {
     icon: FileText,
@@ -28,8 +28,8 @@ const services = [
   },
   {
     icon: Globe,
-    title: "Expat-Specific Guidance",
-    desc: "Understanding visa requirements, OPD vs IPD benefits, exclusions, and renewal strategies for expat situations.",
+    title: "Foreigner-Specific Guidance",
+    desc: "Whether you're on a tourist visa, retirement visa, or work permit — we'll explain your options, what's covered, and how to get the most from your plan.",
   },
 ]
 

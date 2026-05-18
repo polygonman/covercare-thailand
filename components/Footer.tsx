@@ -16,7 +16,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm leading-relaxed">
-              Authorised Allianz Ayudhya advisor specialising in health insurance for expats and
+              Authorised Allianz Ayudhya advisor specialising in health insurance for foreigners and
               digital nomads in Thailand.
             </p>
           </div>
