@@ -1,4 +1,4 @@
-export type Segment = 'corporate' | 'nomad' | 'tech' | 'retiree'
+export type Segment = 'corporate' | 'nomad' | 'tech' | 'retiree' | 'visitor'
 
 export interface Lead {
   name: string
@@ -16,6 +16,7 @@ export const SEGMENT_LABELS: Record<Segment, string> = {
   nomad: 'Digital Nomad / Freelancer',
   tech: 'Tech Startup Employee',
   retiree: 'Retiree in Thailand',
+  visitor: 'Visitor / Tourist',
 }
 
 export const NEEDS_OPTIONS = [
@@ -33,6 +34,7 @@ export function scoreLead(segment: Segment, needs: string[]): number {
     tech: 35,
     nomad: 25,
     retiree: 30,
+    visitor: 20,
   }
   const needsScore = Math.min(needs.length * 10, 40)
   const urgencyBonus = needs.includes('Fast claims assistance') ? 20 : 0
