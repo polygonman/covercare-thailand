@@ -9,9 +9,8 @@ interface Props {
   selectedProvince?: string
 }
 
-// Marker colors per tier
-const PREMIER_COLOR = "#0f766e"  // teal-700
-const STANDARD_COLOR = "#94a3b8" // slate-400
+const PREMIER_COLOR = "#0f766e"
+const STANDARD_COLOR = "#94a3b8"
 const PREMIER_BORDER = "#065f46"
 const STANDARD_BORDER = "#64748b"
 
@@ -19,19 +18,10 @@ function makeIcon(L: typeof import("leaflet"), isPremier: boolean, score: number
   const size = isPremier ? 14 : 9
   const color = isPremier ? PREMIER_COLOR : STANDARD_COLOR
   const border = isPremier ? PREMIER_BORDER : STANDARD_BORDER
-  const opacity = isPremier ? 1 : 0.7
-
+  const glow = isPremier && score && score >= 9 ? "box-shadow:0 0 0 3px rgba(15,118,110,0.3);" : ""
   return L.divIcon({
     className: "",
-    html: `<div style="
-      width:${size}px;
-      height:${size}px;
-      background:${color};
-      border:2px solid ${border};
-      border-radius:50%;
-      opacity:${opacity};
-      ${isPremier && score && score >= 9 ? "box-shadow:0 0 0 3px rgba(15,118,110,0.3);" : ""}
-    "></div>`,
+    html: `<div style="width:${size}px;height:${size}px;background:${color};border:2px solid ${border};border-radius:50%;${glow}"></div>`,
     iconSize: [size, size],
     iconAnchor: [size / 2, size / 2],
     popupAnchor: [0, -size / 2 - 4],
@@ -40,87 +30,50 @@ function makeIcon(L: typeof import("leaflet"), isPremier: boolean, score: number
 
 function makePopup(h: Hospital): string {
   const ratingHtml = h.googleRating
-    ? `<span style="display:inline-flex;align-items:center;gap:3px;font-size:12px;color:#92400e">
-        ★ ${h.googleRating.toFixed(1)}
-        ${h.googleReviews ? `<span style="color:#9ca3af">(${h.googleReviews.toLocaleString()})</span>` : ""}
-       </span>`
-    : ""
-
-  const badgeHtml = h.tier === "Premier" && h.overallScore
-    ? `<span style="
-        display:inline-block;
-        background:#0f766e;
-        color:white;
-        font-size:10px;
-        font-weight:600;
-        padding:1px 6px;
-        border-radius:9999px;
-        margin-left:4px;
-      ">${h.overallScore}/10</span>`
+    ? `<span style="font-size:12px;color:#92400e">★ ${h.googleRating.toFixed(1)}${h.googleReviews ? ` <span style="color:#9ca3af">(${h.googleReviews.toLocaleString()})</span>` : ""}</span>`
     : ""
 
   const tierBadge = h.tier === "Premier"
-    ? `<span style="
-        display:inline-block;
-        background:#f0fdfa;
-        color:#0f766e;
-        border:1px solid #99f6e4;
-        font-size:10px;
-        font-weight:600;
-        padding:1px 6px;
-        border-radius:9999px;
-      ">Premier</span>`
+    ? `<span style="background:#f0fdfa;color:#0f766e;border:1px solid #99f6e4;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9999px;">Premier</span>`
     : ""
-
-  const mapsLink = h.mapsUrl
-    ? `<a href="${h.mapsUrl}" target="_blank" rel="noopener noreferrer"
-        style="display:inline-flex;align-items:center;gap:3px;font-size:11px;color:#0f766e;font-weight:500;text-decoration:none;margin-top:4px;">
-        ↗ View on Google Maps
-       </a>`
+  const scoreBadge = h.tier === "Premier" && h.overallScore
+    ? `<span style="background:#0f766e;color:white;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9999px;margin-left:4px;">${h.overallScore}/10</span>`
     : ""
 
   const specialtiesHtml =
-    h.tier === "Premier" && h.specialties && h.specialties.length > 0
-      ? `<div style="display:flex;flex-wrap:wrap;gap:3px;margin-top:5px;">
-          ${h.specialties
-            .slice(0, 4)
-            .map(
-              (s) =>
-                `<span style="font-size:10px;background:#f0fdfa;color:#0f766e;border:1px solid #99f6e4;padding:1px 5px;border-radius:9999px;">${s}</span>`
-            )
-            .join("")}
-         </div>`
+    h.specialties && h.specialties.length > 0
+      ? h.specialties.slice(0, 4).map((s) =>
+          `<span style="font-size:10px;background:#f0fdfa;color:#0f766e;border:1px solid #99f6e4;padding:1px 5px;border-radius:9999px;">${s}</span>`
+        ).join(" ")
       : ""
 
+  const mapsLink = h.mapsUrl
+    ? `<a href="${h.mapsUrl}" target="_blank" rel="noopener noreferrer" style="font-size:11px;color:#0f766e;font-weight:500;text-decoration:none;">↗ Google Maps</a>`
+    : ""
+
   return `
-    <div style="min-width:180px;max-width:220px;font-family:system-ui,sans-serif;">
-      <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
-        ${tierBadge}
-        ${badgeHtml}
-      </div>
-      <div style="font-weight:600;font-size:13px;color:#0f172a;line-height:1.4;margin-bottom:3px;">
-        ${h.name}
-      </div>
-      <div style="font-size:11px;color:#6b7280;margin-bottom:3px;">
-        📍 ${h.city || h.province}, Thailand
-      </div>
-      ${ratingHtml ? `<div style="margin-bottom:3px;">${ratingHtml}</div>` : ""}
-      ${specialtiesHtml}
-      ${mapsLink ? `<div>${mapsLink}</div>` : ""}
-    </div>
-  `
+    <div style="min-width:180px;max-width:220px;font-family:system-ui,sans-serif;line-height:1.4;">
+      ${tierBadge || scoreBadge ? `<div style="margin-bottom:4px;">${tierBadge}${scoreBadge}</div>` : ""}
+      <div style="font-weight:600;font-size:13px;color:#0f172a;margin-bottom:2px;">${h.name}</div>
+      <div style="font-size:11px;color:#6b7280;margin-bottom:4px;">📍 ${h.city || h.province}, Thailand</div>
+      ${ratingHtml ? `<div style="margin-bottom:4px;">${ratingHtml}</div>` : ""}
+      ${specialtiesHtml ? `<div style="display:flex;flex-wrap:wrap;gap:3px;margin-bottom:4px;">${specialtiesHtml}</div>` : ""}
+      ${mapsLink}
+    </div>`
 }
 
 export default function HospitalMap({ hospitals, selectedProvince }: Props) {
-  const mapRef = useRef<HTMLDivElement>(null)
-  const mapInstanceRef = useRef<import("leaflet").Map | null>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const mapRef = useRef<import("leaflet").Map | null>(null)
+  const markersRef = useRef<import("leaflet").LayerGroup | null>(null)
+  // Store resolved L so the markers effect can use it without re-importing
+  const lRef = useRef<typeof import("leaflet") | null>(null)
 
+  // Effect 1: init map once
   useEffect(() => {
-    if (!mapRef.current || mapInstanceRef.current) return
+    if (!containerRef.current || mapRef.current) return
 
-    // Dynamically import leaflet (browser-only)
     import("leaflet").then((L) => {
-      // Fix default icon URL path issues with Next.js bundler
       // @ts-expect-error – _getIconUrl is internal
       delete L.Icon.Default.prototype._getIconUrl
       L.Icon.Default.mergeOptions({
@@ -129,57 +82,75 @@ export default function HospitalMap({ hospitals, selectedProvince }: Props) {
         shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
       })
 
-      const map = L.map(mapRef.current!, {
-        center: [13.75, 100.52],
+      const map = L.map(containerRef.current!, {
+        center: [13.0, 101.5],
         zoom: 6,
-        zoomControl: true,
         scrollWheelZoom: true,
       })
 
-      mapInstanceRef.current = map
-
-      // OpenStreetMap tiles
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         maxZoom: 19,
       }).addTo(map)
 
-      // Add markers
-      const validHospitals = hospitals.filter((h) => h.lat && h.lng)
+      const markersLayer = L.layerGroup().addTo(map)
 
-      for (const h of validHospitals) {
-        const isPremier = h.tier === "Premier"
-        const icon = makeIcon(L, isPremier, h.overallScore)
-        const marker = L.marker([h.lat!, h.lng!], { icon })
-        marker.bindPopup(makePopup(h), {
-          maxWidth: 240,
-          className: "hospital-popup",
-        })
-        marker.addTo(map)
+      mapRef.current = map
+      markersRef.current = markersLayer
+      lRef.current = L
+
+      // Trigger the markers effect by populating refs (the hospitals effect sees null on first run)
+      // We add initial markers directly here since the effect already fired with null refs
+      const valid = hospitals.filter((h) => h.lat && h.lng)
+      for (const h of valid) {
+        const icon = makeIcon(L, h.tier === "Premier", h.overallScore)
+        L.marker([h.lat!, h.lng!], { icon })
+          .bindPopup(makePopup(h), { maxWidth: 240 })
+          .addTo(markersLayer)
       }
 
-      // Fit bounds to Thailand if no province filter
-      if (!selectedProvince) {
-        map.fitBounds([
-          [5.5, 97.5],
-          [20.5, 105.8],
-        ])
-      }
+      // Fit to Thailand bounds initially
+      map.fitBounds([[5.5, 97.5], [20.5, 105.8]])
     })
 
-    // Cleanup
     return () => {
-      if (mapInstanceRef.current) {
-        mapInstanceRef.current.remove()
-        mapInstanceRef.current = null
+      if (mapRef.current) {
+        mapRef.current.remove()
+        mapRef.current = null
+        markersRef.current = null
+        lRef.current = null
       }
     }
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
+  // Effect 2: update markers whenever the filtered hospitals list changes
+  useEffect(() => {
+    const L = lRef.current
+    const layer = markersRef.current
+    const map = mapRef.current
+    if (!L || !layer || !map) return  // map not ready yet
+
+    layer.clearLayers()
+    const valid = hospitals.filter((h) => h.lat && h.lng)
+    for (const h of valid) {
+      const icon = makeIcon(L, h.tier === "Premier", h.overallScore)
+      L.marker([h.lat!, h.lng!], { icon })
+        .bindPopup(makePopup(h), { maxWidth: 240 })
+        .addTo(layer)
+    }
+
+    // Zoom to filtered hospitals when a province is selected
+    if (selectedProvince && valid.length > 0) {
+      const bounds = L.latLngBounds(valid.map((h) => [h.lat!, h.lng!] as [number, number]))
+      map.fitBounds(bounds, { padding: [60, 60], maxZoom: 12 })
+    } else if (!selectedProvince) {
+      map.fitBounds([[5.5, 97.5], [20.5, 105.8]])
+    }
+  }, [hospitals, selectedProvince])
+
   return (
     <div
-      ref={mapRef}
+      ref={containerRef}
       style={{ height: "100%", width: "100%" }}
       aria-label="Map showing Allianz Ayudhya hospital network locations across Thailand"
     />
