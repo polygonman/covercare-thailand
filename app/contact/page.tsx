@@ -4,6 +4,7 @@ import Footer from "@/components/Footer"
 import FloatingCTA from "@/components/FloatingCTA"
 import ContactSection from "@/components/ContactSection"
 import CalendlyEmbed from "@/components/CalendlyEmbed"
+import HospitalRecommender from "@/components/HospitalRecommender"
 
 export const metadata: Metadata = {
   title: "Contact — CoverCare Thailand",
@@ -24,6 +25,9 @@ export default function ContactPage() {
           </div>
         </section>
         <ContactSection />
+
+        {/* Hospital recommender */}
+        <HospitalRecommender />
 
         {/* Calendly inline booking */}
         <section className="py-16 bg-white">

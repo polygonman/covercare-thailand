@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import FloatingCTA from "@/components/FloatingCTA"
 import HospitalDirectory from "@/components/HospitalDirectory"
+import HospitalRecommender from "@/components/HospitalRecommender"
 import { hospitals, provinces } from "@/lib/hospitals-data"
 import { MapPin, Building2, Globe } from "lucide-react"
 
@@ -76,6 +77,9 @@ export default function HospitalsPage() {
             </p>
           </div>
         </div>
+
+        {/* Recommender */}
+        <HospitalRecommender />
 
         {/* Directory */}
         <HospitalDirectory hospitals={hospitals} provinces={provinces} />
