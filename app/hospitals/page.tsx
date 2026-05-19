@@ -4,6 +4,7 @@ import Footer from "@/components/Footer"
 import FloatingCTA from "@/components/FloatingCTA"
 import HospitalDirectory from "@/components/HospitalDirectory"
 import HospitalRecommender from "@/components/HospitalRecommender"
+import CoverageChecker from "@/components/CoverageChecker"
 import { hospitals, provinces } from "@/lib/hospitals-data"
 import { MapPin, Building2, Globe } from "lucide-react"
 
@@ -77,6 +78,9 @@ export default function HospitalsPage() {
             </p>
           </div>
         </div>
+
+        {/* Coverage checker */}
+        <CoverageChecker />
 
         {/* Recommender */}
         <HospitalRecommender />
