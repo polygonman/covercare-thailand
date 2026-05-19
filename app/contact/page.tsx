@@ -16,7 +16,7 @@ export default function ContactPage() {
     <>
       <Navbar />
       <main className="pt-20">
-        <section className="py-8 bg-gradient-to-br from-teal-50 to-white">
+        <section className="py-8 bg-gradient-to-br from-sky-50 to-white">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <h1 className="text-4xl font-bold text-gray-900 mb-3">Get in Touch</h1>
             <p className="text-gray-600">

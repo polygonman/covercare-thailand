@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 }
 
 const TAG_COLORS: Record<string, string> = {
-  Plans: "bg-teal-50 text-teal-700",
+  Plans: "bg-sky-50 text-navy-700",
   Guide: "bg-blue-50 text-blue-700",
   Nomads: "bg-purple-50 text-purple-700",
   Claims: "bg-amber-50 text-amber-700",
@@ -30,7 +30,7 @@ export default function BlogPage() {
     <>
       <Navbar />
       <main className="pt-20">
-        <section className="py-16 bg-gradient-to-br from-teal-50 to-white">
+        <section className="py-16 bg-gradient-to-br from-sky-50 to-white">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Resources</h1>
             <p className="text-xl text-gray-600">
@@ -45,7 +45,7 @@ export default function BlogPage() {
               {articles.map(({ slug, title, excerpt, date, readTime, tag }) => (
                 <article
                   key={slug}
-                  className="border border-gray-200 rounded-xl p-6 hover:border-teal-300 hover:shadow-sm transition-all"
+                  className="border border-gray-200 rounded-xl p-6 hover:border-sky-300 hover:shadow-sm transition-all"
                 >
                   <div className="flex items-center gap-3 mb-3">
                     <span className={`text-xs font-semibold px-2 py-1 rounded-full ${TAG_COLORS[tag]}`}>
@@ -54,26 +54,26 @@ export default function BlogPage() {
                     <span className="text-xs text-gray-400">{date} · {readTime} read</span>
                   </div>
                   <h2 className="text-xl font-bold text-gray-900 mb-2">
-                    <Link href={`/blog/${slug}`} className="hover:text-teal-600 transition-colors">
+                    <Link href={`/blog/${slug}`} className="hover:text-sky-600 transition-colors">
                       {title}
                     </Link>
                   </h2>
                   <p className="text-gray-500 text-sm mb-4">{excerpt}</p>
-                  <Link href={`/blog/${slug}`} className="text-sm text-teal-600 font-medium hover:underline">
+                  <Link href={`/blog/${slug}`} className="text-sm text-sky-600 font-medium hover:underline">
                     Read article →
                   </Link>
                 </article>
               ))}
             </div>
 
-            <div className="mt-12 bg-teal-50 rounded-2xl p-8 text-center">
+            <div className="mt-12 bg-sky-50 rounded-2xl p-8 text-center">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Have a specific question?</h3>
               <p className="text-gray-600 mb-4">
                 Don&apos;t rely on generic articles — get personalised advice for your situation.
               </p>
               <Link
                 href="/contact"
-                className="inline-block bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors"
+                className="inline-block bg-sky-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-sky-600 transition-colors"
               >
                 Ask Me Directly
               </Link>

@@ -41,13 +41,13 @@ export default function GuideForm() {
         </p>
         <a
           href="/contact"
-          className="inline-block bg-teal-600 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-teal-700 transition-colors"
+          className="inline-block bg-sky-600 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-sky-600 transition-colors"
         >
           Book a free consultation →
         </a>
         <p className="mt-4 text-xs text-gray-400">
           Can&apos;t find the email? Check spam or{" "}
-          <a href="/public/expat-guide.pdf" download className="text-teal-600 underline">
+          <a href="/public/expat-guide.pdf" download className="text-sky-600 underline">
             download directly
           </a>
           .
@@ -65,7 +65,7 @@ export default function GuideForm() {
           name="name"
           required
           placeholder="First name"
-          className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
+          className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500"
         />
       </div>
       <div>
@@ -75,14 +75,14 @@ export default function GuideForm() {
           type="email"
           required
           placeholder="you@email.com"
-          className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
+          className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500"
         />
       </div>
       {error && <p className="text-red-500 text-xs">{error}</p>}
       <button
         type="submit"
         disabled={submitting}
-        className="w-full bg-teal-600 text-white py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors disabled:opacity-50"
+        className="w-full bg-sky-600 text-white py-3 rounded-lg font-semibold hover:bg-sky-600 transition-colors disabled:opacity-50"
       >
         {submitting ? "Sending..." : "Send Me the Free Guide →"}
       </button>

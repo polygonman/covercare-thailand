@@ -46,7 +46,7 @@ export default function ServicesPage() {
     <>
       <Navbar />
       <main className="pt-20">
-        <section className="py-16 bg-gradient-to-br from-teal-50 to-white">
+        <section className="py-16 bg-gradient-to-br from-sky-50 to-white">
           <div className="max-w-6xl mx-auto px-4 text-center">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Services & Plans</h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -65,20 +65,20 @@ export default function ServicesPage() {
               {plans.map(({ name, price, desc, features, highlight }) => (
                 <div
                   key={name}
-                  className={`rounded-2xl p-6 border-2 ${highlight ? "border-teal-600 bg-teal-50" : "border-gray-200 bg-white"}`}
+                  className={`rounded-2xl p-6 border-2 ${highlight ? "border-sky-600 bg-sky-50" : "border-gray-200 bg-white"}`}
                 >
                   {highlight && (
-                    <span className="inline-block bg-teal-600 text-white text-xs font-semibold px-3 py-1 rounded-full mb-3">
+                    <span className="inline-block bg-sky-600 text-white text-xs font-semibold px-3 py-1 rounded-full mb-3">
                       Most Popular
                     </span>
                   )}
                   <h3 className="text-xl font-bold text-gray-900 mb-1">{name}</h3>
-                  <p className="text-teal-600 font-semibold mb-3">{price}</p>
+                  <p className="text-sky-600 font-semibold mb-3">{price}</p>
                   <p className="text-sm text-gray-500 mb-4">{desc}</p>
                   <ul className="flex flex-col gap-2">
                     {features.map((f) => (
                       <li key={f} className="flex items-center gap-2 text-sm text-gray-700">
-                        <CheckCircle size={16} className="text-teal-500 flex-shrink-0" />
+                        <CheckCircle size={16} className="text-sky-500 flex-shrink-0" />
                         {f}
                       </li>
                     ))}
@@ -89,7 +89,7 @@ export default function ServicesPage() {
             <div className="text-center mt-10">
               <a
                 href="#contact"
-                className="inline-block bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors"
+                className="inline-block bg-sky-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-sky-600 transition-colors"
               >
                 Get My Personalised Quote
               </a>

@@ -9,16 +9,16 @@ interface Props {
   selectedProvince?: string
 }
 
-const PREMIER_COLOR = "#0f766e"
+const PREMIER_COLOR = "#00A4E4"  // sky-500
 const STANDARD_COLOR = "#94a3b8"
-const PREMIER_BORDER = "#065f46"
+const PREMIER_BORDER = "#003781"  // navy-700
 const STANDARD_BORDER = "#64748b"
 
 function makeIcon(L: typeof import("leaflet"), isPremier: boolean, score: number | null) {
   const size = isPremier ? 14 : 9
   const color = isPremier ? PREMIER_COLOR : STANDARD_COLOR
   const border = isPremier ? PREMIER_BORDER : STANDARD_BORDER
-  const glow = isPremier && score && score >= 9 ? "box-shadow:0 0 0 3px rgba(15,118,110,0.3);" : ""
+  const glow = isPremier && score && score >= 9 ? "box-shadow:0 0 0 3px rgba(0,164,228,0.35);" : ""
   return L.divIcon({
     className: "",
     html: `<div style="width:${size}px;height:${size}px;background:${color};border:2px solid ${border};border-radius:50%;${glow}"></div>`,
@@ -34,21 +34,21 @@ function makePopup(h: Hospital): string {
     : ""
 
   const tierBadge = h.tier === "Premier"
-    ? `<span style="background:#f0fdfa;color:#0f766e;border:1px solid #99f6e4;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9999px;">Premier</span>`
+    ? `<span style="background:#e0f5ff;color:#00A4E4;border:1px solid #bae6fd;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9999px;">Premier</span>`
     : ""
   const scoreBadge = h.tier === "Premier" && h.overallScore
-    ? `<span style="background:#0f766e;color:white;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9999px;margin-left:4px;">${h.overallScore}/10</span>`
+    ? `<span style="background:#00A4E4;color:white;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9999px;margin-left:4px;">${h.overallScore}/10</span>`
     : ""
 
   const specialtiesHtml =
     h.specialties && h.specialties.length > 0
       ? h.specialties.slice(0, 4).map((s) =>
-          `<span style="font-size:10px;background:#f0fdfa;color:#0f766e;border:1px solid #99f6e4;padding:1px 5px;border-radius:9999px;">${s}</span>`
+          `<span style="font-size:10px;background:#e0f5ff;color:#00A4E4;border:1px solid #bae6fd;padding:1px 5px;border-radius:9999px;">${s}</span>`
         ).join(" ")
       : ""
 
   const mapsLink = h.mapsUrl
-    ? `<a href="${h.mapsUrl}" target="_blank" rel="noopener noreferrer" style="font-size:11px;color:#0f766e;font-weight:500;text-decoration:none;">↗ Google Maps</a>`
+    ? `<a href="${h.mapsUrl}" target="_blank" rel="noopener noreferrer" style="font-size:11px;color:#00A4E4;font-weight:500;text-decoration:none;">↗ Google Maps</a>`
     : ""
 
   return `

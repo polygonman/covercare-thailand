@@ -146,7 +146,7 @@ function PremierCard({ h }: { h: Hospital }) {
           <span className={`ml-auto inline-flex items-center px-2.5 py-1 rounded-full text-sm font-bold ${
             h.overallScore >= 9 ? "bg-navy-700 text-white" :
             h.overallScore >= 8 ? "bg-navy-600 text-white" :
-            "bg-sky-100 text-teal-800"
+            "bg-sky-100 text-navy-800"
           }`}>
             {h.overallScore}/10
           </span>
@@ -306,7 +306,7 @@ export default async function ProvincePage({
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               Hospitals in {province}
             </h1>
-            <p className="text-teal-100 text-lg mb-8 max-w-2xl">
+            <p className="text-sky-100 text-lg mb-8 max-w-2xl">
               {hs.length} Allianz Ayudhya Life in-network hospital{hs.length !== 1 ? "s" : ""} in {province}.
               Direct billing at all locations — you pay nothing upfront.
             </p>
@@ -376,18 +376,18 @@ export default async function ProvincePage({
           )}
 
           {/* CTA */}
-          <section className="bg-gradient-to-br from-teal-700 to-teal-800 rounded-2xl p-8 text-white text-center mb-12">
+          <section className="bg-gradient-to-br from-navy-700 to-navy-800 rounded-2xl p-8 text-white text-center mb-12">
             <h2 className="text-2xl font-bold mb-3">
               Not sure which hospital is right for you?
             </h2>
-            <p className="text-teal-100 mb-6 max-w-xl mx-auto">
+            <p className="text-sky-100 mb-6 max-w-xl mx-auto">
               Tonkla and team can recommend the best hospital for your specific situation in {province} — and set up direct billing so you pay nothing upfront.
             </p>
             <a
               href={`https://wa.me/66611965363?text=${waText}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-white text-teal-800 font-semibold py-3 px-6 rounded-xl hover:bg-sky-50 transition-colors"
+              className="inline-flex items-center gap-2 bg-white text-navy-800 font-semibold py-3 px-6 rounded-xl hover:bg-sky-50 transition-colors"
             >
               <MessageCircle className="w-5 h-5" />
               Ask Tonkla on WhatsApp
@@ -403,7 +403,7 @@ export default async function ProvincePage({
                   <Link
                     key={p.slug}
                     href={`/hospitals/${p.slug}`}
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 hover:border-teal-300 hover:text-navy-700 rounded-xl text-sm text-slate-600 transition-colors"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 hover:border-sky-300 hover:text-navy-700 rounded-xl text-sm text-slate-600 transition-colors"
                   >
                     <MapPin className="w-3.5 h-3.5" />
                     {p.name}

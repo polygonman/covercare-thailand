@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const TAG_COLORS: Record<string, string> = {
-  Plans: "bg-teal-50 text-teal-700",
+  Plans: "bg-sky-50 text-navy-700",
   Guide: "bg-blue-50 text-blue-700",
   Nomads: "bg-purple-50 text-purple-700",
   Claims: "bg-amber-50 text-amber-700",
@@ -53,10 +53,10 @@ export default async function ArticlePage({ params }: Props) {
       <Navbar />
       <main className="pt-20">
         <article>
-          <header className="py-12 bg-gradient-to-br from-teal-50 to-white">
+          <header className="py-12 bg-gradient-to-br from-sky-50 to-white">
             <div className="max-w-3xl mx-auto px-4">
               <div className="flex items-center gap-3 mb-4">
-                <Link href="/blog" className="text-sm text-gray-500 hover:text-teal-600 transition-colors">
+                <Link href="/blog" className="text-sm text-gray-500 hover:text-sky-600 transition-colors">
                   ← All articles
                 </Link>
                 <span className={`text-xs font-semibold px-2 py-1 rounded-full ${TAG_COLORS[article.tag] ?? "bg-gray-100 text-gray-600"}`}>
@@ -73,14 +73,14 @@ export default async function ArticlePage({ params }: Props) {
           <div className="py-10 bg-white">
             <div className="max-w-3xl mx-auto px-4">
               <div
-                className="prose prose-gray prose-headings:font-bold prose-headings:text-gray-900 prose-a:text-teal-600 prose-a:no-underline hover:prose-a:underline prose-table:text-sm max-w-none"
+                className="prose prose-gray prose-headings:font-bold prose-headings:text-gray-900 prose-a:text-sky-600 prose-a:no-underline hover:prose-a:underline prose-table:text-sm max-w-none"
                 dangerouslySetInnerHTML={{ __html: html }}
               />
             </div>
           </div>
         </article>
 
-        <section className="py-12 bg-teal-50">
+        <section className="py-12 bg-sky-50">
           <div className="max-w-3xl mx-auto px-4 text-center">
             <h2 className="text-2xl font-bold text-gray-900 mb-2">Ready to get covered?</h2>
             <p className="text-gray-600 mb-6">
@@ -89,7 +89,7 @@ export default async function ArticlePage({ params }: Props) {
             <div className="flex flex-wrap gap-3 justify-center">
               <Link
                 href="/contact"
-                className="bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors"
+                className="bg-sky-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-sky-600 transition-colors"
               >
                 Book Free Consultation
               </Link>

@@ -26,7 +26,7 @@ export default function GuidePage() {
     <>
       <Navbar />
       <main className="pt-20">
-        <section className="py-16 bg-gradient-to-br from-teal-50 to-white">
+        <section className="py-16 bg-gradient-to-br from-sky-50 to-white">
           <div className="max-w-5xl mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
@@ -43,7 +43,7 @@ export default function GuidePage() {
                 <ul className="flex flex-col gap-2 mb-8">
                   {chapters.map((ch) => (
                     <li key={ch} className="flex items-start gap-2 text-gray-700 text-sm">
-                      <span className="text-teal-500 mt-0.5">✓</span>
+                      <span className="text-sky-500 mt-0.5">✓</span>
                       {ch}
                     </li>
                   ))}
