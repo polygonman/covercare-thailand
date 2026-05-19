@@ -8,11 +8,24 @@ export default function FloatingCTA() {
       href={`https://wa.me/66611965363?text=${encodeURIComponent("Hi Tonkla, I found your website and I'm interested in health insurance in Thailand.")}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition-all duration-200 hover:scale-105 flex items-center gap-2 px-4 py-3 cursor-pointer"
-      aria-label="Chat on WhatsApp"
+      aria-label="Chat with Tonkla"
+      className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-5 py-3 rounded-full transition-all duration-200 hover:scale-105 cursor-pointer"
+      style={{
+        background: "var(--glass-bg-strong)",
+        backdropFilter: "var(--blur-md)",
+        WebkitBackdropFilter: "var(--blur-md)",
+        border: "1px solid var(--glass-border)",
+        boxShadow: "var(--glass-shadow), 0 0 0 1px rgba(37,211,102,0.2)",
+        color: "var(--navy-800)",
+      }}
     >
-      <MessageCircle size={20} />
-      <span className="text-sm font-semibold hidden sm:inline">Chat on WhatsApp</span>
+      <span
+        className="flex items-center justify-center w-7 h-7 rounded-full flex-shrink-0"
+        style={{ background: "linear-gradient(160deg, #2EDF74, var(--whatsapp))", color: "#fff" }}
+      >
+        <MessageCircle size={15} strokeWidth={2.5} />
+      </span>
+      <span className="text-sm font-semibold hidden sm:inline text-navy-800">Chat with Tonkla</span>
     </a>
   )
 }

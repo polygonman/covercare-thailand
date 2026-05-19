@@ -41,7 +41,7 @@ function ResultRow({ h }: { h: Hospital }) {
       {/* tier dot */}
       <span
         className={`flex-shrink-0 w-2 h-2 rounded-full ${
-          h.tier === "Premier" ? "bg-teal-500" : "bg-slate-300"
+          h.tier === "Premier" ? "bg-sky-500" : "bg-slate-300"
         }`}
       />
 
@@ -52,7 +52,7 @@ function ResultRow({ h }: { h: Hospital }) {
             {h.name}
           </span>
           {h.tier === "Premier" && (
-            <span className="flex-shrink-0 text-[10px] font-semibold bg-teal-50 text-teal-700 border border-teal-100 px-1.5 py-0.5 rounded-full leading-none">
+            <span className="flex-shrink-0 text-[10px] font-semibold bg-sky-50 text-navy-700 border border-sky-100 px-1.5 py-0.5 rounded-full leading-none">
               Premier
             </span>
           )}
@@ -76,7 +76,7 @@ function ResultRow({ h }: { h: Hospital }) {
 
       {/* badges + map link */}
       <div className="flex-shrink-0 flex items-center gap-2">
-        <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-medium text-teal-700 bg-teal-50 px-2 py-0.5 rounded-full border border-teal-100 leading-none">
+        <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-medium text-navy-700 bg-sky-50 px-2 py-0.5 rounded-full border border-sky-100 leading-none">
           <ShieldCheck className="w-3 h-3" />
           Direct billing
         </span>
@@ -86,7 +86,7 @@ function ResultRow({ h }: { h: Hospital }) {
             target="_blank"
             rel="noopener noreferrer"
             title="Open in Google Maps"
-            className="text-slate-300 hover:text-teal-600 transition-colors"
+            className="text-slate-300 hover:text-sky-600 transition-colors"
             onClick={(e) => e.stopPropagation()}
           >
             <ExternalLink className="w-4 h-4" />
@@ -120,7 +120,7 @@ export default function CoverageChecker() {
       <div className="max-w-2xl mx-auto px-4">
         {/* heading */}
         <div className="text-center mb-6">
-          <span className="inline-flex items-center gap-1.5 bg-teal-50 border border-teal-100 text-teal-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+          <span className="inline-flex items-center gap-1.5 bg-sky-50 border border-sky-100 text-navy-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">
             <ShieldCheck className="w-3.5 h-3.5" />
             Coverage checker
           </span>
@@ -140,7 +140,7 @@ export default function CoverageChecker() {
             placeholder="Type a hospital name, city, or province…"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="w-full pl-12 pr-10 py-4 text-base border-2 border-slate-200 rounded-xl focus:border-teal-500 focus:outline-none transition-colors bg-white text-slate-900 placeholder:text-slate-400 shadow-sm"
+            className="w-full pl-12 pr-10 py-4 text-base border-2 border-slate-200 rounded-xl focus:border-sky-500 focus:outline-none transition-colors bg-white text-slate-900 placeholder:text-slate-400 shadow-sm"
           />
           {hasQuery && (
             <button
@@ -179,7 +179,7 @@ export default function CoverageChecker() {
                   href={waUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-teal-700 hover:bg-teal-800 text-white text-sm font-semibold px-5 py-3 rounded-xl transition-colors shadow-sm"
+                  className="inline-flex items-center gap-2 bg-navy-700 hover:bg-navy-800 text-white text-sm font-semibold px-5 py-3 rounded-xl transition-colors shadow-sm"
                 >
                   Ask Tonkla on WhatsApp
                   <ChevronRight className="w-4 h-4" />

@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Inter, Plus_Jakarta_Sans } from "next/font/google"
+import { Inter, Plus_Jakarta_Sans, Geist_Mono } from "next/font/google"
 import { GoogleAnalytics } from "@next/third-parties/google"
 import { Suspense } from "react"
 import "./globals.css"
@@ -12,6 +12,11 @@ const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-jakarta",
   weight: ["400", "500", "600", "700", "800"],
+})
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+  weight: ["400", "500", "600"],
 })
 
 const BASE = "https://www.thaicovercare.com"
@@ -58,7 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const gaId = process.env.NEXT_PUBLIC_GA_ID
 
   return (
-    <html lang="en" className={`${inter.variable} ${jakarta.variable}`}>
+    <html lang="en" className={`${inter.variable} ${jakarta.variable} ${geistMono.variable}`}>
       <body className={`${inter.className} min-h-screen flex flex-col`}>
         <PostHogProvider>
           <JsonLd />

@@ -1,44 +1,67 @@
 const steps = [
   {
-    number: "01",
+    n: "01", est: "2 min",
     title: "Tell Me Your Situation",
     desc: "Fill in the quick form or WhatsApp me directly. I'll ask a few questions to understand your needs, visa type, and budget.",
   },
   {
-    number: "02",
+    n: "02", est: "5 min",
     title: "Get Your Personalised Plan",
     desc: "I compare relevant Allianz Ayudhya options and present the best fit with a clear breakdown — no insurance jargon.",
   },
   {
-    number: "03",
-    title: "Stay Supported",
+    n: "03", est: "3 min",
+    title: "Sign & Stay Supported",
     desc: "Once covered, our team is on-call for hospital visits, direct billing coordination, and claims support — for as long as you're in Thailand.",
   },
 ]
 
 export default function HowItWorks() {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">How It Works</h2>
-          <p className="text-slate-500 text-lg">Simple process, personal service.</p>
-        </div>
-        <div className="relative">
-          <div className="hidden md:block absolute left-[22px] top-10 bottom-10 w-0.5 bg-teal-100" />
-          <div className="flex flex-col gap-10">
-            {steps.map(({ number, title, desc }) => (
-              <div key={number} className="flex items-start gap-6">
-                <div className="flex-shrink-0 w-11 h-11 bg-teal-700 text-white rounded-full flex items-center justify-center font-bold text-sm z-10 shadow-md">
-                  {number}
+    <section className="py-20 relative">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
+        <header className="text-center mb-14">
+          <span className="eyebrow">/ How it works</span>
+          <h2 className="text-3xl md:text-4xl font-black mt-3 mb-4" style={{ color: "var(--navy-950)", letterSpacing: "-0.025em" }}>
+            Three steps. <span className="gradient-text">Ten minutes.</span>
+          </h2>
+          <p className="text-lg" style={{ color: "var(--ink-600)" }}>Simple process, personal service.</p>
+        </header>
+
+        <div className="grid md:grid-cols-3 gap-5">
+          {steps.map((s) => (
+            <div
+              key={s.n}
+              className="rounded-3xl p-7 flex flex-col gap-4 transition-all duration-200 hover:-translate-y-1"
+              style={{
+                background: "var(--glass-bg)",
+                backdropFilter: "var(--blur-md)",
+                WebkitBackdropFilter: "var(--blur-md)",
+                border: "1px solid var(--glass-border)",
+                boxShadow: "var(--glass-shadow)",
+              }}
+            >
+              <div className="flex items-start justify-between">
+                <div className="flex flex-col gap-0.5">
+                  <span
+                    className="text-4xl font-black"
+                    style={{ fontFamily: "var(--font-geist-mono)", color: "var(--navy-700)", letterSpacing: "-0.04em" }}
+                  >
+                    {s.n}
+                  </span>
+                  <span className="eyebrow">Step {s.n}</span>
                 </div>
-                <div className="bg-white border border-slate-100 rounded-2xl p-6 flex-1 shadow-sm hover:shadow-md hover:border-teal-100 transition-all duration-200">
-                  <h3 className="font-bold text-slate-900 text-lg mb-1.5">{title}</h3>
-                  <p className="text-slate-500 leading-relaxed">{desc}</p>
-                </div>
+                <span
+                  className="text-xs font-medium px-2.5 py-1 rounded-full"
+                  style={{ background: "var(--sky-50)", color: "var(--sky-700)", border: "1px solid var(--sky-100)" }}
+                >
+                  ~ {s.est}
+                </span>
               </div>
-            ))}
-          </div>
+              <h3 className="font-bold text-navy-900 text-lg">{s.title}</h3>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--ink-600)" }}>{s.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

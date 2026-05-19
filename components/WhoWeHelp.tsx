@@ -29,28 +29,47 @@ const segments = [
 
 export default function WhoWeHelp() {
   return (
-    <section id="segments" className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <section id="segments" className="py-20 relative">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
         <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">Who I Help</h2>
-          <p className="text-slate-500 max-w-xl mx-auto text-lg">
-            Whether you just landed or have lived in Thailand for years, I find the right Allianz plan for your situation.
+          <span className="eyebrow">/ Who I help</span>
+          <h2 className="text-3xl md:text-4xl font-black mt-3 mb-4" style={{ color: "var(--navy-950)", letterSpacing: "-0.025em" }}>
+            Whether you just landed<br className="hidden sm:block" /> or call Thailand home.
+          </h2>
+          <p className="text-lg max-w-xl mx-auto" style={{ color: "var(--ink-600)" }}>
+            I find the right Allianz plan for your situation — whatever your visa or length of stay.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
           {segments.map(({ icon: Icon, title, desc, tags }) => (
             <div
               key={title}
-              className="border border-slate-200 rounded-2xl p-6 hover:border-teal-300 hover:shadow-md transition-all duration-200 group bg-white cursor-default"
+              className="rounded-3xl p-6 flex flex-col gap-4 transition-all duration-200 hover:-translate-y-1 cursor-default"
+              style={{
+                background: "var(--glass-bg)",
+                backdropFilter: "var(--blur-md)",
+                WebkitBackdropFilter: "var(--blur-md)",
+                border: "1px solid var(--glass-border)",
+                boxShadow: "var(--glass-shadow)",
+              }}
             >
-              <div className="bg-teal-50 border border-teal-100 w-11 h-11 rounded-xl flex items-center justify-center mb-4 group-hover:bg-teal-100 transition-colors duration-200">
-                <Icon size={20} className="text-teal-700" />
+              <div
+                className="w-11 h-11 rounded-2xl flex items-center justify-center flex-shrink-0"
+                style={{ background: "var(--navy-100)", color: "var(--navy-700)" }}
+              >
+                <Icon size={20} />
               </div>
-              <h3 className="font-bold text-slate-900 mb-2 group-hover:text-teal-700 transition-colors duration-200">{title}</h3>
-              <p className="text-sm text-slate-500 mb-4 leading-relaxed">{desc}</p>
-              <div className="flex flex-wrap gap-1.5">
+              <div>
+                <h3 className="font-bold text-navy-900 mb-2 text-base">{title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: "var(--ink-600)" }}>{desc}</p>
+              </div>
+              <div className="flex flex-wrap gap-1.5 mt-auto">
                 {tags.map((tag) => (
-                  <span key={tag} className="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded-full">
+                  <span
+                    key={tag}
+                    className="text-xs px-2.5 py-1 rounded-full font-medium"
+                    style={{ background: "var(--sky-50)", color: "var(--sky-700)", border: "1px solid var(--sky-100)" }}
+                  >
                     {tag}
                   </span>
                 ))}

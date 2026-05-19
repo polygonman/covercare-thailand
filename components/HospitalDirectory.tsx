@@ -32,9 +32,9 @@ function StarRating({ rating }: { rating: number | null }) {
 function ScoreBadge({ score }: { score: number | null }) {
   if (!score) return null
   const color =
-    score >= 9 ? "bg-teal-700 text-white" :
-    score >= 8 ? "bg-teal-600 text-white" :
-    score >= 7 ? "bg-teal-100 text-teal-800" :
+    score >= 9 ? "bg-navy-700 text-white" :
+    score >= 8 ? "bg-navy-600 text-white" :
+    score >= 7 ? "bg-sky-100 text-navy-800" :
     "bg-slate-100 text-slate-600"
   return (
     <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold ${color}`}>
@@ -45,12 +45,12 @@ function ScoreBadge({ score }: { score: number | null }) {
 
 function PremierCard({ h }: { h: Hospital }) {
   return (
-    <div className="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-teal-100 transition-all p-5">
+    <div className="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-sky-100 transition-all p-5">
       {/* Header row */}
       <div className="flex items-start justify-between gap-3 mb-3">
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-1">
-            <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-teal-50 text-teal-700 border border-teal-100">
+            <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-sky-50 text-navy-700 border border-sky-100">
               Premier
             </span>
             {h.hospitalType === "International" && (
@@ -90,7 +90,7 @@ function PremierCard({ h }: { h: Hospital }) {
           {h.specialties.slice(0, 5).map((s) => (
             <span
               key={s}
-              className="text-xs px-2 py-0.5 bg-teal-50 text-teal-700 rounded-full border border-teal-100"
+              className="text-xs px-2 py-0.5 bg-sky-50 text-navy-700 rounded-full border border-sky-100"
             >
               {s}
             </span>
@@ -113,7 +113,7 @@ function PremierCard({ h }: { h: Hospital }) {
         {h.phone && (
           <a
             href={`tel:${h.phone.replace(/\s/g, "")}`}
-            className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-teal-700 transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-navy-700 transition-colors"
           >
             <Phone className="w-3.5 h-3.5" />
             {h.phone}
@@ -124,7 +124,7 @@ function PremierCard({ h }: { h: Hospital }) {
             href={h.mapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-xs text-teal-700 hover:text-teal-800 font-medium ml-auto"
+            className="inline-flex items-center gap-1 text-xs text-navy-700 hover:text-navy-800 font-medium ml-auto"
           >
             <MapPin className="w-3.5 h-3.5" />
             View on Maps
@@ -151,7 +151,7 @@ function StandardRow({ h }: { h: Hospital }) {
           href={h.mapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-shrink-0 inline-flex items-center gap-1 text-xs text-teal-700 hover:text-teal-800 font-medium"
+          className="flex-shrink-0 inline-flex items-center gap-1 text-xs text-navy-700 hover:text-navy-800 font-medium"
         >
           <ExternalLink className="w-3.5 h-3.5" />
           Maps
@@ -209,7 +209,7 @@ export default function HospitalDirectory({ hospitals, provinces }: Props) {
                 placeholder="Search hospitals by name or location…"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full pl-9 pr-3 py-2 text-sm border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-400 bg-slate-50"
+                className="w-full pl-9 pr-3 py-2 text-sm border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-400 bg-slate-50"
               />
             </div>
 
@@ -221,7 +221,7 @@ export default function HospitalDirectory({ hospitals, provinces }: Props) {
                   onClick={() => setTier(t)}
                   className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-all ${
                     tier === t
-                      ? "bg-white text-teal-700 shadow-sm"
+                      ? "bg-white text-navy-700 shadow-sm"
                       : "text-slate-500 hover:text-slate-700"
                   }`}
                 >
@@ -239,7 +239,7 @@ export default function HospitalDirectory({ hospitals, provinces }: Props) {
               <select
                 value={province}
                 onChange={(e) => setProvince(e.target.value)}
-                className="appearance-none pl-3 pr-8 py-2 text-sm border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-400 bg-slate-50 cursor-pointer min-w-[140px]"
+                className="appearance-none pl-3 pr-8 py-2 text-sm border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-400 bg-slate-50 cursor-pointer min-w-[140px]"
               >
                 <option value="">All Provinces</option>
                 {provinces.map((p) => (
@@ -254,7 +254,7 @@ export default function HospitalDirectory({ hospitals, provinces }: Props) {
               <button
                 onClick={() => setView("list")}
                 className={`px-3 py-1.5 rounded-lg transition-all flex items-center gap-1.5 text-sm font-medium ${
-                  view === "list" ? "bg-white text-teal-700 shadow-sm" : "text-slate-500 hover:text-slate-700"
+                  view === "list" ? "bg-white text-navy-700 shadow-sm" : "text-slate-500 hover:text-slate-700"
                 }`}
                 aria-label="List view"
               >
@@ -264,7 +264,7 @@ export default function HospitalDirectory({ hospitals, provinces }: Props) {
               <button
                 onClick={() => setView("map")}
                 className={`px-3 py-1.5 rounded-lg transition-all flex items-center gap-1.5 text-sm font-medium ${
-                  view === "map" ? "bg-white text-teal-700 shadow-sm" : "text-slate-500 hover:text-slate-700"
+                  view === "map" ? "bg-white text-navy-700 shadow-sm" : "text-slate-500 hover:text-slate-700"
                 }`}
                 aria-label="Map view"
               >
@@ -291,7 +291,7 @@ export default function HospitalDirectory({ hospitals, provinces }: Props) {
             <p className="text-slate-500">No hospitals match your search.</p>
             <button
               onClick={() => { setSearch(""); setProvince(""); setTier("all") }}
-              className="mt-3 text-sm text-teal-700 hover:text-teal-800 font-medium"
+              className="mt-3 text-sm text-navy-700 hover:text-navy-800 font-medium"
             >
               Clear filters
             </button>
@@ -376,7 +376,7 @@ function ProvinceGroupedStandard({ standards }: { standards: Hospital[] }) {
       {grouped.map(([prov, hospitals]) => (
         <div key={prov} className="bg-white rounded-2xl border border-slate-100 shadow-sm p-4">
           <div className="flex items-center gap-2 mb-2 pb-2 border-b border-slate-50">
-            <MapPin className="w-4 h-4 text-teal-600" />
+            <MapPin className="w-4 h-4 text-sky-600" />
             <h3 className="text-sm font-semibold text-slate-700">{prov}</h3>
             <span className="text-xs text-slate-400 bg-slate-50 px-1.5 py-0.5 rounded-full ml-1">
               {hospitals.length}

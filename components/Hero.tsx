@@ -1,4 +1,132 @@
-import { Shield, Phone, Clock, Award, Building2, MessageCircle } from "lucide-react"
+"use client"
+
+import { useState } from "react"
+import { Award, Building2, Clock, ArrowRight, MessageCircle, Zap, Check } from "lucide-react"
+
+const tiers = ["Basic IPD", "IPD + OPD", "Comprehensive", "Executive"]
+const tierBases = [15000, 42800, 68000, 98000]
+
+function HeroCalc() {
+  const [age, setAge] = useState(32)
+  const [cover, setCover] = useState(60)
+  const [tier, setTier] = useState(1)
+
+  const annual = Math.round(tierBases[tier] + (age - 30) * 600 + (cover - 60) * 280)
+  const monthly = Math.round(annual / 12)
+
+  return (
+    <div
+      className="rounded-[32px] p-6 flex flex-col gap-5"
+      style={{
+        background: "var(--glass-bg-strong)",
+        backdropFilter: "var(--blur-lg)",
+        WebkitBackdropFilter: "var(--blur-lg)",
+        border: "1px solid var(--glass-border)",
+        boxShadow: "var(--glass-shadow-lg)",
+      }}
+    >
+      {/* Header */}
+      <div className="flex items-center justify-between">
+        <span className="flex items-center gap-2 text-sm font-semibold text-navy-800">
+          <span
+            className="w-6 h-6 rounded-full flex items-center justify-center"
+            style={{ background: "var(--sky-100)", color: "var(--sky-600)" }}
+          >
+            <Zap size={13} strokeWidth={2.5} />
+          </span>
+          Quick Quote
+        </span>
+        <span className="flex items-center gap-1.5 text-xs font-medium text-ink-500">
+          <span className="dot-live" />
+          Live
+        </span>
+      </div>
+
+      {/* Age */}
+      <div className="flex flex-col gap-2">
+        <div className="flex justify-between items-baseline">
+          <span className="text-xs font-medium text-ink-600">Age</span>
+          <span className="text-lg font-bold text-navy-700" style={{ fontFamily: "var(--font-geist-mono)" }}>
+            {age}
+          </span>
+        </div>
+        <input
+          type="range" min={22} max={75} value={age}
+          onChange={(e) => setAge(+e.target.value)}
+          className="slider"
+          style={{ "--fill": `${((age - 22) / (75 - 22)) * 100}%` } as React.CSSProperties}
+        />
+      </div>
+
+      {/* Coverage */}
+      <div className="flex flex-col gap-2">
+        <div className="flex justify-between items-baseline">
+          <span className="text-xs font-medium text-ink-600">Coverage level</span>
+          <span className="text-lg font-bold text-navy-700" style={{ fontFamily: "var(--font-geist-mono)" }}>
+            {cover}%
+          </span>
+        </div>
+        <input
+          type="range" min={40} max={100} value={cover}
+          onChange={(e) => setCover(+e.target.value)}
+          className="slider"
+          style={{ "--fill": `${((cover - 40) / (100 - 40)) * 100}%` } as React.CSSProperties}
+        />
+      </div>
+
+      {/* Tier pills */}
+      <div className="flex flex-col gap-2">
+        <span className="eyebrow">Plan tier</span>
+        <div className="flex flex-wrap gap-1.5">
+          {tiers.map((t, i) => (
+            <button
+              key={t}
+              onClick={() => setTier(i)}
+              className="text-xs px-3 py-1.5 rounded-full font-medium transition-all duration-150 cursor-pointer border-0"
+              style={
+                tier === i
+                  ? { background: "var(--sky-500)", color: "#fff", boxShadow: "var(--glow-sky-soft)" }
+                  : { background: "var(--ink-100)", color: "var(--ink-700)" }
+              }
+            >
+              {t}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Quote block */}
+      <div
+        className="rounded-2xl p-4 flex items-center justify-between gap-4"
+        style={{ background: "linear-gradient(135deg, var(--navy-800), var(--navy-950))", color: "#fff" }}
+      >
+        <div className="flex flex-col gap-0.5">
+          <span className="text-xs font-medium text-navy-300">Annual premium</span>
+          <span className="text-2xl font-black" style={{ fontFamily: "var(--font-jakarta)", letterSpacing: "-0.04em" }}>
+            ฿{annual.toLocaleString()}
+            <span className="text-base font-medium ml-1 text-navy-300">/yr</span>
+          </span>
+          <span className="text-xs text-navy-400">~ ฿{monthly.toLocaleString()} / month</span>
+        </div>
+        <span
+          className="flex items-center gap-1 text-xs font-semibold px-3 py-1.5 rounded-full flex-shrink-0"
+          style={{ background: "var(--success-soft)", color: "var(--success)" }}
+        >
+          <Check size={11} strokeWidth={3} /> Best fit
+        </span>
+      </div>
+
+      {/* CTA */}
+      <a
+        href="/#contact"
+        className="flex items-center justify-center gap-2 w-full py-3 rounded-full text-sm font-semibold text-white transition-all duration-150 hover:opacity-90"
+        style={{ background: "linear-gradient(135deg, var(--navy-700), var(--navy-800))", boxShadow: "var(--glow-navy)" }}
+      >
+        Continue to plan <ArrowRight size={14} strokeWidth={2.5} />
+      </a>
+    </div>
+  )
+}
 
 const trustStats = [
   { icon: Award, label: "Allianz Ayudhya Authorised" },
@@ -6,88 +134,92 @@ const trustStats = [
   { icon: Clock, label: "24-Hour Response" },
 ]
 
-const features = [
-  {
-    icon: Shield,
-    title: "Allianz Ayudhya Network",
-    desc: "Top-tier private hospital coverage across Thailand",
-  },
-  {
-    icon: Phone,
-    title: "English-Speaking Support",
-    desc: "Direct line to Tonkla — no call centres, no waiting",
-  },
-  {
-    icon: Clock,
-    title: "Direct Hospital Billing",
-    desc: "Most claims are fax-billed directly to Allianz — you pay nothing upfront",
-  },
-]
-
 export default function Hero() {
   return (
-    <section className="pt-24 pb-20 bg-gradient-to-br from-teal-50 via-white to-slate-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <section className="relative pt-36 pb-24 overflow-hidden">
+      <div className="orbs" aria-hidden="true">
+        <span className="orb a" />
+        <span className="orb b" />
+        <span className="orb c" />
+      </div>
+
+      <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6">
         <div className="grid md:grid-cols-2 gap-14 items-center">
+          {/* Left: copy */}
           <div>
-            <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 text-amber-800 text-xs font-semibold px-3 py-1.5 rounded-full mb-6 tracking-wide uppercase">
-              <Award size={12} />
-              Allianz Ayudhya Authorised Advisor
+            <div
+              className="inline-flex items-center gap-2 text-xs font-bold px-3 py-1.5 rounded-full mb-6 uppercase tracking-widest"
+              style={{ background: "var(--navy-100)", color: "var(--navy-700)", border: "1px solid var(--navy-200)" }}
+            >
+              <Award size={11} /> Allianz Ayudhya · Authorised
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-5 tracking-tight">
-              Thailand Health Insurance{" "}
-              <span className="text-teal-700">for Expats &amp; Digital Nomads</span>
+            <h1 className="text-4xl md:text-5xl font-black mb-5 leading-[1.05]" style={{ color: "var(--navy-950)", letterSpacing: "-0.04em" }}>
+              Health insurance,<br />
+              <span className="gradient-text">handled online.</span>
             </h1>
 
-            <p className="text-lg text-slate-500 leading-relaxed mb-8">
-              English-speaking support, direct hospital billing, and a dedicated claims team with 5+ years of experience — so you can focus on living in Thailand, not navigating paperwork.
+            <p className="text-lg leading-relaxed mb-8 max-w-lg" style={{ color: "var(--ink-600)" }}>
+              Quote, sign, and pay in under ten minutes. Direct hospital billing across 50+ private hospitals.
+              Real humans on WhatsApp when it matters.
             </p>
 
             <div className="flex flex-wrap gap-3 mb-10">
               <a
-                href="#contact"
-                className="bg-teal-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-teal-800 transition-all duration-150 shadow-sm cursor-pointer"
+                href="/#contact"
+                className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all duration-150 hover:opacity-90"
+                style={{ background: "var(--sky-500)", boxShadow: "var(--glow-sky-soft)" }}
               >
-                Book Free Consultation
+                Get instant quote <ArrowRight size={14} strokeWidth={2.5} />
               </a>
               <a
                 href={`https://wa.me/66611965363?text=${encodeURIComponent("Hi Tonkla, I'm interested in expat health insurance in Thailand.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-green-500 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-600 transition-all duration-150 flex items-center gap-2 cursor-pointer"
+                className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-150 text-navy-800"
+                style={{
+                  background: "var(--glass-bg)",
+                  backdropFilter: "var(--blur-md)",
+                  WebkitBackdropFilter: "var(--blur-md)",
+                  border: "1px solid var(--glass-border)",
+                  boxShadow: "var(--glass-shadow)",
+                }}
               >
-                <MessageCircle size={16} />
-                WhatsApp Now
+                <MessageCircle size={15} /> WhatsApp Now
               </a>
             </div>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-5">
               {trustStats.map(({ icon: Icon, label }) => (
-                <div key={label} className="flex items-center gap-1.5 text-sm text-slate-500">
-                  <Icon size={14} className="text-teal-600 flex-shrink-0" />
+                <div key={label} className="flex items-center gap-1.5 text-sm text-ink-600">
+                  <Icon size={14} style={{ color: "var(--sky-500)", flexShrink: 0 }} />
                   <span>{label}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="flex flex-col gap-4">
-            {features.map(({ icon: Icon, title, desc }) => (
-              <div
-                key={title}
-                className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 flex items-start gap-4 hover:shadow-md hover:border-teal-100 transition-all duration-200"
-              >
-                <div className="bg-teal-50 border border-teal-100 p-2.5 rounded-xl flex-shrink-0">
-                  <Icon size={20} className="text-teal-700" />
-                </div>
-                <div>
-                  <p className="font-semibold text-slate-900 mb-0.5">{title}</p>
-                  <p className="text-sm text-slate-500">{desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          {/* Right: calculator */}
+          <HeroCalc />
+        </div>
+
+        {/* Meta pills */}
+        <div className="flex flex-wrap gap-3 mt-10 justify-center md:justify-start">
+          {["Live · reply in 8 min", "50+ hospitals covered", "5+ yr claims team"].map((label, i) => (
+            <span
+              key={i}
+              className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full text-ink-700"
+              style={{
+                background: "var(--glass-bg)",
+                backdropFilter: "var(--blur-md)",
+                WebkitBackdropFilter: "var(--blur-md)",
+                border: "1px solid var(--glass-border)",
+              }}
+            >
+              {i === 0 && <span className="dot-live" />}
+              {label}
+            </span>
+          ))}
         </div>
       </div>
     </section>

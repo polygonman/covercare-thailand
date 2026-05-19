@@ -34,28 +34,64 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null)
 
   return (
-    <section id="faq" className="py-20 bg-white">
+    <section id="faq" className="py-20 relative">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">Frequently Asked Questions</h2>
-          <p className="text-slate-500 text-lg">Everything you need to know before getting covered.</p>
-        </div>
-        <div className="flex flex-col gap-2">
+        <header className="text-center mb-14">
+          <span className="eyebrow">/ FAQ</span>
+          <h2 className="text-3xl md:text-4xl font-black mt-3 mb-4" style={{ color: "var(--navy-950)", letterSpacing: "-0.025em" }}>
+            Everything before you commit.
+          </h2>
+          <p className="text-lg" style={{ color: "var(--ink-600)" }}>
+            Every question you should ask before getting covered.
+          </p>
+        </header>
+
+        <div className="flex flex-col gap-3">
           {faqs.map(({ q, a }, i) => (
-            <div key={i} className="border border-slate-200 rounded-2xl overflow-hidden hover:border-teal-200 transition-colors">
+            <div
+              key={i}
+              className="rounded-[22px] overflow-hidden transition-all duration-200"
+              style={{
+                background: "var(--glass-bg)",
+                backdropFilter: "var(--blur-md)",
+                WebkitBackdropFilter: "var(--blur-md)",
+                border: `1px solid ${open === i ? "var(--sky-200)" : "var(--glass-border)"}`,
+                boxShadow: open === i ? "var(--glass-shadow-lg)" : "var(--glass-shadow)",
+              }}
+            >
               <button
-                className="w-full text-left px-6 py-4 flex items-center justify-between font-semibold text-slate-900 hover:bg-slate-50 transition-colors cursor-pointer"
+                className="w-full text-left px-6 py-5 flex items-center justify-between font-semibold text-navy-900 cursor-pointer"
                 onClick={() => setOpen(open === i ? null : i)}
                 aria-expanded={open === i}
+                style={{ background: "transparent", border: "none" }}
               >
-                <span>{q}</span>
+                <span className="flex items-start gap-3 pr-4">
+                  <span
+                    className="text-xs font-medium flex-shrink-0 mt-0.5 pt-0.5"
+                    style={{ fontFamily: "var(--font-geist-mono)", color: "var(--sky-500)", minWidth: 24 }}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="text-sm leading-snug">{q}</span>
+                </span>
                 <ChevronDown
                   size={18}
-                  className={`text-teal-700 transition-transform flex-shrink-0 ml-4 duration-200 ${open === i ? "rotate-180" : ""}`}
+                  className={`flex-shrink-0 transition-transform duration-200 ${open === i ? "rotate-180" : ""}`}
+                  style={{ color: "var(--sky-500)" }}
                 />
               </button>
               {open === i && (
-                <div className="px-6 pb-5 text-slate-500 text-sm leading-relaxed border-t border-slate-100 pt-4">{a}</div>
+                <div
+                  className="px-6 pb-5 text-sm leading-relaxed"
+                  style={{
+                    color: "var(--ink-600)",
+                    borderTop: "1px solid var(--glass-border)",
+                    paddingTop: 16,
+                    marginLeft: 24,
+                  }}
+                >
+                  {a}
+                </div>
               )}
             </div>
           ))}

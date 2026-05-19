@@ -1,54 +1,71 @@
 import Link from "next/link"
-import { Shield } from "lucide-react"
+import Image from "next/image"
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-slate-400 py-12">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid md:grid-cols-3 gap-10 mb-10">
+    <footer style={{ background: "linear-gradient(180deg, var(--navy-900), var(--navy-950))", color: "var(--ink-300)" }}>
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-14">
+        <div className="grid md:grid-cols-4 gap-10 mb-10">
+          {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-7 h-7 bg-teal-700 rounded-lg flex items-center justify-center flex-shrink-0">
-                <Shield size={14} className="text-white" />
-              </div>
-              <span className="text-white font-bold">
-                CoverCare <span className="text-slate-400 font-medium">Thailand</span>
-              </span>
-            </div>
-            <p className="text-sm leading-relaxed">
-              Authorised Allianz Ayudhya advisor specialising in health insurance for foreigners and
-              digital nomads in Thailand.
+            <Image src="/logo-wordmark-light.svg" alt="covercare" width={120} height={28} className="mb-4" />
+            <p className="text-sm leading-relaxed" style={{ color: "var(--navy-300)" }}>
+              Authorised Allianz Ayudhya advisor specialising in health insurance for foreigners and digital nomads in Thailand.
             </p>
           </div>
+
+          {/* Product */}
           <div>
-            <p className="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Quick Links</p>
+            <p className="text-xs font-semibold mb-4 uppercase tracking-wider" style={{ color: "var(--navy-200)" }}>Product</p>
             <div className="flex flex-col gap-2.5 text-sm">
-              <Link href="/services" className="hover:text-white transition-colors">Services</Link>
-              <Link href="/about" className="hover:text-white transition-colors">About Tonkla</Link>
-              <Link href="/blog" className="hover:text-white transition-colors">Resources</Link>
-              <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
-              <Link href="/#faq" className="hover:text-white transition-colors">FAQ</Link>
+              <Link href="/services" className="hover:text-white transition-colors" style={{ color: "var(--navy-300)" }}>Services</Link>
+              <Link href="/hospitals" className="hover:text-white transition-colors" style={{ color: "var(--navy-300)" }}>Hospital Network</Link>
+              <Link href="/#faq" className="hover:text-white transition-colors" style={{ color: "var(--navy-300)" }}>FAQ</Link>
+              <Link href="/#segments" className="hover:text-white transition-colors" style={{ color: "var(--navy-300)" }}>Who I Help</Link>
             </div>
           </div>
+
+          {/* Resources */}
           <div>
-            <p className="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Contact</p>
+            <p className="text-xs font-semibold mb-4 uppercase tracking-wider" style={{ color: "var(--navy-200)" }}>Resources</p>
             <div className="flex flex-col gap-2.5 text-sm">
-              <a href="https://wa.me/66611965363" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                WhatsApp: +66 61 196 5363
+              <Link href="/blog" className="hover:text-white transition-colors" style={{ color: "var(--navy-300)" }}>Blog & Guides</Link>
+              <Link href="/guide" className="hover:text-white transition-colors" style={{ color: "var(--navy-300)" }}>Free PDF Guide</Link>
+              <Link href="/about" className="hover:text-white transition-colors" style={{ color: "var(--navy-300)" }}>About Tonkla</Link>
+              <Link href="/contact" className="hover:text-white transition-colors" style={{ color: "var(--navy-300)" }}>Contact</Link>
+            </div>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <p className="text-xs font-semibold mb-4 uppercase tracking-wider" style={{ color: "var(--navy-200)" }}>Contact</p>
+            <div className="flex flex-col gap-2.5 text-sm">
+              <a
+                href="https://wa.me/66611965363"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors"
+                style={{ color: "var(--navy-300)" }}
+              >
+                WhatsApp +66 61 196 5363
               </a>
-              <span>LINE: @covercareTH</span>
-              <a href="mailto:covercareTH@gmail.com" className="hover:text-white transition-colors">
+              <span style={{ color: "var(--navy-300)" }}>LINE @covercareTH</span>
+              <a href="mailto:covercareTH@gmail.com" className="hover:text-white transition-colors" style={{ color: "var(--navy-300)" }}>
                 covercareTH@gmail.com
               </a>
-              <a href="https://www.thaicovercare.com" className="hover:text-white transition-colors">
+              <a href="https://www.thaicovercare.com" className="hover:text-white transition-colors" style={{ color: "var(--navy-300)" }}>
                 www.thaicovercare.com
               </a>
             </div>
           </div>
         </div>
-        <div className="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between items-center gap-2 text-xs">
+
+        <div
+          className="pt-6 flex flex-col md:flex-row justify-between items-center gap-2 text-xs"
+          style={{ borderTop: "1px solid rgba(255,255,255,0.06)", color: "var(--ink-500)" }}
+        >
           <p>© {new Date().getFullYear()} CoverCare Thailand. All rights reserved.</p>
-          <p className="text-slate-500">Authorised Allianz Ayudhya Life Insurance Advisor</p>
+          <p style={{ color: "var(--navy-400)" }}>Allianz Ayudhya · Authorised advisor</p>
         </div>
       </div>
     </footer>

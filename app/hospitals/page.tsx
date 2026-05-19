@@ -37,16 +37,16 @@ export default function HospitalsPage() {
       <Navbar />
       <main className="pt-16">
         {/* Hero */}
-        <section className="bg-gradient-to-br from-teal-700 to-teal-900 text-white py-16">
+        <section className="bg-gradient-to-br from-navy-800 to-navy-950 text-white py-16">
           <div className="max-w-6xl mx-auto px-4 text-center">
             <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-1.5 text-sm font-medium mb-6">
-              <span className="w-2 h-2 rounded-full bg-teal-300 animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-sky-300 animate-pulse" />
               Allianz Ayudhya Life Network — Updated January 2024
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
               {hospitals.length}+ Hospitals Across Thailand
             </h1>
-            <p className="text-lg text-teal-100 max-w-2xl mx-auto mb-10">
+            <p className="text-lg text-navy-200 max-w-2xl mx-auto mb-10">
               Every hospital in the Allianz Ayudhya Life insurance network — from Bangkok&apos;s
               international hospitals to provincial clinics. Direct billing at all locations means
               you pay nothing upfront.
@@ -57,10 +57,10 @@ export default function HospitalsPage() {
               {stats.map(({ icon: Icon, value, label }) => (
                 <div key={label} className="flex flex-col items-center">
                   <div className="flex items-center gap-2 mb-1">
-                    <Icon className="w-5 h-5 text-teal-300" />
+                    <Icon className="w-5 h-5 text-sky-300" />
                     <span className="text-3xl font-bold">{value}</span>
                   </div>
-                  <span className="text-sm text-teal-200">{label}</span>
+                  <span className="text-sm text-navy-300">{label}</span>
                 </div>
               ))}
             </div>
@@ -68,9 +68,9 @@ export default function HospitalsPage() {
         </section>
 
         {/* Info bar */}
-        <div className="bg-teal-50 border-b border-teal-100">
+        <div className="bg-sky-50 border-b border-sky-100">
           <div className="max-w-6xl mx-auto px-4 py-3">
-            <p className="text-sm text-teal-800 text-center">
+            <p className="text-sm text-navy-800 text-center">
               <strong>Premier</strong> hospitals ({premierCount}) are fully researched with quality
               scores, specialties, and advisor recommendations. &nbsp;
               <strong>Standard</strong> hospitals ({standardCount}) include coordinates, Google

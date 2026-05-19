@@ -4,14 +4,57 @@
 @theme inline {
   --font-sans: var(--font-inter);
   --font-display: var(--font-jakarta);
+  --font-mono: var(--font-geist-mono);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  /* ── Navy scale (Allianz Trust Blue) ── */
+  --color-navy-950: #001029;
+  --color-navy-900: #001E4D;
+  --color-navy-800: #002A6B;
+  --color-navy-700: #003781;
+  --color-navy-600: #1F4FA1;
+  --color-navy-500: #3367BE;
+  --color-navy-400: #6B8FD7;
+  --color-navy-300: #9DB6E6;
+  --color-navy-200: #CDD9F0;
+  --color-navy-100: #E3EDF7;
+  --color-navy-50:  #F0F5FB;
+
+  /* ── Sky scale (overrides Tailwind default) ── */
+  --color-sky-700: #0078B8;
+  --color-sky-600: #008AD0;
+  --color-sky-500: #00A4E4;
+  --color-sky-400: #33BAEC;
+  --color-sky-300: #66CFF3;
+  --color-sky-200: #99DEF7;
+  --color-sky-100: #CCEAFA;
+  --color-sky-50:  #E6F4FD;
+
+  /* ── Coral (accent) ── */
+  --color-coral-600: #E55934;
+  --color-coral-500: #FF6B47;
+  --color-coral-400: #FF8A6E;
+  --color-coral-100: #FFE5DD;
+
+  /* ── Ink (cool grey, navy undertone) ── */
+  --color-ink-950: #000814;
+  --color-ink-900: #06122B;
+  --color-ink-800: #14213D;
+  --color-ink-700: #24324E;
+  --color-ink-600: #4A5878;
+  --color-ink-500: #6B7894;
+  --color-ink-400: #93A0B8;
+  --color-ink-300: #BFC8DA;
+  --color-ink-200: #DDE3EE;
+  --color-ink-100: #ECEFF6;
+  --color-ink-50:  #F6F8FB;
+
+  /* ── Legacy teal (hospital pages, kept for compat) ── */
   --color-teal: var(--teal);
   --color-teal-dark: var(--teal-dark);
   --color-teal-light: var(--teal-light);
-  --color-gold: var(--gold);
-  --color-gold-light: var(--gold-light);
   --color-primary: #0F766E;
   --color-primary-dark: #0D6B63;
   --color-accent: #0369A1;
@@ -20,6 +63,7 @@
 }
 
 :root {
+  /* Legacy teal */
   --background: #ffffff;
   --foreground: #0f172a;
   --teal: #0f766e;
@@ -27,19 +71,231 @@
   --teal-light: #f0fdfa;
   --gold: #d97706;
   --gold-light: #fef3c7;
+
+  /* ── Navy ── */
+  --navy-950: #001029;
+  --navy-900: #001E4D;
+  --navy-800: #002A6B;
+  --navy-700: #003781;
+  --navy-600: #1F4FA1;
+  --navy-500: #3367BE;
+  --navy-400: #6B8FD7;
+  --navy-300: #9DB6E6;
+  --navy-200: #CDD9F0;
+  --navy-100: #E3EDF7;
+  --navy-50:  #F0F5FB;
+
+  /* ── Sky ── */
+  --sky-700: #0078B8;
+  --sky-600: #008AD0;
+  --sky-500: #00A4E4;
+  --sky-400: #33BAEC;
+  --sky-300: #66CFF3;
+  --sky-200: #99DEF7;
+  --sky-100: #CCEAFA;
+  --sky-50:  #E6F4FD;
+
+  /* ── Coral ── */
+  --coral-600: #E55934;
+  --coral-500: #FF6B47;
+  --coral-400: #FF8A6E;
+  --coral-100: #FFE5DD;
+
+  /* ── Ink ── */
+  --ink-950: #000814;
+  --ink-900: #06122B;
+  --ink-800: #14213D;
+  --ink-700: #24324E;
+  --ink-600: #4A5878;
+  --ink-500: #6B7894;
+  --ink-400: #93A0B8;
+  --ink-300: #BFC8DA;
+  --ink-200: #DDE3EE;
+  --ink-100: #ECEFF6;
+  --ink-50:  #F6F8FB;
+
+  /* ── Glassmorphism ── */
+  --glass-bg:           rgba(255, 255, 255, 0.58);
+  --glass-bg-strong:    rgba(255, 255, 255, 0.75);
+  --glass-bg-tinted:    rgba(227, 237, 247, 0.55);
+  --glass-border:       rgba(255, 255, 255, 0.70);
+  --glass-border-tint:  rgba(0, 164, 228, 0.18);
+  --glass-shadow:       0 24px 48px -16px rgba(0, 55, 129, 0.18), 0 8px 16px -8px rgba(0, 55, 129, 0.12), inset 0 1px 0 rgba(255,255,255,0.8);
+  --glass-shadow-lg:    0 40px 80px -24px rgba(0, 55, 129, 0.28), 0 12px 24px -8px rgba(0, 55, 129, 0.16), inset 0 1px 0 rgba(255,255,255,0.9);
+  --blur-md:  blur(20px);
+  --blur-lg:  blur(28px);
+
+  /* ── Page gradient ── */
+  --bg-page-gradient:
+    radial-gradient(ellipse 90% 50% at 50% 0%, rgba(204, 234, 250, 0.6), transparent 70%),
+    linear-gradient(180deg, #E3EDF7 0%, #F0F5FB 30%, #FFFFFF 100%);
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 2px 6px rgba(0, 30, 77, 0.06), 0 1px 2px rgba(0, 30, 77, 0.04);
+  --shadow-md: 0 12px 32px -8px rgba(0, 30, 77, 0.12), 0 2px 4px rgba(0, 30, 77, 0.04);
+  --shadow-lg: 0 24px 56px -16px rgba(0, 30, 77, 0.22), 0 4px 8px rgba(0, 30, 77, 0.06);
+
+  /* ── Glow ── */
+  --glow-sky:      0 0 0 6px rgba(0, 164, 228, 0.18), 0 8px 24px -4px rgba(0, 164, 228, 0.45);
+  --glow-sky-soft: 0 6px 24px -6px rgba(0, 164, 228, 0.45);
+  --glow-navy:     0 12px 32px -8px rgba(0, 55, 129, 0.4);
+
+  /* ── Hairlines ── */
+  --hairline:        rgba(0, 30, 77, 0.10);
+  --hairline-strong: rgba(0, 30, 77, 0.18);
+
+  /* ── Brand ── */
+  --whatsapp: #25D366;
+  --line:     #06C755;
+  --success:  #00B07A;
+  --success-soft: #D5F2E5;
 }
 
+/* ────────────────── Base ────────────────── */
+
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--bg-page-gradient);
+  background-attachment: fixed;
+  color: var(--navy-900);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-jakarta, var(--font-inter, system-ui, sans-serif));
+  color: var(--navy-950);
+  font-weight: 800;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+/* ────────────────── Glass card ────────────────── */
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: var(--blur-md);
+  -webkit-backdrop-filter: var(--blur-md);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.glass-lg {
+  background: var(--glass-bg-strong);
+  backdrop-filter: var(--blur-lg);
+  -webkit-backdrop-filter: var(--blur-lg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow-lg);
+}
+
+/* ────────────────── Orbs (abstract backdrop) ────────────────── */
+
+.orbs {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.orb.a {
+  width: 600px; height: 600px;
+  top: -200px; right: -100px;
+  background: radial-gradient(circle, rgba(0, 164, 228, 0.22), rgba(0, 164, 228, 0.06) 60%, transparent 80%);
+  filter: blur(80px);
+}
+
+.orb.b {
+  width: 500px; height: 500px;
+  bottom: -150px; left: -100px;
+  background: radial-gradient(circle, rgba(0, 55, 129, 0.18), rgba(0, 55, 129, 0.05) 60%, transparent 80%);
+  filter: blur(80px);
+}
+
+.orb.c {
+  width: 350px; height: 350px;
+  top: 40%; left: 30%;
+  background: radial-gradient(circle, rgba(0, 164, 228, 0.12), transparent 70%);
+  filter: blur(60px);
+}
+
+/* ────────────────── Typography helpers ────────────────── */
+
+.gradient-text {
+  background: linear-gradient(120deg, var(--navy-700) 0%, var(--sky-500) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.eyebrow {
+  font-family: var(--font-geist-mono, ui-monospace, monospace);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-500);
+}
+
+.dot-live {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--success);
+  box-shadow: 0 0 0 4px rgba(0, 176, 122, 0.18);
+  flex-shrink: 0;
+}
+
+/* ────────────────── Hero calculator slider ────────────────── */
+
+input[type="range"].slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    var(--sky-500) 0%,
+    var(--sky-500) var(--fill, 50%),
+    var(--ink-200) var(--fill, 50%),
+    var(--ink-200) 100%
+  );
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="range"].slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: white;
+  border: 2px solid var(--sky-500);
+  box-shadow: 0 2px 8px rgba(0, 164, 228, 0.3);
+  cursor: pointer;
+  transition: box-shadow 150ms;
+}
+
+input[type="range"].slider::-webkit-slider-thumb:hover {
+  box-shadow: var(--glow-sky);
+}
+
+input[type="range"].slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: white;
+  border: 2px solid var(--sky-500);
+  cursor: pointer;
 }

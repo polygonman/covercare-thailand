@@ -1,71 +1,90 @@
-import { BadgeCheck } from "lucide-react"
-
 const testimonials = [
   {
     name: "James R.",
-    role: "Software Engineer, Bangkok",
+    role: "Software · Bangkok",
     initials: "JR",
-    color: "bg-sky-100 text-sky-700",
-    quote:
-      "Tonkla made the whole process so easy. When I had to go to Bumrungrad, she was there to help with everything. Claims were processed within a week.",
-    stars: 5,
+    avatarStyle: { background: "var(--sky-100)", color: "var(--sky-700)" },
+    quote: "Signed up in fifteen minutes. When I went to Bumrungrad the claim was settled before I&apos;d left the lobby.",
   },
   {
     name: "Amelia K.",
-    role: "Digital Nomad, Chiang Mai",
+    role: "Nomad · Chiang Mai",
     initials: "AK",
-    color: "bg-violet-100 text-violet-700",
-    quote:
-      "Finally found someone who actually explains insurance in plain English. She found a plan that covered my pre-existing condition at a reasonable price.",
-    stars: 5,
+    avatarStyle: { background: "var(--coral-100)", color: "var(--coral-600)" },
+    quote: "Finally someone who explains insurance like a normal person. The whole flow is online — I never had to print anything.",
   },
   {
     name: "David & Sarah M.",
-    role: "Retired couple, Phuket",
+    role: "Retired · Phuket",
     initials: "DS",
-    color: "bg-emerald-100 text-emerald-700",
-    quote:
-      "We've been in Thailand 3 years and Tonkla has handled every hospital visit for us. It's like having a personal advocate — invaluable as retirees here.",
-    stars: 5,
+    avatarStyle: { background: "var(--navy-100)", color: "var(--navy-700)" },
+    quote: "Three years in Thailand and Tonkla has handled every hospital visit. It’s like having a personal advocate on call.",
   },
 ]
 
+function Stars() {
+  return (
+    <div className="flex gap-0.5">
+      {Array.from({ length: 5 }).map((_, i) => (
+        <svg key={i} viewBox="0 0 16 16" className="w-4 h-4" style={{ fill: "var(--coral-500)" }}>
+          <path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z" />
+        </svg>
+      ))}
+    </div>
+  )
+}
+
 export default function Testimonials() {
   return (
-    <section className="py-20 bg-slate-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">What Clients Say</h2>
-          <p className="text-slate-500 text-lg">Real experiences from expats across Thailand.</p>
-        </div>
-        <div className="grid md:grid-cols-3 gap-6">
-          {testimonials.map(({ name, role, initials, color, quote, stars }) => (
+    <section className="py-20 relative">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
+        <header className="text-center mb-14">
+          <span className="eyebrow">/ Clients</span>
+          <h2 className="text-3xl md:text-4xl font-black mt-3 mb-4" style={{ color: "var(--navy-950)", letterSpacing: "-0.025em" }}>
+            Real expats. <span className="gradient-text">Real fast.</span>
+          </h2>
+          <p className="text-lg" style={{ color: "var(--ink-600)" }}>Real experiences from foreigners across Thailand.</p>
+        </header>
+
+        <div className="grid md:grid-cols-3 gap-5">
+          {testimonials.map(({ name, role, initials, avatarStyle, quote }) => (
             <div
               key={name}
-              className="bg-white rounded-2xl p-7 border border-slate-100 shadow-sm hover:shadow-md hover:border-teal-100 transition-all duration-200 flex flex-col"
+              className="rounded-3xl p-7 flex flex-col gap-5 transition-all duration-200 hover:-translate-y-1"
+              style={{
+                background: "var(--glass-bg)",
+                backdropFilter: "var(--blur-md)",
+                WebkitBackdropFilter: "var(--blur-md)",
+                border: "1px solid var(--glass-border)",
+                boxShadow: "var(--glass-shadow)",
+              }}
             >
-              <div className="flex gap-0.5 mb-4">
-                {Array.from({ length: stars }).map((_, i) => (
-                  <svg key={i} viewBox="0 0 16 16" className="w-4 h-4 fill-amber-400">
-                    <path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z" />
-                  </svg>
-                ))}
-              </div>
-              <p className="text-slate-600 leading-relaxed mb-6 flex-1">&ldquo;{quote}&rdquo;</p>
+              <Stars />
+              <p className="text-sm leading-relaxed flex-1" style={{ color: "var(--ink-700)" }}>
+                &ldquo;{quote}&rdquo;
+              </p>
               <div className="flex items-center justify-between gap-3">
                 <div className="flex items-center gap-3">
-                  <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 ${color}`}>
+                  <div
+                    className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0"
+                    style={avatarStyle}
+                  >
                     {initials}
                   </div>
                   <div>
-                    <p className="font-semibold text-slate-900 text-sm">{name}</p>
-                    <p className="text-xs text-slate-400">{role}</p>
+                    <p className="font-semibold text-navy-900 text-sm">{name}</p>
+                    <p className="text-xs" style={{ color: "var(--ink-400)" }}>{role}</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-1 text-xs text-teal-700 font-medium flex-shrink-0">
-                  <BadgeCheck size={14} className="text-teal-600" />
+                <span
+                  className="flex items-center gap-1 text-xs font-medium px-2.5 py-1 rounded-full flex-shrink-0"
+                  style={{ background: "var(--sky-50)", color: "var(--sky-600)", border: "1px solid var(--sky-100)" }}
+                >
+                  <svg viewBox="0 0 20 20" className="w-3.5 h-3.5 fill-current">
+                    <path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm3.72 6.28l-4.5 4.5a1 1 0 01-1.44 0l-1.5-1.5a1 1 0 011.44-1.44l.78.78 3.78-3.78a1 1 0 011.44 1.44z"/>
+                  </svg>
                   Verified
-                </div>
+                </span>
               </div>
             </div>
           ))}

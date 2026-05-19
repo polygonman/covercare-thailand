@@ -139,14 +139,14 @@ function ResultCard({
   const rankColors = ["bg-amber-400", "bg-slate-300", "bg-orange-300"]
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-teal-100 transition-all p-5">
+    <div className="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-sky-100 transition-all p-5">
       {/* Rank + badges */}
       <div className="flex items-start justify-between gap-3 mb-3">
         <div className="flex items-center gap-2 flex-wrap">
           <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white ${rankColors[rank] ?? "bg-slate-400"}`}>
             {rank + 1}
           </span>
-          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-teal-50 text-teal-700 border border-teal-100">
+          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-sky-50 text-navy-700 border border-sky-100">
             Premier
           </span>
           {isJCI && (
@@ -158,9 +158,9 @@ function ResultCard({
         {h.overallScore && (
           <div className="flex-shrink-0">
             <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-sm font-bold ${
-              h.overallScore >= 9 ? "bg-teal-700 text-white" :
-              h.overallScore >= 8 ? "bg-teal-600 text-white" :
-              "bg-teal-100 text-teal-800"
+              h.overallScore >= 9 ? "bg-navy-700 text-white" :
+              h.overallScore >= 8 ? "bg-navy-600 text-white" :
+              "bg-sky-100 text-navy-800"
             }`}>
               {h.overallScore}/10
             </span>
@@ -201,7 +201,7 @@ function ResultCard({
               </div>
               <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-teal-500 rounded-full"
+                  className="h-full bg-sky-500 rounded-full"
                   style={{ width: `${val * 10}%` }}
                 />
               </div>
@@ -232,7 +232,7 @@ function ResultCard({
           href={whatsappLink(h.name, selectedProvince, selectedNeedLabel)}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 inline-flex items-center justify-center gap-2 bg-teal-700 hover:bg-teal-800 text-white text-sm font-semibold py-2.5 px-4 rounded-xl transition-colors"
+          className="flex-1 inline-flex items-center justify-center gap-2 bg-navy-700 hover:bg-navy-800 text-white text-sm font-semibold py-2.5 px-4 rounded-xl transition-colors"
         >
           <MessageCircle className="w-4 h-4" />
           Ask Tonkla
@@ -242,7 +242,7 @@ function ResultCard({
             href={h.mapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-1.5 border border-slate-200 hover:border-teal-200 text-slate-600 hover:text-teal-700 text-sm font-medium py-2.5 px-3 rounded-xl transition-colors"
+            className="inline-flex items-center justify-center gap-1.5 border border-slate-200 hover:border-sky-200 text-slate-600 hover:text-navy-700 text-sm font-medium py-2.5 px-3 rounded-xl transition-colors"
           >
             <MapPin className="w-4 h-4" />
           </a>
@@ -250,7 +250,7 @@ function ResultCard({
         {h.phone && (
           <a
             href={`tel:${h.phone.replace(/[^0-9+]/g, "")}`}
-            className="inline-flex items-center justify-center gap-1.5 border border-slate-200 hover:border-teal-200 text-slate-600 hover:text-teal-700 text-sm font-medium py-2.5 px-3 rounded-xl transition-colors"
+            className="inline-flex items-center justify-center gap-1.5 border border-slate-200 hover:border-sky-200 text-slate-600 hover:text-navy-700 text-sm font-medium py-2.5 px-3 rounded-xl transition-colors"
           >
             <Phone className="w-4 h-4" />
           </a>
@@ -319,11 +319,11 @@ export default function HospitalRecommender() {
   const showResults = selectedProvince && selectedNeed
 
   return (
-    <section className="py-16 bg-gradient-to-br from-slate-50 to-teal-50/30">
+    <section className="py-16 bg-gradient-to-br from-slate-50 to-sky-50/30">
       <div className="max-w-4xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-100 rounded-full px-4 py-1.5 text-sm font-medium text-teal-700 mb-4">
+          <div className="inline-flex items-center gap-2 bg-sky-50 border border-sky-100 rounded-full px-4 py-1.5 text-sm font-medium text-navy-700 mb-4">
             <HeartPulse className="w-4 h-4" />
             Find Your Best Hospital
           </div>
@@ -338,7 +338,7 @@ export default function HospitalRecommender() {
         {/* Step 1 — Province */}
         <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 mb-4">
           <div className="flex items-center gap-2 mb-4">
-            <div className="w-7 h-7 rounded-full bg-teal-700 text-white flex items-center justify-center text-sm font-bold">1</div>
+            <div className="w-7 h-7 rounded-full bg-navy-700 text-white flex items-center justify-center text-sm font-bold">1</div>
             <span className="font-semibold text-slate-800">Where are you in Thailand?</span>
           </div>
           <div className="relative">
@@ -346,7 +346,7 @@ export default function HospitalRecommender() {
             <select
               value={selectedProvince}
               onChange={(e) => setSelectedProvince(e.target.value)}
-              className="w-full pl-9 pr-4 py-3 border border-slate-200 rounded-xl text-slate-800 bg-white focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent appearance-none"
+              className="w-full pl-9 pr-4 py-3 border border-slate-200 rounded-xl text-slate-800 bg-white focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent appearance-none"
             >
               <option value="">Select your province…</option>
               {allProvinces.map((p) => (
@@ -360,7 +360,7 @@ export default function HospitalRecommender() {
         {/* Step 2 — Need */}
         <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 mb-6">
           <div className="flex items-center gap-2 mb-4">
-            <div className="w-7 h-7 rounded-full bg-teal-700 text-white flex items-center justify-center text-sm font-bold">2</div>
+            <div className="w-7 h-7 rounded-full bg-navy-700 text-white flex items-center justify-center text-sm font-bold">2</div>
             <span className="font-semibold text-slate-800">What do you need?</span>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
@@ -370,11 +370,11 @@ export default function HospitalRecommender() {
                 onClick={() => setSelectedNeed(id)}
                 className={`flex flex-col items-center gap-2 p-3 rounded-xl border text-xs font-medium transition-all ${
                   selectedNeed === id
-                    ? "border-teal-600 bg-teal-50 text-teal-700 shadow-sm"
-                    : "border-slate-200 text-slate-600 hover:border-teal-200 hover:bg-teal-50/50"
+                    ? "border-sky-600 bg-sky-50 text-navy-700 shadow-sm"
+                    : "border-slate-200 text-slate-600 hover:border-sky-200 hover:bg-sky-50/50"
                 }`}
               >
-                <Icon className={`w-5 h-5 ${selectedNeed === id ? "text-teal-600" : "text-slate-400"}`} />
+                <Icon className={`w-5 h-5 ${selectedNeed === id ? "text-sky-600" : "text-slate-400"}`} />
                 <span className="text-center leading-tight">{label}</span>
               </button>
             ))}
