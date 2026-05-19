@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import { Award, Building2, Clock, ArrowRight, MessageCircle, Zap, Check } from "lucide-react"
 
 const tiers = ["Basic IPD", "IPD + OPD", "Comprehensive", "Executive"]
@@ -117,13 +118,13 @@ function HeroCalc() {
       </div>
 
       {/* CTA */}
-      <a
+      <Link
         href="/#contact"
         className="flex items-center justify-center gap-2 w-full py-3 rounded-full text-sm font-semibold text-white transition-all duration-150 hover:opacity-90"
         style={{ background: "linear-gradient(135deg, var(--navy-700), var(--navy-800))", boxShadow: "var(--glow-navy)" }}
       >
         Continue to plan <ArrowRight size={14} strokeWidth={2.5} />
-      </a>
+      </Link>
     </div>
   )
 }
@@ -165,13 +166,13 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-wrap gap-3 mb-10">
-              <a
+              <Link
                 href="/#contact"
                 className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all duration-150 hover:opacity-90"
                 style={{ background: "var(--sky-500)", boxShadow: "var(--glow-sky-soft)" }}
               >
                 Get instant quote <ArrowRight size={14} strokeWidth={2.5} />
-              </a>
+              </Link>
               <a
                 href={`https://wa.me/66611965363?text=${encodeURIComponent("Hi Tonkla, I'm interested in expat health insurance in Thailand.")}`}
                 target="_blank"
