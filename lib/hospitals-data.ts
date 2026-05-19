@@ -7502,3 +7502,20 @@ export const hospitals: Hospital[] = [
 export const premierHospitals = hospitals.filter(h => h.tier === 'Premier')
 export const standardHospitals = hospitals.filter(h => h.tier === 'Standard')
 export const provinces = [...new Set(hospitals.map(h => h.province))].sort()
+
+// ─── Province slug utilities ───────────────────────────────────────────────────
+export function provinceToSlug(province: string): string {
+  return province
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9-]/g, '')
+}
+
+export function slugToProvince(slug: string): string | undefined {
+  const allProvinces = [...new Set(hospitals.map(h => h.province))]
+  return allProvinces.find(p => provinceToSlug(p) === slug)
+}
+
+export function hospitalsByProvince(province: string): Hospital[] {
+  return hospitals.filter(h => h.province === province)
+}

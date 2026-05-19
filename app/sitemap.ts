@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next"
+import { hospitals, provinceToSlug } from "@/lib/hospitals-data"
 
 const BASE = "https://www.thaicovercare.com"
 
@@ -28,5 +29,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  return [...staticRoutes, ...articleRoutes]
+  const provinceRoutes: MetadataRoute.Sitemap = [
+    ...new Set(hospitals.map((h) => h.province)),
+  ].sort().map((province) => ({
+    url: `${BASE}/hospitals/${provinceToSlug(province)}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }))
+
+  return [...staticRoutes, ...articleRoutes, ...provinceRoutes]
 }
