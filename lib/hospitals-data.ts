@@ -5,6 +5,7 @@
 export interface Hospital {
   id: string
   name: string
+  nameTh: string | null
   tier: 'Premier' | 'Standard'
   city: string | null
   province: string
@@ -40,6 +41,7 @@ export const hospitals: Hospital[] = [
   {
     id: "364e4376-1cc1-81b0-a162-f1f5ec6daf72",
     name: "BNH Hospital",
+    nameTh: "โรงพยาบาลบีเอ็นเอช",
     tier: "Premier",
     city: "Bangkok",
     province: "Bangkok",
@@ -72,6 +74,7 @@ export const hospitals: Hospital[] = [
   {
     id: "364e4376-1cc1-818c-820c-f2a06342ed72",
     name: "Bangkok Christian Hospital",
+    nameTh: "โรงพยาบาลกรุงเทพคริสเตียน",
     tier: "Premier",
     city: "Bangkok",
     province: "Bangkok",
@@ -104,6 +107,7 @@ export const hospitals: Hospital[] = [
   {
     id: "364e4376-1cc1-8131-b3c8-cfb018ad1064",
     name: "Bangkok Hospital Chiang Mai",
+    nameTh: "โรงพยาบาลกรุงเทพเชียงใหม่",
     tier: "Premier",
     city: "Chiang Mai",
     province: "Chiang Mai",
@@ -136,6 +140,7 @@ export const hospitals: Hospital[] = [
   {
     id: "364e4376-1cc1-81c5-949b-c9cccafc195e",
     name: "Bangkok Hospital Hua Hin",
+    nameTh: "โรงพยาบาลกรุงเทพหัวหิน",
     tier: "Premier",
     city: "Hua Hin",
     province: "Prachuap Khiri Khan",
@@ -168,6 +173,7 @@ export const hospitals: Hospital[] = [
   {
     id: "364e4376-1cc1-81be-9f4c-e2b168443f45",
     name: "Bangkok Hospital Koh Samui",
+    nameTh: "โรงพยาบาลกรุงเทพสมุย",
     tier: "Premier",
     city: "Koh Samui",
     province: "Surat Thani",
@@ -200,6 +206,7 @@ export const hospitals: Hospital[] = [
   {
     id: "364e4376-1cc1-8177-92f3-c0f67bbcd987",
     name: "Bangkok Hospital Pattaya",
+    nameTh: "โรงพยาบาลกรุงเทพพัทยา",
     tier: "Premier",
     city: "Pattaya",
     province: "Chonburi",
@@ -232,6 +239,7 @@ export const hospitals: Hospital[] = [
   {
     id: "364e4376-1cc1-8121-8a2b-d0b0e52c40ee",
     name: "Bangkok Hospital Phuket",
+    nameTh: "โรงพยาบาลกรุงเทพภูเก็ต",
     tier: "Premier",
     city: "Phuket",
     province: "Phuket",
@@ -264,6 +272,7 @@ export const hospitals: Hospital[] = [
   {
     id: "364e4376-1cc1-817b-9497-e59dce74c180",
     name: "Bangkok Hospital Siriroj",
+    nameTh: "โรงพยาบาลกรุงเทพสิริโรจน์",
     tier: "Premier",
     city: "Phuket",
     province: "Phuket",
@@ -296,6 +305,7 @@ export const hospitals: Hospital[] = [
   {
     id: "364e4376-1cc1-8186-8254-fc15d4d3ddcd",
     name: "Bangkok Hospital Sukhumvit",
+    nameTh: "โรงพยาบาลกรุงเทพ สุขุมวิท",
     tier: "Premier",
     city: "Bangkok",
     province: "Bangkok",
@@ -328,6 +338,7 @@ export const hospitals: Hospital[] = [
   {
     id: "364e4376-1cc1-8159-a857-cb317514f905",
     name: "Bumrungrad International Hospital",
+    nameTh: "โรงพยาบาลบำรุงราษฎร์",
     tier: "Premier",
     city: "Bangkok",
     province: "Bangkok",
@@ -360,6 +371,7 @@ export const hospitals: Hospital[] = [
   {
     id: "364e4376-1cc1-81a2-ac93-db6c3632691c",
     name: "Chiang Mai Ram Hospital",
+    nameTh: "โรงพยาบาลเชียงใหม่ราม",
     tier: "Premier",
     city: "Chiang Mai",
     province: "Chiang Mai",
@@ -392,6 +404,7 @@ export const hospitals: Hospital[] = [
   {
     id: "364e4376-1cc1-81c1-8b30-f5270512030c",
     name: "Chiangmai Neurological Hospital",
+    nameTh: "โรงพยาบาลประสาทเชียงใหม่",
     tier: "Premier",
     city: "Chiang Mai",
     province: "Chiang Mai",
@@ -424,6 +437,7 @@ export const hospitals: Hospital[] = [
   {
     id: "364e4376-1cc1-8158-aff5-c5f423d05188",
     name: "Dibuk Hospital Phuket",
+    nameTh: "โรงพยาบาลดิบุก",
     tier: "Premier",
     city: "Phuket",
     province: "Phuket",
@@ -456,6 +470,7 @@ export const hospitals: Hospital[] = [
   {
     id: "364e4376-1cc1-8158-907a-f60b10bf95b9",
     name: "McCormick Hospital",
+    nameTh: "โรงพยาบาลแมคคอร์มิค",
     tier: "Premier",
     city: "Chiang Mai",
     province: "Chiang Mai",
@@ -488,6 +503,7 @@ export const hospitals: Hospital[] = [
   {
     id: "364e4376-1cc1-815b-a6e5-c7b2b0188b56",
     name: "MedPark Hospital",
+    nameTh: "โรงพยาบาลเมดพาร์ค",
     tier: "Premier",
     city: "Bangkok",
     province: "Bangkok",
@@ -520,6 +536,7 @@ export const hospitals: Hospital[] = [
   {
     id: "364e4376-1cc1-81a3-8d45-fa27de28ea14",
     name: "Mission Hospital Phuket",
+    nameTh: "โรงพยาบาลมิชชั่น ภูเก็ต",
     tier: "Premier",
     city: "Phuket",
     province: "Phuket",
@@ -552,6 +569,7 @@ export const hospitals: Hospital[] = [
   {
     id: "364e4376-1cc1-8138-a9dc-dc14a296ad73",
     name: "Paolo Memorial Hospital Phaholyothin",
+    nameTh: "โรงพยาบาลเปาโล เมโมเรียล พหลโยธิน",
     tier: "Premier",
     city: "Bangkok",
     province: "Bangkok",
@@ -584,6 +602,7 @@ export const hospitals: Hospital[] = [
   {
     id: "364e4376-1cc1-8105-9d4b-db50944e9c92",
     name: "Pattaya International Hospital",
+    nameTh: "โรงพยาบาลนานาชาติพัทยา",
     tier: "Premier",
     city: "Pattaya",
     province: "Chonburi",
@@ -615,7 +634,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "364e4376-1cc1-812a-8341-c555ba70e769",
-    name: "Phuket International Hospital (\u2192 Bangkok Hospital Siriroj)",
+    name: "Bangkok Hospital Siriroj Phuket",
+    nameTh: "\u0e42\u0e23\u0e07\u0e1e\u0e22\u0e32\u0e1a\u0e32\u0e25\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e2a\u0e34\u0e23\u0e34\u0e42\u0e23\u0e08\u0e19\u0e4c \u0e20\u0e39\u0e40\u0e01\u0e47\u0e15",
     tier: "Premier",
     city: "Phuket",
     province: "Phuket",
@@ -648,6 +668,7 @@ export const hospitals: Hospital[] = [
   {
     id: "364e4376-1cc1-8131-9bae-d781e35a3c79",
     name: "Phyathai 1 Hospital",
+    nameTh: "โรงพยาบาลพญาไท 1",
     tier: "Premier",
     city: "Bangkok",
     province: "Bangkok",
@@ -680,6 +701,7 @@ export const hospitals: Hospital[] = [
   {
     id: "364e4376-1cc1-8180-b7dc-e91536a454f4",
     name: "Phyathai 2 Hospital",
+    nameTh: "โรงพยาบาลพญาไท 2",
     tier: "Premier",
     city: "Bangkok",
     province: "Bangkok",
@@ -712,6 +734,7 @@ export const hospitals: Hospital[] = [
   {
     id: "364e4376-1cc1-81bd-9800-c63960edcd46",
     name: "Praram 9 Hospital",
+    nameTh: "โรงพยาบาลพระรามเก้า",
     tier: "Premier",
     city: "Bangkok",
     province: "Bangkok",
@@ -744,6 +767,7 @@ export const hospitals: Hospital[] = [
   {
     id: "364e4376-1cc1-8115-89a9-ee619ca49090",
     name: "Saint Louis Hospital",
+    nameTh: "โรงพยาบาลเซนต์หลุยส์",
     tier: "Premier",
     city: "Bangkok",
     province: "Bangkok",
@@ -776,6 +800,7 @@ export const hospitals: Hospital[] = [
   {
     id: "364e4376-1cc1-8188-9cd0-f28bf4c26961",
     name: "Samitivej Hospital Srinakarin",
+    nameTh: "โรงพยาบาลสมิติเวช ศรีนครินทร์",
     tier: "Premier",
     city: "Bangkok",
     province: "Bangkok",
@@ -808,6 +833,7 @@ export const hospitals: Hospital[] = [
   {
     id: "364e4376-1cc1-81a7-a84f-c1e1dca2735d",
     name: "Samitivej Hospital Sukhumvit",
+    nameTh: "โรงพยาบาลสมิติเวช สุขุมวิท",
     tier: "Premier",
     city: "Bangkok",
     province: "Bangkok",
@@ -840,6 +866,7 @@ export const hospitals: Hospital[] = [
   {
     id: "364e4376-1cc1-8108-aaf3-e3e52a594d41",
     name: "Thonburi Hospital",
+    nameTh: "โรงพยาบาลธนบุรี",
     tier: "Premier",
     city: "Bangkok",
     province: "Bangkok",
@@ -872,6 +899,7 @@ export const hospitals: Hospital[] = [
   {
     id: "364e4376-1cc1-81d1-a01c-d0fa81c44133",
     name: "Vejthani Hospital",
+    nameTh: "โรงพยาบาลเวชธานี",
     tier: "Premier",
     city: "Bangkok",
     province: "Bangkok",
@@ -904,6 +932,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-3561-2361-4",
     name: "\u0e2d\u0e48\u0e33\u0e07\u0e17\u0e2d\u0e07\u0e40\u0e27\u0e0a\u0e0a\u0e01\u0e33\u0e23 2",
+    nameTh: "โรงพยาบาลอ่างทอง 2",
     tier: "Standard",
     city: null,
     province: "Ang Thong",
@@ -936,6 +965,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-2080-8999",
     name: "\u0e01\u0e23\u0e30\u0e14\u0e39\u0e01\u0e41\u0e25\u0e30\u0e02\u0e49\u0e2d  \u0e02\u0e49\u0e2d\u0e14\u0e35\u0e21\u0e35\u0e2a\u0e38\u0e02",
+    nameTh: "โรงพยาบาลกระดูกและข้อ ข้อดีมีสุข",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -967,7 +997,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2185-1444",
-    name: "\u0e04\u0e33\u0e21\u0e34\u0e25\u0e40\u0e25\u0e35\u0e22\u0e19",
+    name: "Camillian Hospital",
+    nameTh: "คำมิลเลียน",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -999,7 +1030,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2552-8777",
-    name: "\u0e0b\u0e35\u0e08\u0e35\u0e40\u0e2d\u0e0a",
+    name: "CGH Phaholyothin Hospital",
+    nameTh: "ซีจีเอช",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1031,7 +1063,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2991-8999",
-    name: "\u0e0b\u0e35\u0e08\u0e35\u0e40\u0e2d\u0e0a \u0e2a\u0e33\u0e22\u0e44\u0e2b\u0e21",
+    name: "CGH Saimai Hospital",
+    nameTh: "ซีจีเอช สำยไหม",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1063,7 +1096,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2448-3845",
-    name: "\u0e18\u0e19\u0e1a\u0e38\u0e23\u0e35 \u0e17\u0e27\u0e35\u0e27\u0e31\u0e12\u0e19\u0e33",
+    name: "Thonburi Thawiwatthana Hospital",
+    nameTh: "ธนบุรี ทวีวัฒนำ",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1095,7 +1129,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2220-7999",
-    name: "\u0e18\u0e19\u0e1a\u0e38\u0e23\u0e35 \u0e1a \u0e33\u0e23\u0e38\u0e07\u0e40\u0e21\u0e37\u0e2d\u0e07",
+    name: "Thonburi Bamrungmuang Hospital",
+    nameTh: "ธนบุรี บ ำรุงเมือง",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1127,7 +1162,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2416-5454",
-    name: "\u0e19\u0e04\u0e23\u0e18\u0e19",
+    name: "Nakornthon Hospital",
+    nameTh: "นครธน",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1159,7 +1195,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2518-1818",
-    name: "\u0e19\u0e27\u0e21\u0e34\u0e19\u0e17\u0e23\u0e4c 9",
+    name: "Navamin 9 Hospital",
+    nameTh: "นวมินทร์ 9",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1191,7 +1228,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2872-1111",
-    name: "\u0e1a\u0e33\u0e07\u0e1b\u0e30\u0e01\u0e2d\u0e01 1",
+    name: "Bangpakok 1 Hospital",
+    nameTh: "บำงปะกอก 1",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1223,7 +1261,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2894-4111",
-    name: "\u0e1a\u0e33\u0e07\u0e1b\u0e30\u0e01\u0e2d\u0e01 8",
+    name: "Bangpakok 8 Hospital",
+    nameTh: "บำงปะกอก 8",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1255,7 +1294,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2877-1111",
-    name: "\u0e1a\u0e33\u0e07\u0e1b\u0e30\u0e01\u0e2d\u0e01 9  \u0e2d\u0e34\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c\u0e40\u0e19\u0e0a\u0e31\u0e48\u0e19\u0e41\u0e19\u0e25",
+    name: "Bangpakok 9 International Hospital",
+    nameTh: "บำงปะกอก 9  อินเตอร์เนชั่นแนล",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1288,6 +1328,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-2587-0136-55",
     name: "\u0e1a\u0e33\u0e07\u0e42\u0e1e",
+    nameTh: "โรงพยาบาลบางโพ",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1319,7 +1360,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2523-3359-71",
-    name: "\u0e1a\u0e35.\u0e41\u0e04\u0e23\u0e4c.\u0e40\u0e21\u0e14\u0e34\u0e04\u0e2d\u0e25\u0e40\u0e0b\u0e47\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c",
+    name: "B.Care Medical Center",
+    nameTh: "บี.แคร์.เมดิคอลเซ็นเตอร์",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1351,7 +1393,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2129-5555",
-    name: "\u0e1b\u0e34\u0e22\u0e30\u0e40\u0e27\u0e17",
+    name: "Piyavate Hospital",
+    nameTh: "ปิยะเวท",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1383,7 +1426,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2467-1111",
-    name: "\u0e1e\u0e0d\u0e33\u0e44\u0e17 3",
+    name: "Phyathai 3 Hospital",
+    nameTh: "พญำไท 3",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1415,7 +1459,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2944-7111",
-    name: "\u0e1e\u0e0d\u0e33\u0e44\u0e17 \u0e19\u0e27\u0e21\u0e34\u0e19\u0e17\u0e23\u0e4c",
+    name: "Phyathai Nawamin Hospital",
+    nameTh: "พญำไท นวมินทร์",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1447,7 +1492,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2574-5000-9",
-    name: "\u0e21\u0e07\u0e01\u0e38\u0e0e\u0e27\u0e31\u0e12\u0e19\u0e30",
+    name: "Mongkutwattana Hospital",
+    nameTh: "มงกุฎวัฒนะ",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1479,7 +1525,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2281-1422",
-    name: "\u0e21\u0e34\u0e0a\u0e0a\u0e31\u0e48\u0e19",
+    name: "Mission Hospital Bangkok",
+    nameTh: "มิชชั่น",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1511,7 +1558,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2455-5599",
-    name: "\u0e21\u0e34\u0e15\u0e23\u0e1b\u0e23\u0e30\u0e0a\u0e33",
+    name: "Mitrpracha Hospital",
+    nameTh: "มิตรประชำ",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1543,7 +1591,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2768-9999",
-    name: "\u0e23\u0e27\u0e21\u0e43\u0e08\u0e23\u0e31\u0e01\u0e29\u0e4c",
+    name: "Ruamjairak Hospital @Sukhumvit 62",
+    nameTh: "รวมใจรักษ์",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1575,7 +1624,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2374-0200-16",
-    name: "\u0e23\u0e33\u0e21\u0e04 \u0e33\u0e41\u0e2b\u0e07",
+    name: "Ramkhamhaeng Hospital",
+    nameTh: "รำมค ำแหง",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1607,7 +1657,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2427-0175-9",
-    name: "\u0e23\u0e33\u0e29\u0e0e\u0e23\u0e4c\u0e1a\u0e39\u0e23\u0e13\u0e30",
+    name: "Rajburana Hospital",
+    nameTh: "รำษฎร์บูรณะ",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1639,7 +1690,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2932-2929",
-    name: "\u0e25\u0e33\u0e14\u0e1e\u0e23\u0e49\u0e33\u0e27",
+    name: "Ladprao General Hospital",
+    nameTh: "ลำดพร้ำว",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1671,7 +1723,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2618-6200-2",
-    name: "\u0e27\u0e34\u0e0a\u0e31\u0e22\u0e22\u0e38\u0e17\u0e18",
+    name: "Vichaiyut Hospital",
+    nameTh: "วิชัยยุทธ",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1703,7 +1756,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2441-6999",
-    name: "\u0e27\u0e34\u0e0a\u0e31\u0e22\u0e40\u0e27\u0e0a \u0e2d\u0e34\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c\u0e40\u0e19\u0e0a\u0e31\u0e48\u0e19\u0e41\u0e19\u0e25 \u0e2b\u0e19\u0e2d\u0e07\u0e41\u0e02\u0e21",
+    name: "Vichaivej International Hospital Nong Khaem",
+    nameTh: "วิชัยเวช อินเตอร์เนชั่นแนล หนองแขม",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1735,7 +1789,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2412-0055-60",
-    name: "\u0e27\u0e34\u0e0a\u0e31\u0e22\u0e40\u0e27\u0e0a \u0e41\u0e22\u0e01\u0e44\u0e1f\u0e09\u0e33\u0e22",
+    name: "Vichaivej Hospital Yaek Fai Chai",
+    nameTh: "วิชัยเวช แยกไฟฉำย",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1767,7 +1822,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2722-2500",
-    name: "\u0e27\u0e34\u0e20\u0e33\u0e23\u0e33\u0e21",
+    name: "Vibharam Hospital",
+    nameTh: "วิภำรำม",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1799,7 +1855,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2561-1258",
-    name: "\u0e27\u0e34\u0e20\u0e33\u0e27\u0e14\u0e35",
+    name: "Vibhavadi Hospital",
+    nameTh: "วิภำวดี",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1831,7 +1888,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2079-0000",
-    name: "\u0e27\u0e34\u0e21\u0e38\u0e15",
+    name: "Vimut Hospital",
+    nameTh: "วิมุต",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1863,7 +1921,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2366-9900",
-    name: "\u0e28\u0e34\u0e04\u0e23\u0e34\u0e19\u0e17\u0e23\u0e4c",
+    name: "Sikarin Hospital",
+    nameTh: "ศิครินทร์",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1895,7 +1954,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2419-1474",
-    name: "\u0e28\u0e34\u0e23\u0e34\u0e23\u0e33\u0e0a \u0e1b\u0e34\u0e22\u0e21\u0e2b\u0e33\u0e23\u0e33\u0e0a\u0e01\u0e33\u0e23\u0e38\u0e13\u0e22\u0e4c  (\u0e23\u0e31\u0e10\u0e1a\u0e33\u0e25)",
+    name: "Siriraj Piyamaharajkarun Hospital",
+    nameTh: "ศิริรำช ปิยมหำรำชกำรุณย์  (รัฐบำล)",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1927,7 +1987,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2438-9000",
-    name: "\u0e2a\u0e21\u0e34\u0e15\u0e34\u0e40\u0e27\u0e0a \u0e18\u0e19\u0e1a\u0e38\u0e23\u0e35",
+    name: "Samitivej Thonburi Hospital",
+    nameTh: "สมิติเวช ธนบุรี",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1959,7 +2020,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2118-7888",
-    name: "\u0e2a\u0e21\u0e34\u0e15\u0e34\u0e40\u0e27\u0e0a \u0e44\u0e0a\u0e19\u0e48\u0e33\u0e17\u0e33\u0e27\u0e19\u0e4c",
+    name: "Samitivej Chinatown Hospital",
+    nameTh: "สมิติเวช ไชน่ำทำวน์",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -1991,7 +2053,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2948-5380-90",
-    name: "\u0e2a\u0e34\u0e19\u0e41\u0e1e\u0e17\u0e22\u0e4c",
+    name: "Synphaet Ramintra Hospital",
+    nameTh: "สินแพทย์",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -2023,7 +2086,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2761-9888",
-    name: "\u0e2a\u0e34\u0e19\u0e41\u0e1e\u0e17\u0e22\u0e4c\u0e40\u0e2a\u0e23\u0e35\u0e23\u0e31\u0e01\u0e29\u0e4c",
+    name: "Synphaet Seriruk Hospital",
+    nameTh: "สินแพทย์เสรีรักษ์",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -2055,7 +2119,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2874-6767-70",
-    name: "\u0e2a\u0e38\u0e02\u0e2a\u0e27\u0e31\u0e2a\u0e14\u0e34\u0e4c",
+    name: "Suksawat Inter Hospital",
+    nameTh: "สุขสวัสดิ์",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -2087,7 +2152,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2391-0011",
-    name: "\u0e2a\u0e38\u0e02\u0e38\u0e21\u0e27\u0e34\u0e17",
+    name: "Sukumvit Hospital",
+    nameTh: "สุขุมวิท",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -2119,7 +2185,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2223-1351",
-    name: "\u0e2b\u0e31\u0e27\u0e40\u0e09\u0e35\u0e22\u0e27",
+    name: "Hua Chiew Hospital",
+    nameTh: "หัวเฉียว",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -2151,7 +2218,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2481-5555",
-    name: "\u0e2d\u0e34\u0e19\u0e17\u0e23\u0e33\u0e23\u0e31\u0e15\u0e19\u0e4c",
+    name: "Intrarat Hospital",
+    nameTh: "อินทรำรัตน์",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -2183,7 +2251,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2804-8959-70",
-    name: "\u0e40\u0e01\u0e29\u0e21\u0e23\u0e33\u0e29\u0e0e\u0e23\u0e4c \u0e1a\u0e33\u0e07\u0e41\u0e04",
+    name: "Kasemrad Hospital Bang Khae",
+    nameTh: "เกษมรำษฎร์ บำงแค",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -2215,7 +2284,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2910-1600-49",
-    name: "\u0e40\u0e01\u0e29\u0e21\u0e23\u0e33\u0e29\u0e0e\u0e23\u0e4c \u0e1b\u0e23\u0e30\u0e0a\u0e33\u0e0a\u0e37\u0e48\u0e19",
+    name: "Kasemrad Prachachuen Hospital",
+    nameTh: "เกษมรำษฎร์ ประชำชื่น",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -2247,7 +2317,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2339-0000",
-    name: "\u0e40\u0e01\u0e29\u0e21\u0e23\u0e33\u0e29\u0e0e\u0e23\u0e4c \u0e23\u0e33\u0e21\u0e04 \u0e33\u0e41\u0e2b\u0e07",
+    name: "Kasemrad Prachachuen Hospital",
+    nameTh: "เกษมรำษฎร์ รำมค ำแหง",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -2279,7 +2350,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2434-0117",
-    name: "\u0e40\u0e08\u0e49\u0e33\u0e1e\u0e23\u0e30\u0e22\u0e33",
+    name: "Chaophya Hospital",
+    nameTh: "เจ้ำพระยำ",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -2311,7 +2383,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2348-7000",
-    name: "\u0e40\u0e17\u0e1e\u0e18\u0e33\u0e23\u0e34\u0e19\u0e17\u0e23\u0e4c",
+    name: "ViMUT Theptarin Rama 4 Hospital",
+    nameTh: "เทพธำรินทร์",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -2343,7 +2416,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2150-0900",
-    name: "\u0e40\u0e1b\u0e33\u0e42\u0e25 \u0e40\u0e01\u0e29\u0e15\u0e23",
+    name: "Paolo Kaset Hospital",
+    nameTh: "เปำโล เกษตร",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -2375,7 +2449,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2514-4140-9",
-    name: "\u0e40\u0e1b\u0e33\u0e42\u0e25 \u0e42\u0e0a\u0e04\u0e0a\u0e31\u0e22 4",
+    name: "Paolo Hospital Chokchai 4",
+    nameTh: "เปำโล โชคชัย 4",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -2407,7 +2482,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2318-0080-1",
-    name: "\u0e40\u0e1e\u0e0a\u0e23\u0e40\u0e27\u0e0a",
+    name: "Petcharavej Hospital",
+    nameTh: "เพชรเวช",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -2439,7 +2515,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2306-9199",
-    name: "\u0e40\u0e27\u0e0a\u0e28\u0e33\u0e2a\u0e15\u0e23\u0e4c\u0e40\u0e02\u0e15\u0e23\u0e49\u0e2d\u0e19 (\u0e23\u0e31\u0e10\u0e1a\u0e33\u0e25)",
+    name: "Hospital for Tropical Diseases",
+    nameTh: "เวชศำสตร์เขตร้อน (รัฐบำล)",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -2471,7 +2548,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2361-2727",
-    name: "\u0e44\u0e17\u0e22\u0e19\u0e04\u0e23\u0e34\u0e19\u0e17\u0e23\u0e4c",
+    name: "Thainakarin Hospital",
+    nameTh: "ไทยนครินทร์",
     tier: "Standard",
     city: null,
     province: "Bangkok",
@@ -2503,7 +2581,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-4461-4100-7",
-    name: "\u0e1a\u0e38\u0e23\u0e35\u0e23\u0e31\u0e21\u0e22\u0e4c \u0e23\u0e33\u0e21",
+    name: "Buriram Ram Hospital",
+    nameTh: "บุรีรัมย์ รำม",
     tier: "Standard",
     city: null,
     province: "Buri Ram",
@@ -2535,7 +2614,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-5641-3017-8",
-    name: "\u0e23\u0e27\u0e21\u0e41\u0e1e\u0e17\u0e22\u0e4c\u0e0a\u0e31\u0e22\u0e19\u0e33\u0e17",
+    name: "Ruam Phaet Chai Nat Hospital",
+    nameTh: "รวมแพทย์ชัยนำท",
     tier: "Standard",
     city: null,
     province: "Chai Nat",
@@ -2567,7 +2647,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-4483-6888",
-    name: "\u0e0a\u0e31\u0e22\u0e20\u0e39\u0e21\u0e34\u0e23\u0e33\u0e21",
+    name: "Chaiyaphum Ram Hospital",
+    nameTh: "ชัยภูมิรำม",
     tier: "Standard",
     city: null,
     province: "Chaiyaphum",
@@ -2599,7 +2680,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-5380-1999",
-    name: "\u0e23\u0e33\u0e0a\u0e40\u0e27\u0e0a\u0e40\u0e0a\u0e35\u0e22\u0e07\u0e43\u0e2b\u0e21\u0e48",
+    name: "Rajavej Chiang Mai Hospital",
+    nameTh: "รำชเวชเชียงใหม่",
     tier: "Standard",
     city: null,
     province: "Chiang Mai",
@@ -2631,7 +2713,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-5399-9777",
-    name: "\u0e25\u0e33\u0e19\u0e19\u0e33",
+    name: "Lanna Hospital",
+    nameTh: "ลำนนำ",
     tier: "Standard",
     city: null,
     province: "Chiang Mai",
@@ -2663,7 +2746,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-5393-6900-1",
-    name: "\u0e28\u0e39\u0e19\u0e22\u0e4c\u0e28\u0e23\u0e35\u0e1e\u0e31\u0e12\u0e19\u0e4c\u0e04\u0e13\u0e30\u0e41\u0e1e\u0e17\u0e22\u0e28\u0e33\u0e2a\u0e15\u0e23\u0e4c \u0e21\u0e0a. (\u0e23\u0e31\u0e10\u0e1a\u0e33\u0e25)",
+    name: "Sriphat Medical Center - OPD building",
+    nameTh: "ศูนย์ศรีพัฒน์คณะแพทยศำสตร์ มช. (รัฐบำล)",
     tier: "Standard",
     city: null,
     province: "Chiang Mai",
@@ -2695,7 +2779,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-5320-0002",
-    name: "\u0e40\u0e0a\u0e35\u0e22\u0e07\u0e43\u0e2b\u0e21\u0e48\u0e43\u0e01\u0e25\u0e49\u0e2b\u0e21\u0e2d",
+    name: "Chiang Mai Klaimor Hospital",
+    nameTh: "เชียงใหม่ใกล้หมอ",
     tier: "Standard",
     city: null,
     province: "Chiang Mai",
@@ -2727,7 +2812,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-5385-2590-9",
-    name: "\u0e40\u0e17\u0e1e\u0e1b\u0e31\u0e0d\u0e0d\u0e33",
+    name: "Theppanya Hospital",
+    nameTh: "เทพปัญญำ",
     tier: "Standard",
     city: null,
     province: "Chiang Mai",
@@ -2759,7 +2845,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-5205-1800",
-    name: "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e40\u0e0a\u0e35\u0e22\u0e07\u0e23\u0e33\u0e22",
+    name: "Bangkok Hospital Chiang Rai",
+    nameTh: "กรุงเทพเชียงรำย",
     tier: "Standard",
     city: null,
     province: "Chiang Rai",
@@ -2791,7 +2878,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-5391-7563",
-    name: "\u0e21\u0e2b\u0e33\u0e27\u0e34\u0e17\u0e22\u0e33\u0e25\u0e31\u0e22\u0e41\u0e21\u0e48\u0e1f\u0e49\u0e33\u0e2b\u0e25\u0e27\u0e07 (\u0e23\u0e31\u0e10\u0e1a\u0e33\u0e25)",
+    name: "Mae Fah Luang University Medical Center Hospital",
+    nameTh: "มหำวิทยำลัยแม่ฟ้ำหลวง (รัฐบำล)",
     tier: "Standard",
     city: null,
     province: "Chiang Rai",
@@ -2823,7 +2911,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-5391-0999",
-    name: "\u0e40\u0e01\u0e29\u0e21\u0e23\u0e33\u0e29\u0e0e\u0e23\u0e4c\u0e28\u0e23\u0e35\u0e1a\u0e38\u0e23\u0e34\u0e19\u0e17\u0e23\u0e4c",
+    name: "Kasemrad Sriburin Hospital",
+    nameTh: "เกษมรำษฎร์ศรีบุรินทร์",
     tier: "Standard",
     city: null,
     province: "Chiang Rai",
@@ -2855,7 +2944,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-5371-1366",
-    name: "\u0e42\u0e2d\u0e40\u0e27\u0e2d\u0e23\u0e4c\u0e1a\u0e23\u0e38\u0e4a\u0e04",
+    name: "Overbrook Hospital",
+    nameTh: "โอเวอร์บรุ๊ค",
     tier: "Standard",
     city: null,
     province: "Chiang Rai",
@@ -2887,7 +2977,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3839-4850-3",
-    name: "\u0e21\u0e2b\u0e33\u0e27\u0e34\u0e17\u0e22\u0e33\u0e25\u0e31\u0e22\u0e1a\u0e39\u0e23\u0e1e\u0e33 (\u0e23\u0e31\u0e10\u0e1a\u0e33\u0e25)",
+    name: "Burapha University Hospital",
+    nameTh: "มหำวิทยำลัยบูรพำ (รัฐบำล)",
     tier: "Standard",
     city: null,
     province: "Chonburi",
@@ -2919,7 +3010,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3831-6999",
-    name: "\u0e27\u0e34\u0e20\u0e33\u0e23\u0e33\u0e21 \u0e2d\u0e21\u0e15\u0e30\u0e19\u0e04\u0e23",
+    name: "Vibharam Amata",
+    nameTh: "วิภำรำม อมตะนคร",
     tier: "Standard",
     city: null,
     province: "Chonburi",
@@ -2951,7 +3043,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3303-8888",
-    name: "\u0e2a\u0e21\u0e34\u0e15\u0e34\u0e40\u0e27\u0e0a \u0e0a\u0e25\u0e1a\u0e38\u0e23\u0e35",
+    name: "Samitivej Chonburi Hospital",
+    nameTh: "สมิติเวช ชลบุรี",
     tier: "Standard",
     city: null,
     province: "Chonburi",
@@ -2983,7 +3076,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3832-0300",
-    name: "\u0e2a\u0e21\u0e34\u0e15\u0e34\u0e40\u0e27\u0e0a \u0e28\u0e23\u0e35\u0e23\u0e33\u0e0a\u0e33",
+    name: "Samitivej Sriracha Hospital",
+    nameTh: "สมิติเวช ศรีรำชำ",
     tier: "Standard",
     city: null,
     province: "Chonburi",
@@ -3015,7 +3109,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3827-3840-7",
-    name: "\u0e40\u0e2d\u0e01\u0e0a\u0e25",
+    name: "Aikchol Hospital",
+    nameTh: "เอกชล",
     tier: "Standard",
     city: null,
     province: "Chonburi",
@@ -3047,7 +3142,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3893-9888",
-    name: "\u0e40\u0e2d\u0e01\u0e0a\u0e25 2",
+    name: "Hospital AIKCHOL Angsila",
+    nameTh: "เอกชล 2",
     tier: "Standard",
     city: null,
     province: "Chonburi",
@@ -3079,7 +3175,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-7765-8555",
-    name: "\u0e18\u0e19\u0e1a\u0e38\u0e23\u0e35\u0e0a\u0e38\u0e21\u0e1e\u0e23",
+    name: "Thonburi-Chumphon Hospital",
+    nameTh: "ธนบุรีชุมพร",
     tier: "Standard",
     city: null,
     province: "Chumphon",
@@ -3111,7 +3208,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-7750-3238-40",
-    name: "\u0e27\u0e34\u0e23\u0e31\u0e0a\u0e28\u0e34\u0e25\u0e1b\u0e4c",
+    name: "Virajsilp hospital",
+    nameTh: "วิรัชศิลป์",
     tier: "Standard",
     city: null,
     province: "Chumphon",
@@ -3143,7 +3241,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "043-840444",
-    name: "\u0e01\u0e33\u0e2c\u0e2a\u0e34\u0e19\u0e18\u0e38\u0e4c-\u0e18\u0e19\u0e1a\u0e38\u0e23\u0e35",
+    name: "Thonburi Hospital Kalasin",
+    nameTh: "กำฬสินธุ์-ธนบุรี",
     tier: "Standard",
     city: null,
     province: "Kalasin",
@@ -3175,7 +3274,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-5571-6701-5",
-    name: "\u0e40\u0e2d\u0e01\u0e0a\u0e19\u0e40\u0e21\u0e37\u0e2d\u0e07\u0e01 \u0e33\u0e41\u0e1e\u0e07",
+    name: "Ekkachon Mueang Kamphaeng Phet Hospital",
+    nameTh: "เอกชนเมืองก ำแพง",
     tier: "Standard",
     city: null,
     province: "Kamphaeng Phet",
@@ -3207,7 +3307,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3462-2366",
-    name: "\u0e18\u0e19\u0e01\u0e33\u0e0d\u0e08\u0e19\u0e4c",
+    name: "Thanakan Hospital",
+    nameTh: "ธนกำญจน์",
     tier: "Standard",
     city: null,
     province: "Kanchanaburi",
@@ -3239,7 +3340,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3458-7800",
-    name: "\u0e1e\u0e2b\u0e25\u0e1e\u0e25\u0e1e\u0e22\u0e38\u0e2b\u0e40\u0e2a\u0e19\u0e33 (\u0e23\u0e31\u0e10\u0e1a\u0e33\u0e25)",
+    name: "Paholpolpayuhasena Hospital",
+    nameTh: "พหลพลพยุหเสนำ (รัฐบำล)",
     tier: "Standard",
     city: null,
     province: "Kanchanaburi",
@@ -3271,7 +3373,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-4304-2888",
-    name: "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e02\u0e2d\u0e19\u0e41\u0e01\u0e48\u0e19",
+    name: "Bangkok Hospital KhonKaen",
+    nameTh: "กรุงเทพขอนแก่น",
     tier: "Standard",
     city: null,
     province: "Khon Kaen",
@@ -3303,7 +3406,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-4300-2002",
-    name: "\u0e02\u0e2d\u0e19\u0e41\u0e01\u0e48\u0e19\u0e23\u0e33\u0e21",
+    name: "Khon Kaen Ram Hospital",
+    nameTh: "ขอนแก่นรำม",
     tier: "Standard",
     city: null,
     province: "Khon Kaen",
@@ -3335,7 +3439,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-4333-3555-62",
-    name: "\u0e23\u0e33\u0e0a\u0e1e\u0e24\u0e01\u0e29\u0e4c",
+    name: "Ratchaphruek Hospital",
+    nameTh: "รำชพฤกษ์",
     tier: "Standard",
     city: null,
     province: "Khon Kaen",
@@ -3367,7 +3472,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-4336-6492-3",
-    name: "\u0e28\u0e23\u0e35\u0e19\u0e04\u0e23\u0e34\u0e19\u0e17\u0e23\u0e4c \u0e04\u0e13\u0e30\u0e41\u0e1e\u0e17\u0e22\u0e28\u0e33\u0e2a\u0e15\u0e23\u0e4c \u0e21.\u0e02\u0e2d\u0e19\u0e41\u0e01\u0e48\u0e19 (\u0e40\u0e09\u0e1e\u0e33\u0e30\u0e2b\u0e2d\u0e1c\u0e39\u0e49\u0e1b\u0e48\u0e27\u0e22\u0e1e\u0e34\u0e40\u0e28\u0e29 \u0e0a\u0e31\u0e49\u0e19 14   \u0e2d\u0e33\u0e04\u0e33\u0e23\u0e2a\u0e21\u0e40\u0e14\u0e47\u0e08\u0e1e\u0e23\u0e30\u0e28\u0e23\u0e35\u0e19\u0e04\u0e23\u0e34\u0e19\u0e17\u0e23\u0e4c) (\u0e23\u0e31\u0e10\u0e1a\u0e33\u0e25)",
+    name: "Srinagarind Hospital",
+    nameTh: "ศรีนครินทร์ คณะแพทยศำสตร์ ม.ขอนแก่น (เฉพำะหอผู้ป่วยพิเศษ ชั้น 14   อำคำรสมเด็จพระศรีนครินทร์) (รัฐบำล)",
     tier: "Standard",
     city: null,
     province: "Khon Kaen",
@@ -3399,7 +3505,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-7562-6555",
-    name: "\u0e01\u0e23\u0e30\u0e1a\u0e35\u0e48\u0e19\u0e04\u0e23\u0e34\u0e19\u0e17\u0e23\u0e4c \u0e2d\u0e34\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c\u0e40\u0e19\u0e0a\u0e31\u0e48\u0e19\u0e41\u0e19\u0e25",
+    name: "Krabi Nakharin International Hospital",
+    nameTh: "กระบี่นครินทร์ อินเตอร์เนชั่นแนล",
     tier: "Standard",
     city: null,
     province: "Krabi",
@@ -3431,7 +3538,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-7581-5555",
-    name: "\u0e27\u0e31\u0e12\u0e19\u0e41\u0e1e\u0e17\u0e22\u0e4c \u0e2d\u0e48\u0e33\u0e27\u0e19\u0e33\u0e07",
+    name: "Wattanapat Hospital Ao Nang",
+    nameTh: "วัฒนแพทย์ อ่ำวนำง",
     tier: "Standard",
     city: null,
     province: "Krabi",
@@ -3463,7 +3571,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-5401-9619",
-    name: "\u0e40\u0e02\u0e25\u0e33\u0e07\u0e04\u0e4c\u0e19\u0e04\u0e23\u0e23\u0e33\u0e21",
+    name: "Khelangnakorn-Ram Hospital",
+    nameTh: "เขลำงค์นครรำม",
     tier: "Standard",
     city: null,
     province: "Lampang",
@@ -3495,7 +3604,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-5328-2888",
-    name: "\u0e1e\u0e23\u0e34\u0e49\u0e19\u0e0b\u0e4c \u0e25 \u0e33\u0e1e\u0e39\u0e19",
+    name: "PRINC Hospital Lamphun",
+    nameTh: "พริ้นซ์ ล ำพูน",
     tier: "Standard",
     city: null,
     province: "Lamphun",
@@ -3528,6 +3638,7 @@ export const hospitals: Hospital[] = [
   {
     id: "05358-1998",
     name: "\u0e25 \u0e33\u0e1e\u0e39\u0e19\u0e43\u0e01\u0e25\u0e49\u0e2b\u0e21\u0e2d",
+    nameTh: "โรงพยาบาลลำพูนใกล้หมอ",
     tier: "Standard",
     city: null,
     province: "Lamphun",
@@ -3559,7 +3670,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-5358-1600-7",
-    name: "\u0e2b\u0e23\u0e34\u0e20\u0e38\u0e0d\u0e0a\u0e31\u0e22\u0e40\u0e21\u0e42\u0e21\u0e40\u0e23\u0e35\u0e22\u0e25",
+    name: "Hariphunchai Memorial Hospital Co., Ltd.",
+    nameTh: "หริภุญชัยเมโมเรียล",
     tier: "Standard",
     city: null,
     province: "Lamphun",
@@ -3591,7 +3703,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-4287-0000-9",
-    name: "\u0e40\u0e21\u0e37\u0e2d\u0e07\u0e40\u0e25\u0e22\u0e23\u0e33\u0e21",
+    name: "Mueang Loei Ram Hospital",
+    nameTh: "เมืองเลยรำม",
     tier: "Standard",
     city: null,
     province: "Loei",
@@ -3623,7 +3736,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3641-3933",
-    name: "\u0e40\u0e1a\u0e0d\u0e08\u0e23\u0e21\u0e22\u0e4c",
+    name: "Benjarom Hospital",
+    nameTh: "เบญจรมย์",
     tier: "Standard",
     city: null,
     province: "Lop Buri",
@@ -3655,7 +3769,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3661-6300",
-    name: "\u0e40\u0e21\u0e37\u0e2d\u0e07\u0e19\u0e33\u0e23\u0e33\u0e22\u0e13\u0e4c",
+    name: "Mueang Narai Hospital",
+    nameTh: "เมืองนำรำยณ์",
     tier: "Standard",
     city: null,
     province: "Lop Buri",
@@ -3687,7 +3802,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-4372-3669",
-    name: "\u0e21\u0e2b\u0e33\u0e2a\u0e33\u0e23\u0e04\u0e33\u0e21\u0e2d\u0e34\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c\u0e40\u0e19\u0e0a\u0e31\u0e48\u0e19\u0e41\u0e19\u0e25",
+    name: "Mahasarakham International Hospital",
+    nameTh: "มหำสำรคำมอินเตอร์เนชั่นแนล",
     tier: "Standard",
     city: null,
     province: "Maha Sarakham",
@@ -3719,7 +3835,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-4372-2055",
-    name: "\u0e2a\u0e38\u0e17\u0e18\u0e33\u0e40\u0e27\u0e0a \u0e04\u0e13\u0e30\u0e41\u0e1e\u0e17\u0e22\u0e28\u0e33\u0e2a\u0e15\u0e23\u0e4c \u0e21.\u0e21\u0e2b\u0e33\u0e2a\u0e33\u0e23\u0e04\u0e33\u0e21 (\u0e23\u0e31\u0e10\u0e1a\u0e33\u0e25)",
+    name: "Suddhavej Hospital",
+    nameTh: "สุทธำเวช คณะแพทยศำสตร์ ม.มหำสำรคำม (รัฐบำล)",
     tier: "Standard",
     city: null,
     province: "Maha Sarakham",
@@ -3751,7 +3868,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-4263-3301-9",
-    name: "\u0e21\u0e38\u0e01\u0e14\u0e33\u0e2b\u0e33\u0e23\u0e2d\u0e34\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c\u0e40\u0e19\u0e0a\u0e31\u0e48\u0e19\u0e41\u0e19\u0e25",
+    name: "Mukdahan International Hospital",
+    nameTh: "มุกดำหำรอินเตอร์เนชั่นแนล",
     tier: "Standard",
     city: null,
     province: "Mukdahan",
@@ -3783,7 +3901,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3427-0080-5",
-    name: "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e04\u0e23\u0e34\u0e2a\u0e40\u0e15\u0e35\u0e22\u0e19 \u0e19\u0e04\u0e23\u0e1b\u0e10\u0e21",
+    name: "Bangkok Christian Nakhon Pathom Hospital",
+    nameTh: "กรุงเทพคริสเตียน นครปฐม",
     tier: "Standard",
     city: null,
     province: "Nakhon Pathom",
@@ -3815,7 +3934,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3421-9600",
-    name: "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e2a\u0e19\u0e33\u0e21\u0e08\u0e31\u0e19\u0e17\u0e23\u0e4c",
+    name: "Bangkok Sanam Chan Hospital",
+    nameTh: "กรุงเทพสนำมจันทร์",
     tier: "Standard",
     city: null,
     province: "Nakhon Pathom",
@@ -3847,7 +3967,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3431-0000",
-    name: "\u0e2d\u0e34\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c\u0e01 \u0e33\u0e41\u0e1e\u0e07\u0e41\u0e2a\u0e19",
+    name: "Inter Kamphaeng Saen Hospital",
+    nameTh: "อินเตอร์ก ำแพงแสน",
     tier: "Standard",
     city: null,
     province: "Nakhon Pathom",
@@ -3879,7 +4000,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-34273-463",
-    name: "\u0e40\u0e17\u0e1e\u0e33\u0e01\u0e23",
+    name: "Tepakorn Hospital",
+    nameTh: "เทพำกร",
     tier: "Standard",
     city: null,
     province: "Nakhon Pathom",
@@ -3911,7 +4033,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-4431-6611-5",
-    name: "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e1b\u0e33\u0e01\u0e0a\u0e48\u0e2d\u0e07",
+    name: "Bangkok Hospital Pakchong",
+    nameTh: "กรุงเทพปำกช่อง",
     tier: "Standard",
     city: null,
     province: "Nakhon Ratchasima",
@@ -3943,7 +4066,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-4442-9999",
-    name: "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e23\u0e33\u0e0a\u0e2a\u0e35\u0e21\u0e33",
+    name: "Bangkok Hospital Ratchasima",
+    nameTh: "กรุงเทพรำชสีมำ",
     tier: "Standard",
     city: null,
     province: "Nakhon Ratchasima",
@@ -3975,7 +4099,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-4422-3600",
-    name: "\u0e21\u0e2b\u0e33\u0e27\u0e34\u0e17\u0e22\u0e33\u0e25\u0e31\u0e22\u0e40\u0e17\u0e04\u0e42\u0e19\u0e42\u0e25\u0e22\u0e35\u0e2a\u0e38\u0e23\u0e19\u0e33\u0e23\u0e35 (\u0e23\u0e31\u0e10\u0e1a\u0e33\u0e25)",
+    name: "Suranaree University of Technology Hospital",
+    nameTh: "มหำวิทยำลัยเทคโนโลยีสุรนำรี (รัฐบำล)",
     tier: "Standard",
     city: null,
     province: "Nakhon Ratchasima",
@@ -4007,7 +4132,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-4426-1261",
-    name: "\u0e40\u0e0b\u0e19\u0e15\u0e4c\u0e40\u0e21\u0e23\u0e35\u0e48 \u0e19\u0e04\u0e23\u0e23\u0e33\u0e0a\u0e2a\u0e35\u0e21\u0e33",
+    name: "Saint Mary's Hospital",
+    nameTh: "เซนต์เมรี่ นครรำชสีมำ",
     tier: "Standard",
     city: null,
     province: "Nakhon Ratchasima",
@@ -4039,7 +4165,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-5622-5501-5",
-    name: "\u0e1e\u0e23\u0e34\u0e49\u0e19\u0e0b\u0e4c \u0e1b\u0e33\u0e01\u0e19 \u0e49\u0e33\u0e42\u0e1e 1",
+    name: "PRINC Hospital Paknampo",
+    nameTh: "พริ้นซ์ ปำกน ้ำโพ 1",
     tier: "Standard",
     city: null,
     province: "Nakhon Sawan",
@@ -4071,7 +4198,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-5622-3600",
-    name: "\u0e23\u0e27\u0e21\u0e41\u0e1e\u0e17\u0e22\u0e4c\u0e19\u0e04\u0e23\u0e2a\u0e27\u0e23\u0e23\u0e04\u0e4c",
+    name: "Sri Sawan Hospital",
+    nameTh: "รวมแพทย์นครสวรรค์",
     tier: "Standard",
     city: null,
     province: "Nakhon Sawan",
@@ -4103,7 +4231,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-5631-1626-35",
-    name: "\u0e28\u0e23\u0e35\u0e2a\u0e27\u0e23\u0e23\u0e04\u0e4c",
+    name: "Sri Sawan Hospital",
+    nameTh: "ศรีสวรรค์",
     tier: "Standard",
     city: null,
     province: "Nakhon Sawan",
@@ -4135,7 +4264,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-7580-8888",
-    name: "\u0e18\u0e19\u0e1a\u0e38\u0e23\u0e35 \u0e17\u0e38\u0e48\u0e07\u0e2a\u0e07",
+    name: "Thonburi Thungsong Hospital",
+    nameTh: "ธนบุรี ทุ่งสง",
     tier: "Standard",
     city: null,
     province: "Nakhon Si Thammarat",
@@ -4167,7 +4297,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-7535-6214",
-    name: "\u0e19\u0e04\u0e23\u0e04\u0e23\u0e34\u0e2a\u0e40\u0e15\u0e35\u0e22\u0e19",
+    name: "Nakhon Christian Hospital",
+    nameTh: "นครคริสเตียน",
     tier: "Standard",
     city: null,
     province: "Nakhon Si Thammarat",
@@ -4199,7 +4330,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-7530-5999",
-    name: "\u0e19\u0e04\u0e23\u0e1e\u0e31\u0e12\u0e19\u0e4c",
+    name: "Nakhonpat Inter Hospital",
+    nameTh: "นครพัฒน์",
     tier: "Standard",
     city: null,
     province: "Nakhon Si Thammarat",
@@ -4231,7 +4363,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-7531-2800-15",
-    name: "\u0e19\u0e04\u0e23\u0e34\u0e19\u0e17\u0e23\u0e4c",
+    name: "Nakharin Hospital",
+    nameTh: "นครินทร์",
     tier: "Standard",
     city: null,
     province: "Nakhon Si Thammarat",
@@ -4263,7 +4396,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-4242-4124",
-    name: "\u0e23\u0e27\u0e21\u0e41\u0e1e\u0e17\u0e22\u0e4c\u0e2b\u0e19\u0e2d\u0e07\u0e04\u0e33\u0e22",
+    name: "Nong Khai Hospital",
+    nameTh: "รวมแพทย์หนองคำย",
     tier: "Standard",
     city: null,
     province: "Nong Khai",
@@ -4295,7 +4429,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-4246-5201-9",
-    name: "\u0e2b\u0e19\u0e2d\u0e07\u0e04\u0e33\u0e22-\u0e27\u0e31\u0e12\u0e19\u0e33",
+    name: "Nong Khai Wattana Hospital",
+    nameTh: "หนองคำย-วัฒนำ",
     tier: "Standard",
     city: null,
     province: "Nong Khai",
@@ -4327,7 +4462,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2596-7888",
-    name: "\u0e19\u0e19\u0e17\u0e40\u0e27\u0e0a",
+    name: "Nonthavej Hospital",
+    nameTh: "นนทเวช",
     tier: "Standard",
     city: null,
     province: "Nonthaburi",
@@ -4359,7 +4495,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2921-3400-9",
-    name: "\u0e40\u0e01\u0e29\u0e21\u0e23\u0e33\u0e29\u0e0e\u0e23\u0e4c \u0e23\u0e31\u0e15\u0e19\u0e33\u0e18\u0e34\u0e40\u0e1a\u0e28\u0e23\u0e4c",
+    name: "Kasemrad Rattanatibeth Hospital",
+    nameTh: "เกษมรำษฎร์ รัตนำธิเบศร์",
     tier: "Standard",
     city: null,
     province: "Nonthaburi",
@@ -4391,7 +4528,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2594-0020-65",
-    name: "\u0e40\u0e01\u0e29\u0e21\u0e23\u0e33\u0e29\u0e0e\u0e23\u0e4c \u0e2d\u0e34\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c\u0e40\u0e19\u0e0a\u0e31\u0e48\u0e19\u0e41\u0e19\u0e25 \u0e23\u0e31\u0e15\u0e19\u0e33\u0e18\u0e34\u0e40\u0e1a\u0e28\u0e23\u0e4c",
+    name: "Kasemrad International Hospital Ratthanatibeth",
+    nameTh: "เกษมรำษฎร์ อินเตอร์เนชั่นแนล รัตนำธิเบศร์",
     tier: "Standard",
     city: null,
     province: "Nonthaburi",
@@ -4423,7 +4561,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2836-9999",
-    name: "\u0e40\u0e27\u0e34\u0e25\u0e14\u0e4c\u0e40\u0e21\u0e14\u0e34\u0e04\u0e2d\u0e25",
+    name: "World Medical Hospital",
+    nameTh: "เวิลด์เมดิคอล",
     tier: "Standard",
     city: null,
     province: "Nonthaburi",
@@ -4455,7 +4594,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2975-6700-16",
-    name: "\u0e01\u0e23\u0e38\u0e07\u0e2a\u0e22\u0e33\u0e21\u0e40\u0e0b\u0e19\u0e15\u0e4c\u0e04\u0e33\u0e23\u0e4c\u0e25\u0e2d\u0e2a",
+    name: "Krung Siam St. Carlos Hospital",
+    nameTh: "กรุงสยำมเซนต์คำร์ลอส",
     tier: "Standard",
     city: null,
     province: "Pathum Thani",
@@ -4487,7 +4627,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2529-4533-41",
-    name: "\u0e01\u0e33\u0e23\u0e38\u0e0d\u0e40\u0e27\u0e0a \u0e1b\u0e17\u0e38\u0e21\u0e18\u0e33\u0e19\u0e35",
+    name: "Kasemrad Pathum Thani Hospital",
+    nameTh: "กำรุญเวช ปทุมธำนี",
     tier: "Standard",
     city: null,
     province: "Pathum Thani",
@@ -4519,7 +4660,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2926-9999",
-    name: "\u0e18\u0e23\u0e23\u0e21\u0e28\u0e33\u0e2a\u0e15\u0e23\u0e4c\u0e40\u0e09\u0e25\u0e34\u0e21\u0e1e\u0e23\u0e30\u0e40\u0e01\u0e35\u0e22\u0e23\u0e15\u0e34 (\u0e23\u0e31\u0e10\u0e1a\u0e33\u0e25) *\u0e02\u0e22\u0e33\u0e22\u0e1a\u0e23\u0e34\u0e01\u0e33\u0e23 OPD",
+    name: "Thammasat University Hospital",
+    nameTh: "ธรรมศำสตร์เฉลิมพระเกียรติ (รัฐบำล) *ขยำยบริกำร OPD",
     tier: "Standard",
     city: null,
     province: "Pathum Thani",
@@ -4551,7 +4693,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2996-2209-21",
-    name: "\u0e1a\u0e33\u0e07\u0e1b\u0e30\u0e01\u0e2d\u0e01\u0e23\u0e31\u0e07\u0e2a\u0e34\u0e15 2",
+    name: "Bangpakok-Rangsit 2 Hospital",
+    nameTh: "บำงปะกอกรังสิต 2",
     tier: "Standard",
     city: null,
     province: "Pathum Thani",
@@ -4583,7 +4726,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2567-1991-9",
-    name: "\u0e1b\u0e17\u0e38\u0e21\u0e40\u0e27\u0e0a",
+    name: "Pathumvech Hospital",
+    nameTh: "ปทุมเวช",
     tier: "Standard",
     city: null,
     province: "Pathum Thani",
@@ -4615,7 +4759,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2901-8400",
-    name: "\u0e20\u0e31\u0e17\u0e23-\u0e18\u0e19\u0e1a\u0e38\u0e23\u0e35",
+    name: "Phatara-Thonburi Hospital",
+    nameTh: "ภัทร-ธนบุรี",
     tier: "Standard",
     city: null,
     province: "Pathum Thani",
@@ -4647,7 +4792,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "02-006-9999",
-    name: "\u0e2a\u0e34\u0e19\u0e41\u0e1e\u0e17\u0e22\u0e4c \u0e25 \u0e33\u0e25\u0e39\u0e01\u0e01\u0e33",
+    name: "Synphaet Lamlukka Hospital",
+    nameTh: "สินแพทย์ ล ำลูกกำ",
     tier: "Standard",
     city: null,
     province: "Pathum Thani",
@@ -4679,7 +4825,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2998-9888",
-    name: "\u0e40\u0e09\u0e1e\u0e33\u0e30\u0e17\u0e33\u0e07\u0e41\u0e21\u0e48\u0e41\u0e25\u0e30\u0e40\u0e14\u0e47\u0e01\u0e41\u0e1e\u0e17\u0e22\u0e4c\u0e23\u0e31\u0e07\u0e2a\u0e34\u0e15",
+    name: "Pat Rangsit Mother & Child Hospital",
+    nameTh: "เฉพำะทำงแม่และเด็กแพทย์รังสิต",
     tier: "Standard",
     city: null,
     province: "Pathum Thani",
@@ -4711,7 +4858,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2577-8111",
-    name: "\u0e40\u0e1b\u0e33\u0e42\u0e25 \u0e23\u0e31\u0e07\u0e2a\u0e34\u0e15",
+    name: "Paolo Rangsit Hospital",
+    nameTh: "เปำโล รังสิต",
     tier: "Standard",
     city: null,
     province: "Pathum Thani",
@@ -4743,7 +4891,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2998-9999",
-    name: "\u0e41\u0e1e\u0e17\u0e22\u0e4c\u0e23\u0e31\u0e07\u0e2a\u0e34\u0e15",
+    name: "patRangsit Hospital",
+    nameTh: "แพทย์รังสิต",
     tier: "Standard",
     city: null,
     province: "Pathum Thani",
@@ -4775,7 +4924,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-5441-1111-29",
-    name: "\u0e1e\u0e30\u0e40\u0e22\u0e33\u0e23\u0e33\u0e21",
+    name: "Phayao Ram Hospital",
+    nameTh: "พะเยำรำม",
     tier: "Standard",
     city: null,
     province: "Phayao",
@@ -4807,7 +4957,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-5672-0680-4",
-    name: "\u0e40\u0e1e\u0e0a\u0e23\u0e23\u0e31\u0e15\u0e19\u0e4c",
+    name: "Phetcharat Hospital",
+    nameTh: "เพชรรัตน์",
     tier: "Standard",
     city: null,
     province: "Phetchabun",
@@ -4839,7 +4990,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3289-7888",
-    name: "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e40\u0e1e\u0e0a\u0e23\u0e1a\u0e38\u0e23\u0e35",
+    name: "Bangkok Hospital Phetchaburi",
+    nameTh: "กรุงเทพเพชรบุรี",
     tier: "Standard",
     city: null,
     province: "Phetchaburi",
@@ -4871,7 +5023,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3241-7070-9",
-    name: "\u0e21\u0e2b\u0e33\u0e0a\u0e31\u0e22\u0e40\u0e1e\u0e0a\u0e23\u0e23\u0e31\u0e0a\u0e15\u0e4c",
+    name: "Mahachai Petcharat Hospital",
+    nameTh: "มหำชัยเพชรรัชต์",
     tier: "Standard",
     city: null,
     province: "Phetchaburi",
@@ -4903,7 +5056,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-5661-2096",
-    name: "\u0e1e\u0e34\u0e29\u0e13\u0e38\u0e40\u0e27\u0e0a \u0e1e\u0e34\u0e08\u0e34\u0e15\u0e23",
+    name: "Phitsanuwet Phichit Hospital",
+    nameTh: "พิษณุเวช พิจิตร",
     tier: "Standard",
     city: null,
     province: "Phichit",
@@ -4935,7 +5089,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-5521-2222",
-    name: "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e1e\u0e34\u0e29\u0e13\u0e38\u0e42\u0e25\u0e01",
+    name: "Bangkok Hospital Phitsanulok",
+    nameTh: "กรุงเทพพิษณุโลก",
     tier: "Standard",
     city: null,
     province: "Phitsanulok",
@@ -4967,7 +5122,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-5590-9000",
-    name: "\u0e1e\u0e34\u0e29\u0e13\u0e38\u0e40\u0e27\u0e0a",
+    name: "Pitsanuvej Hospital",
+    nameTh: "พิษณุเวช",
     tier: "Standard",
     city: null,
     province: "Phitsanulok",
@@ -4999,7 +5155,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3533-5555",
-    name: "\u0e23\u0e33\u0e0a\u0e18\u0e33\u0e19\u0e35",
+    name: "Rajthanee Hospital",
+    nameTh: "รำชธำนี",
     tier: "Standard",
     city: null,
     province: "Phra Nakhon Si Ayutthaya",
@@ -5031,7 +5188,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3535-6888",
-    name: "\u0e40\u0e2d\u0e40\u0e0a\u0e35\u0e22\u0e2d\u0e34\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c\u0e40\u0e19\u0e0a\u0e31\u0e48\u0e19\u0e41\u0e19\u0e25",
+    name: "ASIA International Hospital",
+    nameTh: "เอเชียอินเตอร์เนชั่นแนล",
     tier: "Standard",
     city: null,
     province: "Phra Nakhon Si Ayutthaya",
@@ -5063,7 +5221,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-5452-2911-3",
-    name: "\u0e41\u0e1e\u0e23\u0e48-\u0e23\u0e33\u0e21",
+    name: "Phrae-Ram Hospital",
+    nameTh: "แพร่-รำม",
     tier: "Standard",
     city: null,
     province: "Phrae",
@@ -5095,7 +5254,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-5451-1017",
-    name: "\u0e41\u0e1e\u0e23\u0e48\u0e04\u0e23\u0e34\u0e2a\u0e40\u0e15\u0e35\u0e22\u0e19",
+    name: "Phrae Christian Hospital",
+    nameTh: "แพร่คริสเตียน",
     tier: "Standard",
     city: null,
     province: "Phrae",
@@ -5127,7 +5287,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-7634-2633",
-    name: "\u0e1b\u0e48\u0e33\u0e15\u0e2d\u0e07 (\u0e23\u0e31\u0e10\u0e1a\u0e33\u0e25)",
+    name: "Patong Hospital",
+    nameTh: "ป่ำตอง (รัฐบำล)",
     tier: "Standard",
     city: null,
     province: "Phuket",
@@ -5159,7 +5320,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-7636-1234",
-    name: "\u0e27\u0e0a\u0e34\u0e23\u0e30\u0e20\u0e39\u0e40\u0e01\u0e47\u0e15 (\u0e23\u0e31\u0e10\u0e1a\u0e33\u0e25)",
+    name: "Vachira Phuket Hospital",
+    nameTh: "วชิระภูเก็ต (รัฐบำล)",
     tier: "Standard",
     city: null,
     province: "Phuket",
@@ -5191,7 +5353,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3253-2576-85",
-    name: "\u0e0b\u0e33\u0e19\u0e40\u0e1b\u0e33\u0e42\u0e25\u0e2b\u0e31\u0e27\u0e2b\u0e34\u0e19",
+    name: "San Paulo Hospital",
+    nameTh: "ซำนเปำโลหัวหิน",
     tier: "Standard",
     city: null,
     province: "Prachuap Khiri Khan",
@@ -5223,7 +5386,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3232-2274-80",
-    name: "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e40\u0e21\u0e37\u0e2d\u0e07\u0e23\u0e33\u0e0a",
+    name: "Ratchaburi Hospital",
+    nameTh: "กรุงเทพเมืองรำช",
     tier: "Standard",
     city: null,
     province: "Ratchaburi",
@@ -5255,7 +5419,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3220-1260",
-    name: "\u0e0b\u0e33\u0e19\u0e04\u0e33\u0e21\u0e34\u0e25\u0e42\u0e25",
+    name: "San Camillo Hospital",
+    nameTh: "ซำนคำมิลโล",
     tier: "Standard",
     city: null,
     province: "Ratchaburi",
@@ -5287,7 +5452,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-32328-521-8",
-    name: "\u0e21\u0e2b\u0e33\u0e0a\u0e31\u0e22\u0e1e\u0e23\u0e49\u0e2d\u0e21\u0e41\u0e1e\u0e17\u0e22\u0e4c",
+    name: "Prompaet Hospital",
+    nameTh: "มหำชัยพร้อมแพทย์",
     tier: "Standard",
     city: null,
     province: "Ratchaburi",
@@ -5319,7 +5485,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3861-2999",
-    name: "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e23\u0e30\u0e22\u0e2d\u0e07",
+    name: "Bangkok Hospital Rayong",
+    nameTh: "กรุงเทพระยอง",
     tier: "Standard",
     city: null,
     province: "Rayong",
@@ -5351,7 +5518,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3869-1800",
-    name: "\u0e21\u0e07\u0e01\u0e38\u0e0e\u0e23\u0e30\u0e22\u0e2d\u0e07",
+    name: "Mongkut Rayong Hospital",
+    nameTh: "มงกุฎระยอง",
     tier: "Standard",
     city: null,
     province: "Rayong",
@@ -5383,7 +5551,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3899-8555",
-    name: "\u0e28\u0e23\u0e35\u0e23\u0e30\u0e22\u0e2d\u0e07",
+    name: "Sri Rayong Hospital",
+    nameTh: "ศรีระยอง",
     tier: "Standard",
     city: null,
     province: "Rayong",
@@ -5415,7 +5584,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "03-868-4444",
-    name: "\u0e40\u0e09\u0e25\u0e34\u0e21\u0e1e\u0e23\u0e30\u0e40\u0e01\u0e35\u0e22\u0e23\u0e15\u0e34\u0e2a\u0e21\u0e40\u0e14\u0e47\u0e08\u0e1e\u0e23\u0e30\u0e40\u0e17\u0e1e\u0e23\u0e31\u0e15\u0e19\u0e23\u0e33\u0e0a\u0e2a\u0e38\u0e14\u0e33\u0e2f\u0e2a\u0e22\u0e33\u0e21\u0e1a\u0e23\u0e21\u0e23\u0e33\u0e0a\u0e01\u0e38\u0e21\u0e33\u0e23\u0e35 \u0e23\u0e30\u0e22\u0e2d\u0e07 (\u0e23\u0e31\u0e10\u0e1a\u0e33\u0e25)  *\u0e2a\u0e16\u0e33\u0e19\u0e1e\u0e22\u0e33\u0e1a\u0e33\u0e25\u0e40\u0e1b\u0e34\u0e14\u0e43\u0e2b\u0e21\u0e48",
+    name: "Chaloem Phrakiat Princess Maha Chakri Sirindhorn Hospital",
+    nameTh: "เฉลิมพระเกียรติสมเด็จพระเทพรัตนรำชสุดำฯสยำมบรมรำชกุมำรี ระยอง (รัฐบำล)  *สถำนพยำบำลเปิดใหม่",
     tier: "Standard",
     city: null,
     province: "Rayong",
@@ -5448,6 +5618,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-4352-7111",
     name: "\u0e08\u0e38\u0e23\u0e35\u0e40\u0e27\u0e0a",
+    nameTh: "โรงพยาบาลจุรีเวช (Churivej)",
     tier: "Standard",
     city: null,
     province: "Roi Et",
@@ -5479,7 +5650,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-4352-7199",
-    name: "\u0e23\u0e49\u0e2d\u0e22\u0e40\u0e2d\u0e47\u0e14\u0e18\u0e19\u0e1a\u0e38\u0e23\u0e35",
+    name: "Roi Et - Thonburi Hospital",
+    nameTh: "ร้อยเอ็ดธนบุรี",
     tier: "Standard",
     city: null,
     province: "Roi Et",
@@ -5511,7 +5683,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3764-0000-99",
-    name: "\u0e40\u0e01\u0e29\u0e21\u0e23\u0e33\u0e29\u0e0e\u0e23\u0e4c \u0e2d\u0e34\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c\u0e40\u0e19\u0e0a\u0e31\u0e48\u0e19\u0e41\u0e19\u0e25 \u0e2d\u0e23\u0e31\u0e0d\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28",
+    name: "KASEMRAD INTERNATIONAL HOSPITAL ARANYAPRATHET",
+    nameTh: "เกษมรำษฎร์ อินเตอร์เนชั่นแนล อรัญประเทศ",
     tier: "Standard",
     city: null,
     province: "Sa Kaeo",
@@ -5543,7 +5716,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-4271-2800",
-    name: "\u0e23\u0e31\u0e01\u0e29\u0e4c\u0e2a\u0e01\u0e25",
+    name: "Rak Sakon Nakhon Hospital",
+    nameTh: "รักษ์สกล",
     tier: "Standard",
     city: null,
     province: "Sakon Nakhon",
@@ -5575,7 +5749,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-4217-6 000",
-    name: "\u0e2a\u0e01\u0e25\u0e19\u0e04\u0e23 (\u0e23\u0e31\u0e10\u0e1a\u0e33\u0e25)",
+    name: "Sakon Nakhon Hospital",
+    nameTh: "สกลนคร (รัฐบำล)",
     tier: "Standard",
     city: null,
     province: "Sakon Nakhon",
@@ -5607,7 +5782,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2033-2900",
-    name: "\u0e08\u0e38\u0e2c\u0e33\u0e23\u0e31\u0e15\u0e19\u0e4c 3   \u0e2d\u0e34\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c",
+    name: "Chularat 3 International Hospital",
+    nameTh: "จุฬำรัตน์ 3   อินเตอร์",
     tier: "Standard",
     city: null,
     province: "Samut Prakan",
@@ -5639,7 +5815,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2738-9900-9",
-    name: "\u0e08\u0e38\u0e2c\u0e33\u0e23\u0e31\u0e15\u0e19\u0e4c 9   \u0e41\u0e2d\u0e23\u0e4c\u0e1e\u0e2d\u0e23\u0e4c\u0e15",
+    name: "Chularat 9 Airport Hospital",
+    nameTh: "จุฬำรัตน์ 9   แอร์พอร์ต",
     tier: "Standard",
     city: null,
     province: "Samut Prakan",
@@ -5671,7 +5848,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2330-3030-2",
-    name: "\u0e1a\u0e33\u0e07\u0e19\u0e33 2",
+    name: "Bang Na 2 Hospital",
+    nameTh: "บำงนำ 2",
     tier: "Standard",
     city: null,
     province: "Samut Prakan",
@@ -5703,7 +5881,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2818-7555",
-    name: "\u0e1a\u0e33\u0e07\u0e1b\u0e30\u0e01\u0e2d\u0e01 3",
+    name: "Bangpakok 3 Hospital",
+    nameTh: "บำงปะกอก 3",
     tier: "Standard",
     city: null,
     province: "Samut Prakan",
@@ -5735,7 +5914,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2019-3222",
-    name: "\u0e1a\u0e33\u0e07\u0e1b\u0e30\u0e01\u0e2d\u0e01\u0e2a\u0e21\u0e38\u0e17\u0e23\u0e1b\u0e23\u0e33\u0e01\u0e33\u0e23",
+    name: "Bangpakok Samut Prakan Hospital",
+    nameTh: "บำงปะกอกสมุทรปรำกำร",
     tier: "Standard",
     city: null,
     province: "Samut Prakan",
@@ -5767,7 +5947,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2316-0026",
-    name: "\u0e1e\u0e23\u0e34\u0e49\u0e19\u0e0b\u0e4c \u0e2a\u0e38\u0e27\u0e23\u0e23\u0e13\u0e20\u0e39\u0e21\u0e34",
+    name: "Princ Hospital Suvarnabhumi",
+    nameTh: "พริ้นซ์ สุวรรณภูมิ",
     tier: "Standard",
     city: null,
     province: "Samut Prakan",
@@ -5799,7 +5980,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2361-1111",
-    name: "\u0e2a \u0e33\u0e42\u0e23\u0e07\u0e01\u0e33\u0e23\u0e41\u0e1e\u0e17\u0e22\u0e4c",
+    name: "Samrong Medical Hospital",
+    nameTh: "ส ำโรงกำรแพทย์",
     tier: "Standard",
     city: null,
     province: "Samut Prakan",
@@ -5831,7 +6013,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2761-5999",
-    name: "\u0e2a\u0e34\u0e19\u0e41\u0e1e\u0e17\u0e22\u0e4c \u0e40\u0e17\u0e1e\u0e33\u0e23\u0e31\u0e01\u0e29\u0e4c",
+    name: "Synphaet Theparak Hospital",
+    nameTh: "สินแพทย์ เทพำรักษ์",
     tier: "Standard",
     city: null,
     province: "Samut Prakan",
@@ -5863,7 +6046,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2818-9000",
-    name: "\u0e40\u0e1b\u0e33\u0e42\u0e25 \u0e1e\u0e23\u0e30\u0e1b\u0e23\u0e30\u0e41\u0e14\u0e07",
+    name: "Paolo Hospital Phra Pradaeng",
+    nameTh: "เปำโล พระประแดง",
     tier: "Standard",
     city: null,
     province: "Samut Prakan",
@@ -5895,7 +6079,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2389-2555",
-    name: "\u0e40\u0e1b\u0e33\u0e42\u0e25 \u0e2a\u0e21\u0e38\u0e17\u0e23\u0e1b\u0e23\u0e33\u0e01\u0e33\u0e23",
+    name: "Paolo Hospital Samut Prakan",
+    nameTh: "เปำโล สมุทรปรำกำร",
     tier: "Standard",
     city: null,
     province: "Samut Prakan",
@@ -5927,7 +6112,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2754-2800",
-    name: "\u0e40\u0e21\u0e37\u0e2d\u0e07\u0e2a\u0e21\u0e38\u0e17\u0e23\u0e1b\u0e39\u0e48\u0e40\u0e08\u0e49\u0e33 \u0e2f",
+    name: "Mueang Samut Pu Chao Hospital",
+    nameTh: "เมืองสมุทรปู่เจ้ำ ฯ",
     tier: "Standard",
     city: null,
     province: "Samut Prakan",
@@ -5959,7 +6145,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3441-9555",
-    name: "\u0e1a\u0e49\u0e33\u0e19\u0e41\u0e1e\u0e49\u0e27 (\u0e2d\u0e07\u0e04\u0e4c\u0e01\u0e33\u0e23\u0e21\u0e2b\u0e33\u0e0a\u0e19) (\u0e23\u0e31\u0e10\u0e1a\u0e33\u0e25)",
+    name: "Banphaeo General Hospital",
+    nameTh: "บ้ำนแพ้ว (องค์กำรมหำชน) (รัฐบำล)",
     tier: "Standard",
     city: null,
     province: "Samut Sakhon",
@@ -5991,7 +6178,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3442-4990",
-    name: "\u0e21\u0e2b\u0e33\u0e0a\u0e31\u0e22 1",
+    name: "Mahachai Hospital",
+    nameTh: "มหำชัย 1",
     tier: "Standard",
     city: null,
     province: "Samut Sakhon",
@@ -6023,7 +6211,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2810-3442",
-    name: "\u0e21\u0e2b\u0e33\u0e0a\u0e31\u0e22 2",
+    name: "Mahachai 2 Hospital",
+    nameTh: "มหำชัย 2",
     tier: "Standard",
     city: null,
     province: "Samut Sakhon",
@@ -6055,7 +6244,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3482-6709-29",
-    name: "\u0e27\u0e34\u0e0a\u0e31\u0e22\u0e40\u0e27\u0e0a \u0e2d\u0e34\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c\u0e40\u0e19\u0e0a\u0e31\u0e48\u0e19\u0e41\u0e19\u0e25 \u0e2a\u0e21\u0e38\u0e17\u0e23\u0e2a\u0e33\u0e04\u0e23",
+    name: "Vichaivej International Hospital Samutsakhon",
+    nameTh: "วิชัยเวช อินเตอร์เนชั่นแนล สมุทรสำคร",
     tier: "Standard",
     city: null,
     province: "Samut Sakhon",
@@ -6087,7 +6277,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-2431-0070",
-    name: "\u0e27\u0e34\u0e0a\u0e31\u0e22\u0e40\u0e27\u0e0a \u0e2d\u0e34\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c\u0e40\u0e19\u0e0a\u0e31\u0e48\u0e19\u0e41\u0e19\u0e25 \u0e2d\u0e49\u0e2d\u0e21\u0e19\u0e49\u0e2d\u0e22",
+    name: "Vichaivej Hospital International Omnoi",
+    nameTh: "วิชัยเวช อินเตอร์เนชั่นแนล อ้อมน้อย",
     tier: "Standard",
     city: null,
     province: "Samut Sakhon",
@@ -6119,7 +6310,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3411-6999",
-    name: "\u0e27\u0e34\u0e20\u0e33\u0e23\u0e33\u0e21 \u0e2a\u0e21\u0e38\u0e17\u0e23\u0e2a\u0e33\u0e04\u0e23",
+    name: "Vibharam Samut Sakhon Hospital",
+    nameTh: "วิภำรำม สมุทรสำคร",
     tier: "Standard",
     city: null,
     province: "Samut Sakhon",
@@ -6151,7 +6343,8 @@ export const hospitals: Hospital[] = [
   },
   {
     id: "0-3441-7999",
-    name: "\u0e40\u0e2d\u0e01\u0e0a\u0e31\u0e22",
+    name: "Ekachai Hospital",
+    nameTh: "เอกชัย",
     tier: "Standard",
     city: null,
     province: "Samut Sakhon",
@@ -6184,6 +6377,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-3621-8900",
     name: "\u0e21\u0e34\u0e15\u0e23\u0e20\u0e33\u0e1e\u0e40\u0e21\u0e42\u0e21\u0e40\u0e23\u0e35\u0e22\u0e25",
+    nameTh: "มิตรภำพเมโมเรียล",
     tier: "Standard",
     city: null,
     province: "Saraburi",
@@ -6216,6 +6410,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-3631-5555",
     name: "\u0e40\u0e01\u0e29\u0e21\u0e23\u0e33\u0e29\u0e0e\u0e23\u0e4c\u0e2a\u0e23\u0e30\u0e1a\u0e38\u0e23\u0e35",
+    nameTh: "เกษมรำษฎร์สระบุรี",
     tier: "Standard",
     city: null,
     province: "Saraburi",
@@ -6248,6 +6443,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-4563-1313-4",
     name: "\u0e1b\u0e23\u0e30\u0e0a\u0e33\u0e23\u0e31\u0e01\u0e29\u0e4c\u0e40\u0e27\u0e0a\u0e01\u0e33\u0e23",
+    nameTh: "ประชำรักษ์เวชกำร",
     tier: "Standard",
     city: null,
     province: "Si Sa Ket",
@@ -6280,6 +6476,7 @@ export const hospitals: Hospital[] = [
   {
     id: "045-968-888",
     name: "\u0e1e\u0e23\u0e34\u0e49\u0e19\u0e0b\u0e4c \u0e28\u0e23\u0e35\u0e2a\u0e30\u0e40\u0e01\u0e29",
+    nameTh: "พริ้นซ์ ศรีสะเกษ",
     tier: "Standard",
     city: null,
     province: "Si Sa Ket",
@@ -6312,6 +6509,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-7436-5780-90",
     name: "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e2b\u0e33\u0e14\u0e43\u0e2b\u0e0d\u0e48",
+    nameTh: "กรุงเทพหำดใหญ่",
     tier: "Standard",
     city: null,
     province: "Songkhla",
@@ -6344,6 +6542,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-7420-0200",
     name: "\u0e23\u0e33\u0e29\u0e0e\u0e23\u0e4c\u0e22\u0e34\u0e19\u0e14\u0e35",
+    nameTh: "รำษฎร์ยินดี",
     tier: "Standard",
     city: null,
     province: "Songkhla",
@@ -6376,6 +6575,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-7436-6966",
     name: "\u0e28\u0e34\u0e04\u0e23\u0e34\u0e19\u0e17\u0e23\u0e4c \u0e2b\u0e33\u0e14\u0e43\u0e2b\u0e0d\u0e48",
+    nameTh: "ศิครินทร์ หำดใหญ่",
     tier: "Standard",
     city: null,
     province: "Songkhla",
@@ -6408,6 +6608,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-7445-1024",
     name: "\u0e2a\u0e07\u0e02\u0e25\u0e33\u0e19\u0e04\u0e23\u0e34\u0e19\u0e17\u0e23\u0e4c (\u0e23\u0e31\u0e10\u0e1a\u0e33\u0e25)",
+    nameTh: "สงขลำนครินทร์ (รัฐบำล)",
     tier: "Standard",
     city: null,
     province: "Songkhla",
@@ -6440,6 +6641,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-5562-1502-7",
     name: "\u0e1e\u0e31\u0e12\u0e19\u0e40\u0e27\u0e0a\u0e2a\u0e38\u0e42\u0e02\u0e17\u0e31\u0e22",
+    nameTh: "พัฒนเวชสุโขทัย",
     tier: "Standard",
     city: null,
     province: "Sukhothai",
@@ -6472,6 +6674,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-3550-3531-5",
     name: "\u0e1e\u0e23\u0e0a\u0e31\u0e22",
+    nameTh: "พรชัย",
     tier: "Standard",
     city: null,
     province: "Suphan Buri",
@@ -6504,6 +6707,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-3555-2724-7",
     name: "\u0e27\u0e34\u0e20\u0e33\u0e27\u0e14\u0e35-\u0e1b\u0e34\u0e22\u0e30\u0e23\u0e33\u0e29\u0e0e\u0e23\u0e4c",
+    nameTh: "วิภำวดี-ปิยะรำษฎร์",
     tier: "Standard",
     city: null,
     province: "Suphan Buri",
@@ -6536,6 +6740,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-3550-0283-8",
     name: "\u0e28\u0e38\u0e20\u0e21\u0e34\u0e15\u0e23",
+    nameTh: "ศุภมิตร",
     tier: "Standard",
     city: null,
     province: "Suphan Buri",
@@ -6568,6 +6773,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-7795-6789",
     name: "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e2a\u0e38\u0e23\u0e33\u0e29\u0e0e\u0e23\u0e4c",
+    nameTh: "กรุงเทพสุรำษฎร์",
     tier: "Standard",
     city: null,
     province: "Surat Thani",
@@ -6600,6 +6806,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-7728-5701-5",
     name: "\u0e17\u0e31\u0e01\u0e29\u0e34\u0e13",
+    nameTh: "ทักษิณ",
     tier: "Standard",
     city: null,
     province: "Surat Thani",
@@ -6632,6 +6839,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-7724-5236-9",
     name: "\u0e1a\u0e49\u0e33\u0e19\u0e14\u0e2d\u0e19\u0e2d\u0e34\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c",
+    nameTh: "บ้ำนดอนอินเตอร์",
     tier: "Standard",
     city: null,
     province: "Surat Thani",
@@ -6664,6 +6872,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-7796-5889",
     name: "\u0e27\u0e31\u0e12\u0e19\u0e41\u0e1e\u0e17\u0e22\u0e4c \u0e2a\u0e21\u0e38\u0e22",
+    nameTh: "วัฒนแพทย์ สมุย",
     tier: "Standard",
     city: null,
     province: "Surat Thani",
@@ -6696,6 +6905,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-7728-2520-1",
     name: "\u0e28\u0e23\u0e35\u0e27\u0e34\u0e0a\u0e31\u0e22 \u0e2a\u0e38\u0e23\u0e33\u0e29\u0e0e\u0e23\u0e4c\u0e18\u0e33\u0e19\u0e35",
+    nameTh: "ศรีวิชัย สุรำษฎร์ธำนี",
     tier: "Standard",
     city: null,
     province: "Surat Thani",
@@ -6728,6 +6938,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-7741-4400-9",
     name: "\u0e44\u0e17\u0e22\u0e2d\u0e34\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c\u0e40\u0e19\u0e0a\u0e31\u0e48\u0e19\u0e41\u0e19\u0e25",
+    nameTh: "ไทยอินเตอร์เนชั่นแนล",
     tier: "Standard",
     city: null,
     province: "Surat Thani",
@@ -6760,6 +6971,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-5551-8200-22",
     name: "\u0e19\u0e04\u0e23\u0e41\u0e21\u0e48\u0e2a\u0e2d\u0e14 \u0e2d\u0e34\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c\u0e40\u0e19\u0e0a\u0e31\u0e48\u0e19\u0e41\u0e19\u0e25",
+    nameTh: "นครแม่สอด อินเตอร์เนชั่นแนล",
     tier: "Standard",
     city: null,
     province: "Tak",
@@ -6792,6 +7004,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-5553-3912-4",
     name: "\u0e41\u0e21\u0e48\u0e2a\u0e2d\u0e14-\u0e23\u0e33\u0e21",
+    nameTh: "แม่สอด-รำม",
     tier: "Standard",
     city: null,
     province: "Tak",
@@ -6824,6 +7037,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-7521-8988",
     name: "\u0e18\u0e19\u0e1a\u0e38\u0e23\u0e35\u0e15\u0e23\u0e31\u0e07 (\u0e40\u0e14\u0e34\u0e21\u0e0a\u0e37\u0e48\u0e2d \u0e17\u0e35\u0e2d\u0e33\u0e23\u0e4c\u0e1e\u0e35\u0e40\u0e2d\u0e0a)",
+    nameTh: "ธนบุรีตรัง (เดิมชื่อ ทีอำร์พีเอช)",
     tier: "Standard",
     city: null,
     province: "Trang",
@@ -6856,6 +7070,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-7520-5555",
     name: "\u0e27\u0e31\u0e12\u0e19\u0e41\u0e1e\u0e17\u0e22\u0e4c\u0e15\u0e23\u0e31\u0e07",
+    nameTh: "วัฒนแพทย์ตรัง",
     tier: "Standard",
     city: null,
     province: "Trang",
@@ -6888,6 +7103,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-3955-2777",
     name: "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e15\u0e23\u0e33\u0e14",
+    nameTh: "กรุงเทพตรำด",
     tier: "Standard",
     city: null,
     province: "Trat",
@@ -6920,6 +7136,7 @@ export const hospitals: Hospital[] = [
   {
     id: "045-250271-3",
     name: "\u0e1e\u0e23\u0e34\u0e49\u0e19\u0e0b\u0e4c \u0e2d\u0e38\u0e1a\u0e25\u0e23\u0e33\u0e0a\u0e18\u0e33\u0e19\u0e35",
+    nameTh: "พริ้นซ์ อุบลรำชธำนี",
     tier: "Standard",
     city: null,
     province: "Ubon Ratchathani",
@@ -6952,6 +7169,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-4595-8888",
     name: "\u0e21\u0e30\u0e40\u0e23\u0e47\u0e07\u0e0a\u0e35\u0e27\u0e33\u0e21\u0e34\u0e15\u0e23\u0e33",
+    nameTh: "มะเร็งชีวำมิตรำ",
     tier: "Standard",
     city: null,
     province: "Ubon Ratchathani",
@@ -6984,6 +7202,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-4528-0040-60",
     name: "\u0e23\u0e33\u0e0a\u0e40\u0e27\u0e0a\u0e2d\u0e38\u0e1a\u0e25\u0e23\u0e33\u0e0a\u0e18\u0e33\u0e19\u0e35",
+    nameTh: "รำชเวชอุบลรำชธำนี",
     tier: "Standard",
     city: null,
     province: "Ubon Ratchathani",
@@ -7016,6 +7235,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-4531-9295",
     name: "\u0e2a\u0e23\u0e23\u0e1e\u0e2a\u0e34\u0e17\u0e18\u0e34\u0e1b\u0e23\u0e30\u0e2a\u0e07\u0e04\u0e4c (\u0e23\u0e31\u0e10\u0e1a\u0e33\u0e25)",
+    nameTh: "สรรพสิทธิประสงค์ (รัฐบำล)",
     tier: "Standard",
     city: null,
     province: "Ubon Ratchathani",
@@ -7048,6 +7268,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-4526-0300",
     name: "\u0e2d\u0e38\u0e1a\u0e25\u0e23\u0e31\u0e01\u0e29\u0e4c\u0e18\u0e19\u0e1a\u0e38\u0e23\u0e35",
+    nameTh: "อุบลรักษ์ธนบุรี",
     tier: "Standard",
     city: null,
     province: "Ubon Ratchathani",
@@ -7080,6 +7301,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-4234-3111",
     name: "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e2d\u0e38\u0e14\u0e23",
+    nameTh: "กรุงเทพอุดร",
     tier: "Standard",
     city: null,
     province: "Udon Thani",
@@ -7112,6 +7334,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-4232-5999",
     name: "\u0e19\u0e2d\u0e23\u0e4c\u0e17\u0e2d\u0e35\u0e2a\u0e40\u0e17\u0e2d\u0e23\u0e4c\u0e19\u0e27\u0e31\u0e12\u0e19\u0e33",
+    nameTh: "นอร์ทอีสเทอร์นวัฒนำ",
     tier: "Standard",
     city: null,
     province: "Udon Thani",
@@ -7144,6 +7367,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-4234-2555",
     name: "\u0e40\u0e2d\u0e01\u0e2d\u0e38\u0e14\u0e23",
+    nameTh: "เอกอุดร",
     tier: "Standard",
     city: null,
     province: "Udon Thani",
@@ -7176,6 +7400,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-5604-9899",
     name: "\u0e1e\u0e23\u0e34\u0e49\u0e19\u0e0b\u0e4c \u0e2d\u0e38\u0e17\u0e31\u0e22\u0e18\u0e33\u0e19\u0e35",
+    nameTh: "พริ้นซ์ อุทัยธำนี",
     tier: "Standard",
     city: null,
     province: "Uthai Thani",
@@ -7208,6 +7433,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-73223600-4",
     name: "\u0e2a\u0e34\u0e42\u0e23\u0e23\u0e2a",
+    nameTh: "สิโรรส",
     tier: "Standard",
     city: null,
     province: "Yala",
@@ -7240,6 +7466,7 @@ export const hospitals: Hospital[] = [
   {
     id: "0-4571-2141-2",
     name: "\u0e23\u0e27\u0e21\u0e41\u0e1e\u0e17\u0e22\u0e4c \u0e22\u0e42\u0e2a\u0e18\u0e23",
+    nameTh: "รวมแพทย์ ยโสธร",
     tier: "Standard",
     city: null,
     province: "Yasothon",

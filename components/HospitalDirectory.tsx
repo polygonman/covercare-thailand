@@ -60,6 +60,9 @@ function PremierCard({ h }: { h: Hospital }) {
             )}
           </div>
           <h3 className="font-semibold text-slate-900 text-base leading-snug">{h.name}</h3>
+          {h.nameTh && (
+            <p className="text-xs text-slate-400 mt-0.5 leading-snug">{h.nameTh}</p>
+          )}
           <div className="flex items-center gap-1.5 mt-1 text-sm text-slate-500">
             <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
             <span>{h.city || h.province}, Thailand</span>
@@ -138,7 +141,9 @@ function StandardRow({ h }: { h: Hospital }) {
     <div className="flex items-center gap-3 py-2.5 border-b border-slate-50 last:border-0 hover:bg-slate-50/50 px-3 -mx-3 rounded-lg transition-colors">
       <div className="flex-1 min-w-0">
         <span className="text-sm font-medium text-slate-800 truncate block">{h.name}</span>
-        <span className="text-xs text-slate-400">{h.province}</span>
+        <span className="text-xs text-slate-400">
+          {h.nameTh ? `${h.nameTh} · ` : ""}{h.province}
+        </span>
       </div>
       <StarRating rating={h.googleRating} />
       {h.mapsUrl ? (
