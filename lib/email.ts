@@ -7,7 +7,7 @@ export async function sendLeadNotification(lead: Lead) {
   const scoreLabel = lead.score >= 70 ? '🔥 HOT' : lead.score >= 40 ? '⚡ WARM' : '❄️ COLD'
 
   await resend.emails.send({
-    from: 'CoverCare Thailand <leads@thaicovercare.com>',
+    from: 'CoverCare Thailand <tonkla@thaicovercare.com>',
     to: 'covercareTH@gmail.com',
     subject: `[${scoreLabel}] New Lead: ${lead.name} (${lead.segment})`,
     html: `
@@ -30,7 +30,7 @@ export async function sendLeadNotification(lead: Lead) {
 
 export async function sendLeadConfirmation(lead: Lead) {
   await resend.emails.send({
-    from: 'Tonkla at CoverCare Thailand <covercareTH@gmail.com>',
+    from: 'Tonkla at CoverCare Thailand <tonkla@thaicovercare.com>',
     to: lead.email,
     subject: "I'll be in touch soon — CoverCare Thailand",
     html: `
