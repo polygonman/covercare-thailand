@@ -7,7 +7,7 @@ const schema = z.object({
   name: z.string().min(2),
   email: z.string().email(),
   whatsapp: z.string().min(7),
-  segment: z.enum(["corporate", "nomad", "tech", "retiree"]),
+  segment: z.enum(["corporate", "nomad", "tech", "retiree", "visitor"]),
   needs: z.array(z.string()).min(1),
   message: z.string().optional(),
 })
