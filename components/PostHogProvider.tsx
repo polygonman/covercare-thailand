@@ -9,10 +9,13 @@ export default function PostHogProvider({ children }: { children: React.ReactNod
     const key = process.env.NEXT_PUBLIC_POSTHOG_KEY
     if (!key) return // skip when not configured
     posthog.init(key, {
-      api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST ?? "https://app.posthog.com",
-      capture_pageview: false, // handled manually via usePathname
+      // US PostHog ingestion endpoint — avoids redirect delay from app.posthog.com
+      api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST ?? "https://us.i.posthog.com",
+      capture_pageview: false,  // handled manually via PageViewTracker
       capture_pageleave: true,
       persistence: "localStorage",
+      // Web Vitals (LCP, INP, CLS) for PostHog performance monitoring
+      capture_performance: { web_vitals: true },
     })
   }, [])
 

@@ -13,8 +13,6 @@ declare global {
   interface Window {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     gtag?: (...args: any[]) => void
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    posthog?: any
   }
 }
 
@@ -23,11 +21,13 @@ type EventProperties = Record<string, string | number | boolean | null | undefin
 export function track(event: string, properties: EventProperties = {}): void {
   if (typeof window === "undefined") return
 
-  // PostHog
+  // PostHog — import directly so it works with the npm-initialized instance
   try {
-    window.posthog?.capture(event, properties)
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const posthog = require("posthog-js").default
+    if (posthog?.__loaded) posthog.capture(event, properties)
   } catch {
-    // silently ignore
+    // silently ignore (SSR / not initialized)
   }
 
   // GA4
