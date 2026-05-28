@@ -9,8 +9,10 @@ export default function PostHogProvider({ children }: { children: React.ReactNod
     const key = process.env.NEXT_PUBLIC_POSTHOG_KEY
     if (!key) return // skip when not configured
     posthog.init(key, {
-      // US PostHog ingestion endpoint — avoids redirect delay from app.posthog.com
-      api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST ?? "https://us.i.posthog.com",
+      // Reverse-proxied through our own domain → bypasses ad blockers
+      // /ingest rewrites to us.i.posthog.com via next.config.ts
+      api_host: "/ingest",
+      ui_host: "https://us.posthog.com",
       capture_pageview: false,  // handled manually via PageViewTracker
       capture_pageleave: true,
       persistence: "localStorage",
