@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import FloatingCTA from "@/components/FloatingCTA"
@@ -145,12 +146,12 @@ export default function AboutPage() {
 
             {/* CTA */}
             <div className="text-center">
-              <a
+              <Link
                 href="/#contact"
                 className="inline-block bg-sky-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-sky-700 transition-colors"
               >
                 Talk to our team
-              </a>
+              </Link>
             </div>
           </div>
         </section>

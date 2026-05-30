@@ -109,7 +109,6 @@ export default function CoverageChecker() {
   }, [query])
 
   const hasQuery = query.trim().length > 0
-  const noResults = hasQuery && results.length === 0
 
   const waUrl = `https://wa.me/66611965363?text=${encodeURIComponent(
     `Hi! Is "${query.trim()}" covered under the Allianz Ayudhya Life network?`
