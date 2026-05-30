@@ -10,7 +10,7 @@ const faqs = [
   },
   {
     q: "Can I use my insurance at any hospital?",
-    a: "Yes, for emergency reimbursement. For direct billing (cashless treatment), I'll help you find the nearest in-network hospital — Allianz covers 50+ major hospitals across Thailand.",
+    a: "Yes, for emergency reimbursement. For direct billing (cashless treatment), our team will help you find the nearest in-network hospital — Allianz covers 226+ hospitals across Thailand.",
   },
   {
     q: "How does the claims process work?",

@@ -22,7 +22,7 @@ const plans = [
     name: "Basic Inpatient",
     price: "From 15,000 THB/yr",
     desc: "Hospitalisation coverage for emergency and planned admissions at Allianz network hospitals.",
-    features: ["Inpatient (IPD) coverage", "Emergency room", "Surgery & specialist", "50+ hospital network"],
+    features: ["Inpatient (IPD) coverage", "Emergency room", "Surgery & specialist", "226+ hospital network"],
     highlight: false,
   },
   {

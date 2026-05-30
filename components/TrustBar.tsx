@@ -2,7 +2,7 @@ import { Award, Building2, Globe, Zap, FileCheck } from "lucide-react"
 
 const items = [
   { icon: Award,     label: "Allianz Authorised" },
-  { icon: Building2, label: "50+ Hospitals" },
+  { icon: Building2, label: "226+ Hospitals" },
   { icon: Globe,     label: "English Support" },
   { icon: Zap,       label: "Reply in 8 min" },
   { icon: FileCheck, label: "Direct Billing" },
