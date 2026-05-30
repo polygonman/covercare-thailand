@@ -104,10 +104,10 @@ export default function ContactForm() {
           Thank you!
         </h3>
         <p className="mb-6 text-sm" style={{ color: "var(--ink-600)", maxWidth: 320, margin: "8px auto 24px" }}>
-          I&apos;ll personally follow up within 24 hours. In the meantime, feel free to WhatsApp me directly.
+          Our team will personally follow up within 24 hours. In the meantime, feel free to WhatsApp us directly.
         </p>
         <a
-          href={`https://wa.me/66611965363?text=${encodeURIComponent("Hi Tonkla, I just submitted the form on your website!")}`}
+          href={`https://wa.me/66611965363?text=${encodeURIComponent("Hi! I just submitted the form on your website!")}`}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-opacity hover:opacity-90"

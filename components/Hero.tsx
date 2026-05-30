@@ -131,8 +131,8 @@ function HeroCalc() {
 
 const trustStats = [
   { icon: Award, label: "Allianz Ayudhya Authorised" },
-  { icon: Building2, label: "50+ Hospital Network" },
-  { icon: Clock, label: "24-Hour Response" },
+  { icon: Building2, label: "226+ Hospital Network" },
+  { icon: Clock, label: "Direct billing — pay nothing upfront" },
 ]
 
 export default function Hero() {
@@ -156,13 +156,13 @@ export default function Hero() {
             </div>
 
             <h1 className="text-4xl md:text-5xl font-black mb-5 leading-[1.05]" style={{ color: "var(--navy-950)", letterSpacing: "-0.04em" }}>
-              Health insurance,<br />
-              <span className="gradient-text">handled online.</span>
+              Health insurance for<br />
+              <span className="gradient-text">foreigners in Thailand.</span>
             </h1>
 
             <p className="text-lg leading-relaxed mb-8 max-w-lg" style={{ color: "var(--ink-600)" }}>
-              Quote, sign, and pay in under ten minutes. Direct hospital billing across 50+ private hospitals.
-              Real humans on WhatsApp when it matters.
+              We&apos;re a small team — claims specialist, hospital nurse, Allianz-authorised advisor — who&apos;ve worked alongside foreigners in Thailand for years.
+              Plan picked, claims paid, no hold music.
             </p>
 
             <div className="flex flex-wrap gap-3 mb-10">
@@ -171,10 +171,10 @@ export default function Hero() {
                 className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all duration-150 hover:opacity-90"
                 style={{ background: "var(--sky-500)", boxShadow: "var(--glow-sky-soft)" }}
               >
-                Get instant quote <ArrowRight size={14} strokeWidth={2.5} />
+                Talk to our team <ArrowRight size={14} strokeWidth={2.5} />
               </Link>
               <a
-                href={`https://wa.me/66611965363?text=${encodeURIComponent("Hi Tonkla, I'm interested in expat health insurance in Thailand.")}`}
+                href={`https://wa.me/66611965363?text=${encodeURIComponent("Hi! I'm interested in health insurance for foreigners in Thailand.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-150 text-navy-800"
@@ -206,7 +206,7 @@ export default function Hero() {
 
         {/* Meta pills */}
         <div className="flex flex-wrap gap-3 mt-10 justify-center md:justify-start">
-          {["Live · reply in 8 min", "50+ hospitals covered", "5+ yr claims team"].map((label, i) => (
+          {["Live · reply in 8 min", "226+ hospitals covered", "5+ yr claims team"].map((label, i) => (
             <span
               key={i}
               className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full text-ink-700"

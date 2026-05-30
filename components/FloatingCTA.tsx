@@ -5,10 +5,10 @@ import { MessageCircle } from "lucide-react"
 export default function FloatingCTA() {
   return (
     <a
-      href={`https://wa.me/66611965363?text=${encodeURIComponent("Hi Tonkla, I found your website and I'm interested in health insurance in Thailand.")}`}
+      href={`https://wa.me/66611965363?text=${encodeURIComponent("Hi! I found your website and I'm interested in health insurance in Thailand.")}`}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Chat with Tonkla"
+      aria-label="Chat with our team"
       className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-5 py-3 rounded-full transition-all duration-200 hover:scale-105 cursor-pointer"
       style={{
         background: "var(--glass-bg-strong)",
@@ -25,7 +25,7 @@ export default function FloatingCTA() {
       >
         <MessageCircle size={15} strokeWidth={2.5} />
       </span>
-      <span className="text-sm font-semibold hidden sm:inline text-navy-800">Chat with Tonkla</span>
+      <span className="text-sm font-semibold hidden sm:inline text-navy-800">Chat with our team</span>
     </a>
   )
 }

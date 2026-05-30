@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     "retirement visa insurance Thailand",
     "English speaking insurance agent Thailand",
   ],
-  authors: [{ name: "Tonkla", url: BASE }],
+  authors: [{ name: "CoverCare Thailand", url: BASE }],
   openGraph: {
     type: "website",
     locale: "en_US",

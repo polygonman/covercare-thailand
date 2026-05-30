@@ -8,7 +8,7 @@ import HospitalRecommender from "@/components/HospitalRecommender"
 
 export const metadata: Metadata = {
   title: "Contact — CoverCare Thailand",
-  description: "Book a free consultation with Tonkla, your English-speaking health insurance advisor in Thailand. WhatsApp, LINE, or email.",
+  description: "Book a free consultation with our team — English-speaking health insurance advisors for foreigners in Thailand. WhatsApp, LINE, or email.",
 }
 
 export default function ContactPage() {

@@ -118,7 +118,7 @@ function scoreHospital(h: Hospital, specialty: string | null): number {
 // ─── WhatsApp link ────────────────────────────────────────────────────────────
 function whatsappLink(hospital: string, province: string, need: string): string {
   const text = encodeURIComponent(
-    `Hi Tonkla! I'm in ${province} and need ${need} care. Can you recommend ${hospital}? I'd like to know more about coverage options.`
+    `Hi! I'm in ${province} and need ${need} care. Can you recommend ${hospital}? I'd like to know more about coverage options.`
   )
   return `https://wa.me/66611965363?text=${text}`
 }
@@ -235,7 +235,7 @@ function ResultCard({
           className="flex-1 inline-flex items-center justify-center gap-2 bg-navy-700 hover:bg-navy-800 text-white text-sm font-semibold py-2.5 px-4 rounded-xl transition-colors"
         >
           <MessageCircle className="w-4 h-4" />
-          Ask Tonkla
+          Ask our team
         </a>
         {h.mapsUrl && (
           <a
@@ -415,7 +415,7 @@ export default function HospitalRecommender() {
             {/* Fallback note */}
             {selectedProvince && !hospitals.some((h) => h.tier === "Premier" && h.province === selectedProvince) && (
               <p className="text-xs text-slate-400 text-center mt-4">
-                No Premier hospitals in {selectedProvince} — showing nearest high-quality options. Tonkla can arrange direct billing at any of these.
+                No Premier hospitals in {selectedProvince} — showing nearest high-quality options. Our team can arrange direct billing at any of these.
               </p>
             )}
           </div>

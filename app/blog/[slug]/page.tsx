@@ -94,12 +94,12 @@ export default async function ArticlePage({ params }: Props) {
                 Book Free Consultation
               </Link>
               <a
-                href={`https://wa.me/66611965363?text=${encodeURIComponent(`Hi Tonkla, I just read your article "${article.title}" and have a question.`)}`}
+                href={`https://wa.me/66611965363?text=${encodeURIComponent(`Hi! I just read your article "${article.title}" and have a question.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors"
               >
-                WhatsApp Me
+                WhatsApp our team
               </a>
             </div>
           </div>

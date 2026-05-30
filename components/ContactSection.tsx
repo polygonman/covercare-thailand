@@ -3,10 +3,10 @@ import { Mail, MessageCircle, Phone, Calendar, ArrowRight } from "lucide-react"
 
 const channels = [
   {
-    href: `https://wa.me/66611965363?text=${encodeURIComponent("Hi Tonkla, I'd like to discuss health insurance options.")}`,
+    href: `https://wa.me/66611965363?text=${encodeURIComponent("Hi! I'd like to discuss health insurance options.")}`,
     iconStyle: { background: "linear-gradient(160deg, #2EDF74, #25D366)" },
     icon: MessageCircle,
-    label: "WhatsApp Tonkla",
+    label: "WhatsApp our team",
     value: "+66 61 196 5363 · reply in 8 min",
     external: true,
   },

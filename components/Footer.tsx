@@ -10,7 +10,7 @@ export default function Footer() {
           <div>
             <Image src="/logo-wordmark-light.svg" alt="covercare" width={120} height={28} className="mb-4" />
             <p className="text-sm leading-relaxed" style={{ color: "var(--navy-300)" }}>
-              Authorised Allianz Ayudhya advisor specialising in health insurance for foreigners and digital nomads in Thailand.
+              By the CoverCare team. Authorised Allianz Ayudhya advisor for foreigners in Thailand.
             </p>
           </div>
 
@@ -21,7 +21,7 @@ export default function Footer() {
               <Link href="/services" className="hover:text-white transition-colors" style={{ color: "var(--navy-300)" }}>Services</Link>
               <Link href="/hospitals" className="hover:text-white transition-colors" style={{ color: "var(--navy-300)" }}>Hospital Network</Link>
               <Link href="/#faq" className="hover:text-white transition-colors" style={{ color: "var(--navy-300)" }}>FAQ</Link>
-              <Link href="/#segments" className="hover:text-white transition-colors" style={{ color: "var(--navy-300)" }}>Who I Help</Link>
+              <Link href="/#segments" className="hover:text-white transition-colors" style={{ color: "var(--navy-300)" }}>Who we help</Link>
             </div>
           </div>
 
@@ -31,7 +31,7 @@ export default function Footer() {
             <div className="flex flex-col gap-2.5 text-sm">
               <Link href="/blog" className="hover:text-white transition-colors" style={{ color: "var(--navy-300)" }}>Blog & Guides</Link>
               <Link href="/guide" className="hover:text-white transition-colors" style={{ color: "var(--navy-300)" }}>Free PDF Guide</Link>
-              <Link href="/about" className="hover:text-white transition-colors" style={{ color: "var(--navy-300)" }}>About Tonkla</Link>
+              <Link href="/about" className="hover:text-white transition-colors" style={{ color: "var(--navy-300)" }}>About our team</Link>
               <Link href="/contact" className="hover:text-white transition-colors" style={{ color: "var(--navy-300)" }}>Contact</Link>
             </div>
           </div>

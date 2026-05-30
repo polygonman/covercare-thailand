@@ -112,7 +112,7 @@ export default function CoverageChecker() {
   const noResults = hasQuery && results.length === 0
 
   const waUrl = `https://wa.me/66611965363?text=${encodeURIComponent(
-    `Hi Tonkla! Is "${query.trim()}" covered under the Allianz Ayudhya Life network?`
+    `Hi! Is "${query.trim()}" covered under the Allianz Ayudhya Life network?`
   )}`
 
   return (
@@ -173,7 +173,7 @@ export default function CoverageChecker() {
                 </p>
                 <p className="text-xs text-slate-500 mb-5 max-w-xs mx-auto">
                   This hospital may not be in-network, or the name may be spelled
-                  differently. Ask Tonkla to check — takes 2 minutes.
+                  differently. Ask our team to check — takes 2 minutes.
                 </p>
                 <a
                   href={waUrl}
@@ -181,7 +181,7 @@ export default function CoverageChecker() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-navy-700 hover:bg-navy-800 text-white text-sm font-semibold px-5 py-3 rounded-xl transition-colors shadow-sm"
                 >
-                  Ask Tonkla on WhatsApp
+                  Ask our team on WhatsApp
                   <ChevronRight className="w-4 h-4" />
                 </a>
               </div>

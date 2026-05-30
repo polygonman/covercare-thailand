@@ -38,7 +38,7 @@ export default function GuidePage() {
                 </h1>
                 <p className="text-lg text-gray-600 mb-6">
                   Everything you need to know before buying a policy — written in plain English by
-                  Tonkla, an Allianz Ayudhya advisor based in Thailand.
+                  the CoverCare team, Allianz Ayudhya-authorised advisors based in Thailand.
                 </p>
                 <ul className="flex flex-col gap-2 mb-8">
                   {chapters.map((ch) => (

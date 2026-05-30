@@ -73,14 +73,14 @@ export default function Services() {
               8<span className="text-2xl" style={{ color: "var(--sky-500)" }}>min</span>
             </div>
             <h3 className="font-bold text-navy-900">Median WhatsApp reply</h3>
-            <p className="text-sm" style={{ color: "var(--ink-500)" }}>Tonkla & team. Not a call centre.</p>
+            <p className="text-sm" style={{ color: "var(--ink-500)" }}>Our team. Not a call centre.</p>
           </div>
 
           {/* Small: network */}
           <div className="rounded-3xl p-6 flex flex-col gap-1" style={glassTile}>
             <span className="eyebrow" style={{ color: "var(--ink-400)" }}>03 / Hospital network</span>
             <div className="text-5xl font-black mt-2" style={{ fontFamily: "var(--font-jakarta)", color: "var(--navy-700)", letterSpacing: "-0.04em" }}>
-              50<span className="text-2xl" style={{ color: "var(--sky-500)" }}>+</span>
+              226<span className="text-2xl" style={{ color: "var(--sky-500)" }}>+</span>
             </div>
             <h3 className="font-bold text-navy-900">Direct-billed hospitals</h3>
             <div className="flex flex-wrap gap-1.5 mt-1">
@@ -143,8 +143,8 @@ export default function Services() {
         <div className="lg:hidden grid sm:grid-cols-2 gap-5">
           {[
             { n: "01", title: "Online in 10 min", desc: "Digital signature, card payment, policy active immediately." },
-            { n: "02", title: "8 min reply time", desc: "Tonkla & team on WhatsApp. Not a call centre." },
-            { n: "03", title: "50+ hospitals", desc: "Direct billing to Bumrungrad, BNH, Samitivej, and more." },
+            { n: "02", title: "8 min reply time", desc: "Our team on WhatsApp. Not a call centre." },
+            { n: "03", title: "226+ hospitals", desc: "Direct billing to Bumrungrad, BNH, Samitivej, and more." },
             { n: "04", title: "3–7 day claims", desc: "Our nurse and claims specialist handle every visit." },
             { n: "05", title: "Claims & Hospital Support", desc: "Our team — including an experienced nurse — handles direct billing and guides every claim." },
             { n: "06", title: "Foreigner-Specific Guidance", desc: "Tourist visa, retirement visa, or work permit — we'll explain your options." },

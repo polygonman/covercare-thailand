@@ -122,7 +122,7 @@ function ScoreBar({ label, value }: { label: string; value: number | null }) {
 function PremierCard({ h }: { h: Hospital }) {
   const isJCI = h.accreditation.includes("JCI")
   const waText = encodeURIComponent(
-    `Hi Tonkla! I'm interested in ${h.name} in ${h.province}. Can you tell me about coverage?`
+    `Hi! I'm interested in ${h.name} in ${h.province}. Can you tell me about coverage?`
   )
 
   return (
@@ -203,7 +203,7 @@ function PremierCard({ h }: { h: Hospital }) {
           className="flex-1 inline-flex items-center justify-center gap-2 bg-navy-700 hover:bg-navy-800 text-white text-sm font-semibold py-2.5 px-4 rounded-xl transition-colors"
         >
           <MessageCircle className="w-4 h-4" />
-          Ask Tonkla
+          Ask our team
         </a>
         {h.mapsUrl && (
           <a href={h.mapsUrl} target="_blank" rel="noopener noreferrer"
@@ -282,7 +282,7 @@ export default async function ProvincePage({
     .slice(0, 6)
 
   const waText = encodeURIComponent(
-    `Hi Tonkla! I'm in ${province} and looking for health insurance. Can you help?`
+    `Hi! I'm in ${province} and looking for health insurance. Can you help?`
   )
 
   return (
@@ -381,7 +381,7 @@ export default async function ProvincePage({
               Not sure which hospital is right for you?
             </h2>
             <p className="text-sky-100 mb-6 max-w-xl mx-auto">
-              Tonkla and team can recommend the best hospital for your specific situation in {province} — and set up direct billing so you pay nothing upfront.
+              Our team can recommend the best hospital for your specific situation in {province} — and set up direct billing so you pay nothing upfront.
             </p>
             <a
               href={`https://wa.me/66611965363?text=${waText}`}
@@ -390,7 +390,7 @@ export default async function ProvincePage({
               className="inline-flex items-center gap-2 bg-white text-navy-800 font-semibold py-3 px-6 rounded-xl hover:bg-sky-50 transition-colors"
             >
               <MessageCircle className="w-5 h-5" />
-              Ask Tonkla on WhatsApp
+              Ask our team on WhatsApp
             </a>
           </section>
 
