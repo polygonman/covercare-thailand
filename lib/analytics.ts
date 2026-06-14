@@ -33,8 +33,11 @@ export function track(event: string, properties: EventProperties = {}): void {
   // GA4
   try {
     if (event === "$pageview") {
+      const path = properties.$current_url ?? window.location.pathname
       window.gtag?.("event", "page_view", {
-        page_path: properties.$current_url ?? window.location.pathname,
+        // GA4-native params — page_location wants the full URL
+        page_location: window.location.origin + path,
+        page_title: document.title,
       })
     } else {
       window.gtag?.("event", event, properties)

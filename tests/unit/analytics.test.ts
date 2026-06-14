@@ -18,9 +18,12 @@ describe("track()", () => {
     expect(gtag).toHaveBeenCalledWith("event", "form_started", {})
   })
 
-  it("maps $pageview to GA4 page_view with page_path", () => {
+  it("maps $pageview to GA4 page_view with native page_location/page_title", () => {
     track("$pageview", { $current_url: "/blog/x" })
-    expect(gtag).toHaveBeenCalledWith("event", "page_view", { page_path: "/blog/x" })
+    expect(gtag).toHaveBeenCalledWith("event", "page_view", {
+      page_location: window.location.origin + "/blog/x",
+      page_title: document.title,
+    })
   })
 
   it("does not throw when gtag is absent", () => {

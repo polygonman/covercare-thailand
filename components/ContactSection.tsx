@@ -1,5 +1,6 @@
 import ContactForm from "@/components/ContactForm"
 import WhatsAppLink from "@/components/WhatsAppLink"
+import LineLink from "@/components/LineLink"
 import { Mail, MessageCircle, Phone, Calendar, ArrowRight } from "lucide-react"
 
 const channels = [
@@ -98,12 +99,19 @@ export default function ContactSection() {
                   </>
                 )
 
-                // WhatsApp gets click tracking so chats count as leads
+                // WhatsApp / LINE get click tracking so chats count as leads
                 if (href.includes("wa.me")) {
                   return (
                     <WhatsAppLink key={label} source="contact_section" href={href} className={tileClass} style={glassTile}>
                       {inner}
                     </WhatsAppLink>
+                  )
+                }
+                if (href.includes("line.me")) {
+                  return (
+                    <LineLink key={label} source="contact_section" href={href} className={tileClass} style={glassTile}>
+                      {inner}
+                    </LineLink>
                   )
                 }
 

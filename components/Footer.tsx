@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import WhatsAppLink from "@/components/WhatsAppLink"
+import LineLink from "@/components/LineLink"
 
 export default function Footer() {
   return (
@@ -49,7 +50,14 @@ export default function Footer() {
               >
                 WhatsApp +66 61 196 5363
               </WhatsAppLink>
-              <span style={{ color: "var(--navy-300)" }}>LINE @covercareTH</span>
+              <LineLink
+                source="footer"
+                href="https://line.me/ti/p/~@covercareTH"
+                className="hover:text-white transition-colors"
+                style={{ color: "var(--navy-300)" }}
+              >
+                LINE @covercareTH
+              </LineLink>
               <a href="mailto:covercareTH@gmail.com" className="hover:text-white transition-colors" style={{ color: "var(--navy-300)" }}>
                 covercareTH@gmail.com
               </a>
