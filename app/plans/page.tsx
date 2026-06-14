@@ -2,8 +2,8 @@ import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import FloatingCTA from "@/components/FloatingCTA"
 import QuickRate from "@/components/QuickRate"
-import { PLANS, annualPremium, thb } from "@/lib/quickRates"
-import { MessageCircle, ShieldCheck, Stethoscope, HeartPulse, Activity, PlusCircle, Hospital, Check } from "lucide-react"
+import { PLANS, annualPremium, thb, BENEFITS, BROCHURES } from "@/lib/quickRates"
+import { MessageCircle, ShieldCheck, Stethoscope, HeartPulse, Activity, PlusCircle, Hospital, Check, FileDown } from "lucide-react"
 
 export const metadata = {
   title: "Plans & Rates — My Double Care & First Class Ultra | CoverCare Thailand",
@@ -46,12 +46,24 @@ function PlanCard({ id }: { id: string }) {
         <div className="text-sm text-ink-500">per year · {p.network}</div>
       </div>
       <p className="text-sm leading-relaxed" style={{ color: "var(--ink-600)" }}>{p.blurb}</p>
+      <ul className="flex flex-col gap-1.5">
+        {BENEFITS[p.product].slice(0, 4).map((b) => (
+          <li key={b} className="flex items-start gap-2 text-xs" style={{ color: "var(--ink-600)" }}>
+            <Check size={14} style={{ color: "var(--sky-500)", flexShrink: 0, marginTop: 1 }} /> {b}
+          </li>
+        ))}
+      </ul>
       <div className="mt-auto pt-2" style={{ borderTop: "1px solid var(--glass-border)" }}>
         <div className="text-xs text-ink-400 mt-3">Annual premium, e.g. age 35 male</div>
         <div className="text-xl font-bold text-navy-800">{ref35 ? thb(ref35) : "—"} <span className="text-sm font-medium text-ink-500">/ year</span></div>
         <a href={wa(`Hi! I'd like a real quote for ${p.productName} ${p.tier} (${p.coverageLabel.replace(" / year", "/yr")}, ${p.network}).`)} target="_blank" rel="noopener noreferrer" className="mt-3 flex items-center justify-center gap-2 w-full py-2.5 rounded-full text-sm font-semibold text-white transition-opacity hover:opacity-90" style={{ background: "linear-gradient(160deg, #2EDF74, #25D366)" }}>
           <MessageCircle size={14} strokeWidth={2.5} /> Get my quote
         </a>
+        {BROCHURES[p.id] && (
+          <a href={BROCHURES[p.id]} target="_blank" rel="noopener noreferrer" className="mt-2 flex items-center justify-center gap-2 w-full py-2 rounded-full text-xs font-semibold transition-opacity hover:opacity-80" style={{ color: "var(--navy-700)", background: "var(--ink-100)" }}>
+            <FileDown size={13} strokeWidth={2.5} /> Download brochure (PDF)
+          </a>
+        )}
       </div>
     </div>
   )

@@ -53,6 +53,43 @@ export const PLANS: Plan[] = [
   { id:"fc120", product:"fc", productName:"My First Class Ultra", tier:"Beyond Platinum", coverage:120_000_000, coverageLabel:"฿120M / year", network:"BDMS network", blurb:"Highest tier — ฿120M a year across the BDMS network." },
 ]
 
+// OPD (out-patient) add-on annual premium (THB) by band [m, f].
+// mdc = OPDMDC at the ฿1,000/visit cap, 30 visits/yr. fc = OPDMFCPN @All, as-charged, 30 visits/yr.
+const OPD_RATES: Record<"mdc" | "fc", readonly (readonly [number, number])[]> = {
+  mdc: [[3750,3750],[3750,5250],[3750,5250],[3750,5250],[3750,5250],[3750,5250],[3750,5250],[3750,5250],[3750,5250],[3750,5250],[11250,15750],[18750,22500]],
+  fc: [[28685,31046],[20639,25338],[18342,25431],[23613,33741],[27347,40194],[33219,44739],[43242,54716],[49469,62180],[60366,75359],[64778,81302],[69549,90095],[70398,91613]],
+}
+export function opdPremium(product: "mdc" | "fc", age: number, gender: Gender): number {
+  const row = OPD_RATES[product][bandIndex(age)]
+  return gender === "m" ? row[0] : row[1]
+}
+
+export const BROCHURES: Record<string, string> = {
+  mdc8: "/brochures/my-double-care.pdf", mdc15: "/brochures/my-double-care.pdf", mdc30: "/brochures/my-double-care.pdf",
+  fc60: "/brochures/first-class-ultra-bdms.pdf", fc80: "/brochures/first-class-ultra-all.pdf",
+  fc100: "/brochures/first-class-ultra-all.pdf", fc120: "/brochures/first-class-ultra-bdms.pdf",
+}
+
+export const BENEFITS: Record<"mdc" | "fc", string[]> = {
+  mdc: [
+    "As-charged in-patient care at any hospital in Thailand",
+    "Annual limit doubles on first critical illness (e.g. ฿15M → ฿30M)",
+    "Room & board, ICU, surgery and specialist fees",
+    "Cancer treatment and kidney dialysis covered",
+    "Direct billing — pay nothing upfront",
+  ],
+  fc: [
+    "Ultra-high annual limit — ฿60M to ฿120M",
+    "As-charged in-patient, any hospital or the BDMS network",
+    "Private room, no sub-limits on core treatment",
+    "Dental cover on Beyond Platinum tiers",
+    "Dedicated claims support and direct billing",
+  ],
+}
+
+// Optional riders offered in the plan builder (OPD is handled separately with its own price)
+export const RIDERS = ["Critical Illness", "Hospital Cash", "Personal Accident", "Dental", "Premium Waiver"]
+
 export function annualPremium(planId: string, age: number, gender: Gender): number | null {
   const t = RATES[planId]
   if (!t) return null

@@ -79,14 +79,14 @@ export default function HospitalsPage() {
           </div>
         </div>
 
+        {/* Interactive map + directory — map shown first */}
+        <HospitalDirectory hospitals={hospitals} provinces={provinces} />
+
         {/* Coverage checker */}
         <CoverageChecker />
 
         {/* Recommender */}
         <HospitalRecommender />
-
-        {/* Directory */}
-        <HospitalDirectory hospitals={hospitals} provinces={provinces} />
       </main>
       <Footer />
       <FloatingCTA />
