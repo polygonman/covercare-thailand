@@ -45,12 +45,28 @@ export function track(event: string, properties: EventProperties = {}): void {
 }
 
 // Convenience helpers for the most common events
+//
+// Lead events fire BOTH a descriptive custom event (for source breakdowns in
+// PostHog / GA4) and GA4's standard `generate_lead` event. `generate_lead` is
+// the event GA4 counts in its "Generate leads" report — without it, leads never
+// show up there no matter how many people contact you. Remember to mark
+// `generate_lead` as a Key event in GA4 Admin → Events for it to count as a
+// conversion.
 export const Analytics = {
   formStarted: () => track("form_started"),
-  formCompleted: (score: number) => track("form_completed", { score }),
+  formCompleted: (score: number) => {
+    track("form_completed", { score })
+    track("generate_lead", { method: "contact_form", value: score })
+  },
   guideDownloaded: () => track("guide_downloaded"),
-  whatsappClicked: (source: string) => track("whatsapp_clicked", { source }),
-  lineClicked: (source: string) => track("line_clicked", { source }),
+  whatsappClicked: (source: string) => {
+    track("whatsapp_clicked", { source })
+    track("generate_lead", { method: "whatsapp", source })
+  },
+  lineClicked: (source: string) => {
+    track("line_clicked", { source })
+    track("generate_lead", { method: "line", source })
+  },
   calendlyOpened: () => track("calendly_opened"),
   blogArticleRead: (slug: string) => track("blog_article_read", { slug }),
 }

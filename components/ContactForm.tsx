@@ -7,6 +7,7 @@ import { z } from "zod"
 import { SEGMENT_LABELS, NEEDS_OPTIONS } from "@/types/lead"
 import type { Segment } from "@/types/lead"
 import { Analytics } from "@/lib/analytics"
+import WhatsAppLink from "./WhatsAppLink"
 
 const schema = z.object({
   name: z.string().min(2, "Please enter your name"),
@@ -106,15 +107,14 @@ export default function ContactForm() {
         <p className="mb-6 text-sm" style={{ color: "var(--ink-600)", maxWidth: 320, margin: "8px auto 24px" }}>
           Our team will personally follow up within 24 hours. In the meantime, feel free to WhatsApp us directly.
         </p>
-        <a
+        <WhatsAppLink
+          source="form_success"
           href={`https://wa.me/66611965363?text=${encodeURIComponent("Hi! I just submitted the form on your website!")}`}
-          target="_blank"
-          rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-opacity hover:opacity-90"
           style={{ background: "linear-gradient(160deg, #2EDF74, #25D366)" }}
         >
           Open WhatsApp
-        </a>
+        </WhatsAppLink>
       </div>
     )
   }

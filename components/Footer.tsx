@@ -1,5 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
+import WhatsAppLink from "@/components/WhatsAppLink"
 
 export default function Footer() {
   return (
@@ -40,15 +41,14 @@ export default function Footer() {
           <div>
             <p className="text-xs font-semibold mb-4 uppercase tracking-wider" style={{ color: "var(--navy-200)" }}>Contact</p>
             <div className="flex flex-col gap-2.5 text-sm">
-              <a
+              <WhatsAppLink
+                source="footer"
                 href="https://wa.me/66611965363"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="hover:text-white transition-colors"
                 style={{ color: "var(--navy-300)" }}
               >
                 WhatsApp +66 61 196 5363
-              </a>
+              </WhatsAppLink>
               <span style={{ color: "var(--navy-300)" }}>LINE @covercareTH</span>
               <a href="mailto:covercareTH@gmail.com" className="hover:text-white transition-colors" style={{ color: "var(--navy-300)" }}>
                 covercareTH@gmail.com

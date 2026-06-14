@@ -4,6 +4,7 @@ import Link from "next/link"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import FloatingCTA from "@/components/FloatingCTA"
+import WhatsAppLink from "@/components/WhatsAppLink"
 import {
   hospitals,
   provinceToSlug,
@@ -196,15 +197,14 @@ function PremierCard({ h }: { h: Hospital }) {
 
       {/* Actions */}
       <div className="flex gap-2">
-        <a
+        <WhatsAppLink
+          source="hospital_card"
           href={`https://wa.me/66611965363?text=${waText}`}
-          target="_blank"
-          rel="noopener noreferrer"
           className="flex-1 inline-flex items-center justify-center gap-2 bg-navy-700 hover:bg-navy-800 text-white text-sm font-semibold py-2.5 px-4 rounded-xl transition-colors"
         >
           <MessageCircle className="w-4 h-4" />
           Ask our team
-        </a>
+        </WhatsAppLink>
         {h.mapsUrl && (
           <a href={h.mapsUrl} target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-3 border border-slate-200 hover:border-sky-200 text-slate-500 hover:text-navy-700 rounded-xl transition-colors">
@@ -383,15 +383,14 @@ export default async function ProvincePage({
             <p className="text-sky-100 mb-6 max-w-xl mx-auto">
               Our team can recommend the best hospital for your specific situation in {province} — and set up direct billing so you pay nothing upfront.
             </p>
-            <a
+            <WhatsAppLink
+              source="hospital_province_cta"
               href={`https://wa.me/66611965363?text=${waText}`}
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white text-navy-800 font-semibold py-3 px-6 rounded-xl hover:bg-sky-50 transition-colors"
             >
               <MessageCircle className="w-5 h-5" />
               Ask our team on WhatsApp
-            </a>
+            </WhatsAppLink>
           </section>
 
           {/* Related provinces */}

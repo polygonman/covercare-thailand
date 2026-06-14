@@ -1,4 +1,5 @@
 import ContactForm from "@/components/ContactForm"
+import WhatsAppLink from "@/components/WhatsAppLink"
 import { Mail, MessageCircle, Phone, Calendar, ArrowRight } from "lucide-react"
 
 const channels = [
@@ -73,32 +74,51 @@ export default function ContactSection() {
             </p>
 
             <div className="flex flex-col gap-3">
-              {channels.map(({ href, iconStyle, icon: Icon, label, value, external }) => (
-                <a
-                  key={label}
-                  href={href}
-                  {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                  className="flex items-center gap-4 p-4 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 group cursor-pointer"
-                  style={glassTile}
-                >
-                  <span
-                    className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ ...iconStyle, color: "#fff" }}
+              {channels.map(({ href, iconStyle, icon: Icon, label, value, external }) => {
+                const tileClass =
+                  "flex items-center gap-4 p-4 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 group cursor-pointer"
+                const inner = (
+                  <>
+                    <span
+                      className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                      style={{ ...iconStyle, color: "#fff" }}
+                    >
+                      <Icon size={17} strokeWidth={2.25} />
+                    </span>
+                    <div className="flex-1 min-w-0">
+                      <p className="font-semibold text-navy-900 text-sm">{label}</p>
+                      <p className="text-xs truncate" style={{ color: "var(--ink-500)" }}>{value}</p>
+                    </div>
+                    <ArrowRight
+                      size={15}
+                      strokeWidth={2}
+                      className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"
+                      style={{ color: "var(--sky-500)" }}
+                    />
+                  </>
+                )
+
+                // WhatsApp gets click tracking so chats count as leads
+                if (href.includes("wa.me")) {
+                  return (
+                    <WhatsAppLink key={label} source="contact_section" href={href} className={tileClass} style={glassTile}>
+                      {inner}
+                    </WhatsAppLink>
+                  )
+                }
+
+                return (
+                  <a
+                    key={label}
+                    href={href}
+                    {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    className={tileClass}
+                    style={glassTile}
                   >
-                    <Icon size={17} strokeWidth={2.25} />
-                  </span>
-                  <div className="flex-1 min-w-0">
-                    <p className="font-semibold text-navy-900 text-sm">{label}</p>
-                    <p className="text-xs truncate" style={{ color: "var(--ink-500)" }}>{value}</p>
-                  </div>
-                  <ArrowRight
-                    size={15}
-                    strokeWidth={2}
-                    className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"
-                    style={{ color: "var(--sky-500)" }}
-                  />
-                </a>
-              ))}
+                    {inner}
+                  </a>
+                )
+              })}
             </div>
           </div>
 

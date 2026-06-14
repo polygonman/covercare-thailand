@@ -8,6 +8,7 @@ import {
 } from "lucide-react"
 import { hospitals } from "@/lib/hospitals-data"
 import type { Hospital } from "@/lib/hospitals-data"
+import WhatsAppLink from "@/components/WhatsAppLink"
 
 // ─── Need categories ──────────────────────────────────────────────────────────
 const NEEDS = [
@@ -228,15 +229,14 @@ function ResultCard({
 
       {/* CTAs */}
       <div className="flex gap-2">
-        <a
+        <WhatsAppLink
+          source="hospital_recommender"
           href={whatsappLink(h.name, selectedProvince, selectedNeedLabel)}
-          target="_blank"
-          rel="noopener noreferrer"
           className="flex-1 inline-flex items-center justify-center gap-2 bg-navy-700 hover:bg-navy-800 text-white text-sm font-semibold py-2.5 px-4 rounded-xl transition-colors"
         >
           <MessageCircle className="w-4 h-4" />
           Ask our team
-        </a>
+        </WhatsAppLink>
         {h.mapsUrl && (
           <a
             href={h.mapsUrl}
