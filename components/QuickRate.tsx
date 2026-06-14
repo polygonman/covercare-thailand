@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { MessageCircle, ArrowRight, ShieldCheck, Check } from "lucide-react"
-import { PLANS, annualPremium, opdPremium, thb, RIDERS, type Gender } from "@/lib/quickRates"
+import { PLANS, annualPremium, opdPremium, thb, RIDERS, OPD_MDC_CAPS, type Gender } from "@/lib/quickRates"
 
 const WA = "66611965363"
 
@@ -14,12 +14,13 @@ export default function QuickRate({ compact = false }: { compact?: boolean }) {
   const [age, setAge] = useState(35)
   const [gender, setGender] = useState<Gender>("m")
   const [opd, setOpd] = useState(false)
+  const [opdCap, setOpdCap] = useState(1000)
   const [riders, setRiders] = useState<string[]>([])
 
   const plan = PLANS.find((p) => p.id === planId) ?? tiers[0]
   const activePlan = plan.product === product ? plan : tiers[Math.min(1, tiers.length - 1)]
   const ipd = annualPremium(activePlan.id, age, gender) ?? 0
-  const opdPrem = opd ? opdPremium(product, age, gender) : 0
+  const opdPrem = opd ? (opdPremium(activePlan, age, gender, opdCap) ?? 0) : 0
   const total = ipd + opdPrem
 
   function toggleRider(r: string) {
@@ -30,13 +31,14 @@ export default function QuickRate({ compact = false }: { compact?: boolean }) {
     setPlanId(p === "mdc" ? "mdc15" : "fc80")
   }
 
+  const opdLabel = activePlan.product === "mdc" ? `฿${opdCap.toLocaleString()}/visit` : "as-charged"
   const lines = [
     `Hi! I'd like a real quote — here's the plan I built:`,
     `• ${activePlan.productName} ${activePlan.tier} (${activePlan.coverageLabel.replace(" / year", "/yr")}, ${activePlan.network})`,
     `• Age ${age}, ${gender === "m" ? "male" : "female"}`,
-    opd ? `• + OPD out-patient add-on` : null,
+    opd ? `• + OPD (${opdLabel}) ≈ ${thb(opdPrem)}/yr` : null,
     riders.length ? `• + Riders: ${riders.join(", ")}` : null,
-    `Indicative annual total I saw: ${thb(total)}${opd || riders.length ? " (before riders priced)" : ""}.`,
+    `Indicative annual total I saw: ${thb(total)}${riders.length ? " (before riders priced)" : ""}.`,
   ].filter(Boolean)
   const wa = `https://wa.me/${WA}?text=` + encodeURIComponent(lines.join("\n"))
 
@@ -102,18 +104,35 @@ export default function QuickRate({ compact = false }: { compact?: boolean }) {
         </div>
       </div>
 
-      {/* OPD toggle */}
-      <button onClick={() => setOpd(!opd)} className="flex items-center justify-between p-3 rounded-2xl border-0 cursor-pointer text-left" style={{ background: opd ? "var(--sky-50)" : "var(--ink-100)" }}>
-        <div className="flex items-center gap-2.5">
-          <span className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: opd ? "var(--sky-500)" : "#fff", color: opd ? "#fff" : "var(--ink-500)" }}>
-            <Check size={15} strokeWidth={3} />
-          </span>
-          <div>
-            <div className="text-sm font-semibold text-navy-800">Add OPD (out-patient)</div>
-            <div className="text-xs text-ink-500">Doctor visits without admission · {thb(opdPremium(product, age, gender))}/yr</div>
+      {/* OPD */}
+      <div className="flex flex-col gap-2">
+        <button onClick={() => setOpd(!opd)} className="flex items-center justify-between p-3 rounded-2xl border-0 cursor-pointer text-left" style={{ background: opd ? "var(--sky-50)" : "var(--ink-100)" }}>
+          <div className="flex items-center gap-2.5">
+            <span className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: opd ? "var(--sky-500)" : "#fff", color: opd ? "#fff" : "var(--ink-500)" }}>
+              <Check size={15} strokeWidth={3} />
+            </span>
+            <div>
+              <div className="text-sm font-semibold text-navy-800">Add OPD (out-patient)</div>
+              <div className="text-xs text-ink-500">
+                {activePlan.product === "mdc" ? "Choose your per-visit limit" : "As-charged out-patient cover"}
+                {opd ? ` · ${thb(opdPrem)}/yr` : ""}
+              </div>
+            </div>
           </div>
-        </div>
-      </button>
+        </button>
+        {opd && activePlan.product === "mdc" && (
+          <div className="flex flex-col gap-1.5 pl-1">
+            <span className="eyebrow">OPD cover per visit</span>
+            <div className="flex flex-wrap gap-1.5">
+              {OPD_MDC_CAPS.map((c) => (
+                <button key={c} onClick={() => setOpdCap(c)} className="text-xs px-2.5 py-1 rounded-full font-medium border-0 cursor-pointer" style={pill(opdCap === c)}>
+                  ฿{c.toLocaleString()}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
 
       {!compact && (
         <div className="flex flex-col gap-2">
@@ -136,7 +155,7 @@ export default function QuickRate({ compact = false }: { compact?: boolean }) {
           <span className="text-sm text-ink-500 mb-1">/ year</span>
         </div>
         <span className="text-xs text-ink-500">
-          {activePlan.coverageLabel} IPD {thb(ipd)}{opd ? ` + OPD ${thb(opdPrem)}` : ""}{riders.length ? ` · +${riders.length} rider${riders.length > 1 ? "s" : ""} (priced on request)` : ""}
+          {activePlan.coverageLabel} IPD {thb(ipd)}{opd ? ` + OPD ${thb(opdPrem)} (${opdLabel})` : ""}{riders.length ? ` · +${riders.length} rider${riders.length > 1 ? "s" : ""} (priced on request)` : ""}
         </span>
       </div>
 
@@ -152,7 +171,7 @@ export default function QuickRate({ compact = false }: { compact?: boolean }) {
         )}
       </div>
       <p className="text-xs" style={{ color: "var(--ink-400)", lineHeight: 1.5 }}>
-        Indicative annual premium for a standard healthy applicant (new business, age 11–70). Rider prices confirmed on request. Final premium is set after underwriting. Annual premium only — we don&apos;t bill monthly.
+        Annual premium computed from current Allianz Ayudhya rates for a standard-occupation healthy applicant (new business, age 11–70). Rider prices confirmed on request. Final premium is set after underwriting. Annual premium only — we don&apos;t bill monthly.
       </p>
     </div>
   )
