@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { MessageCircle, ArrowRight, ShieldCheck, Check } from "lucide-react"
-import { PLANS, annualPremium, opdPremium, thb, RIDERS, OPD_MDC_CAPS, type Gender } from "@/lib/quickRates"
+import { PLANS, annualPremium, opdPremium, mainContract, thb, RIDERS, OPD_MDC_CAPS, type Gender } from "@/lib/quickRates"
 
 const WA = "66611965363"
 
@@ -21,7 +21,9 @@ export default function QuickRate({ compact = false }: { compact?: boolean }) {
   const activePlan = plan.product === product ? plan : tiers[Math.min(1, tiers.length - 1)]
   const ipd = annualPremium(activePlan.id, age, gender) ?? 0
   const opdPrem = opd ? (opdPremium(activePlan, age, gender, opdCap) ?? 0) : 0
-  const total = ipd + opdPrem
+  const main = mainContract(age, gender)
+  const mainPrem = main?.premium ?? 0
+  const total = mainPrem + ipd + opdPrem
 
   function toggleRider(r: string) {
     setRiders((cur) => (cur.includes(r) ? cur.filter((x) => x !== r) : [...cur, r]))
@@ -35,6 +37,7 @@ export default function QuickRate({ compact = false }: { compact?: boolean }) {
   const lines = [
     `Hi! I'd like a real quote — here's the plan I built:`,
     `• ${activePlan.productName} ${activePlan.tier} (${activePlan.coverageLabel.replace(" / year", "/yr")}, ${activePlan.network})`,
+    `• Incl. required main contract (Whole Life 99/20) ≈ ${thb(mainPrem)}/yr`,
     `• Age ${age}, ${gender === "m" ? "male" : "female"}`,
     opd ? `• + OPD (${opdLabel}) ≈ ${thb(opdPrem)}/yr` : null,
     riders.length ? `• + Riders: ${riders.join(", ")}` : null,
@@ -155,7 +158,7 @@ export default function QuickRate({ compact = false }: { compact?: boolean }) {
           <span className="text-sm text-ink-500 mb-1">/ year</span>
         </div>
         <span className="text-xs text-ink-500">
-          {activePlan.coverageLabel} IPD {thb(ipd)}{opd ? ` + OPD ${thb(opdPrem)} (${opdLabel})` : ""}{riders.length ? ` · +${riders.length} rider${riders.length > 1 ? "s" : ""} (priced on request)` : ""}
+          Main contract {thb(mainPrem)} + {activePlan.coverageLabel} IPD {thb(ipd)}{opd ? ` + OPD ${thb(opdPrem)} (${opdLabel})` : ""}{riders.length ? ` · +${riders.length} rider${riders.length > 1 ? "s" : ""} (priced on request)` : ""}
         </span>
       </div>
 
@@ -171,7 +174,7 @@ export default function QuickRate({ compact = false }: { compact?: boolean }) {
         )}
       </div>
       <p className="text-xs" style={{ color: "var(--ink-400)", lineHeight: 1.5 }}>
-        Annual premium computed from current Allianz Ayudhya rates for a standard-occupation healthy applicant (new business, age 11–70). Rider prices confirmed on request. Final premium is set after underwriting. Annual premium only — we don&apos;t bill monthly.
+        All-in annual premium from current Allianz Ayudhya rates for a standard-occupation healthy applicant (new business, age 11–70). Includes the minimum required Whole Life A99/20 main contract. Rider prices confirmed on request. Final premium is set after underwriting. Annual premium only — we don&apos;t bill monthly.
       </p>
     </div>
   )

@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import FloatingCTA from "@/components/FloatingCTA"
-import { Headset, CreditCard, FileText, Stethoscope, Sparkles, Users, MessageCircle, Globe, Clock, ShieldCheck } from "lucide-react"
+import { Headset, CreditCard, FileText, Stethoscope, Sparkles, Users, MessageCircle, Globe, Clock, ShieldCheck, Building2 } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "What You Get as Our Client — Concierge, Cashless Claims & More | CoverCare Thailand",
@@ -79,6 +79,25 @@ export default function ServicesPage() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Company consulting (B2B) */}
+        <section className="py-12">
+          <div className="max-w-[1100px] mx-auto px-4 sm:px-6">
+            <div className="rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-8" style={{ background: "var(--glass-bg)", border: "1px solid var(--glass-border)", boxShadow: "var(--glass-shadow)" }}>
+              <div className="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0" style={{ background: "var(--navy-100)", color: "var(--navy-700)" }}>
+                <Building2 size={30} />
+              </div>
+              <div className="flex-1">
+                <span className="eyebrow" style={{ color: "var(--sky-600)" }}>/ For companies</span>
+                <h2 className="text-2xl md:text-3xl font-black mt-2 mb-2" style={{ color: "var(--navy-950)", letterSpacing: "-0.02em" }}>Company insurance planning &amp; consulting</h2>
+                <p className="text-base" style={{ color: "var(--ink-600)" }}>Running a business in Thailand? We also advise companies on group health and employee-benefit planning at scale — not just individual policies. From a handful of staff to a full team, we design and manage the right Allianz Ayudhya setup for your people.</p>
+              </div>
+              <a href={`https://wa.me/66611965363?text=${encodeURIComponent("Hi! I'd like to discuss company insurance planning for my business.")}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white whitespace-nowrap flex-shrink-0 transition-opacity hover:opacity-90" style={{ background: "linear-gradient(160deg,#2EDF74,#25D366)" }}>
+                <MessageCircle size={16} strokeWidth={2.5} /> Talk to me directly
+              </a>
             </div>
           </div>
         </section>

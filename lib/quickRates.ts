@@ -1,10 +1,15 @@
 // Plan catalogue + helpers. All premiums come from the ported Allianz engine
 // (allianzCalc.ts) reading the real rate tables — identical to the QuickRate tool.
 // ANNUAL premium only. OPD is priced by per-visit cap for My Double Care.
-import { calcPrem, OPD_MDC_CAPS, type Cfg } from "./allianzCalc"
+import { calcPrem, OPD_MDC_CAPS, mainContractMin, type Cfg } from "./allianzCalc"
 
 export type Gender = "m" | "f"
 export { OPD_MDC_CAPS }
+
+// Required main contract (Whole Life A99/20) at the lowest qualifying coverage for this age.
+export function mainContract(age: number, gender: Gender): { sa: number; premium: number } | null {
+  return mainContractMin(age, gender)
+}
 
 export interface Plan {
   id: string

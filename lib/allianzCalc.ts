@@ -4,7 +4,7 @@
 // expected/*.json cases. Do not hand-edit numbers here — they come from the data.
 import RATES from "./data/allianzRates.json"
 
-const D = RATES as Record<string, { type: string; rows: AnyRow[]; plans?: number[] }>
+const D = RATES as Record<string, any>
 
 type AnyRow = { band: string; [k: string]: unknown }
 
@@ -34,11 +34,20 @@ function findBand(rows: AnyRow[], age: number): AnyRow | null {
   }) || null
 }
 
+// For per1000_mf tables: rows is a dict keyed by age string ("1m1d" for age 0).
+function getAgeKey(obj: Record<string, [number, number]>, age: number): [number, number] | null {
+  if (age === 0 && obj["1m1d"] !== undefined) return obj["1m1d"]
+  if (obj[String(age)] !== undefined) return obj[String(age)]
+  if (obj[String(age) + "*"] !== undefined) return obj[String(age) + "*"]
+  return null
+}
+
 export interface Cfg {
   hsmhpdc_ded?: string
   hsmhpdc_plan?: string
   opd_plan?: number // OPDMDC per-visit cap (e.g. 1000)
   occ_class?: number // 0=class1 (default)…3=class4
+  sa?: number // sum insured, for per1000_mf mains (e.g. MWLA9920)
 }
 
 export function calcPrem(prod: string, age: number, gender: "m" | "f", cfg: Cfg = {}): number | null {
@@ -75,6 +84,12 @@ export function calcPrem(prod: string, age: number, gender: "m" | "f", cfg: Cfg 
       const u = r.u
       prem = typeof v === "number" ? v : typeof u === "number" ? u : null
     }
+  } else if (t === "per1000_mf") {
+    const r = getAgeKey(data.rows, age)
+    if (r && cfg.sa) {
+      const rate = gender === "m" ? r[0] : r[1]
+      if (typeof rate === "number") prem = (rate * cfg.sa) / 1000
+    }
   }
 
   if (prem == null) return null
@@ -86,3 +101,13 @@ export function calcPrem(prod: string, age: number, gender: "m" | "f", cfg: Cfg 
 
 // Per-visit caps available for My Double Care OPD (฿/visit)
 export const OPD_MDC_CAPS: number[] = (D["OPDMDC"].plans as number[]) || [400, 500, 600, 700, 800, 900, 1000, 1500, 2000, 2500, 3000, 3500, 4000]
+
+// Lowest-cost required main contract (Whole Life A99/20) that allows a health rider:
+// SA = smallest 100k multiple ≥ 200,000 whose annual premium ≥ 6,000.
+export function mainContractMin(age: number, gender: "m" | "f"): { sa: number; premium: number } | null {
+  for (let sa = 200000; sa <= 5000000; sa += 100000) {
+    const p = calcPrem("MWLA9920", age, gender, { sa })
+    if (p != null && p >= 6000) return { sa, premium: Math.round(p) }
+  }
+  return null
+}
