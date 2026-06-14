@@ -117,14 +117,38 @@ function HeroCalc() {
         </span>
       </div>
 
-      {/* CTA */}
-      <Link
-        href="/#contact"
-        className="flex items-center justify-center gap-2 w-full py-3 rounded-full text-sm font-semibold text-white transition-all duration-150 hover:opacity-90"
-        style={{ background: "linear-gradient(135deg, var(--navy-700), var(--navy-800))", boxShadow: "var(--glow-navy)" }}
-      >
-        Continue to plan <ArrowRight size={14} strokeWidth={2.5} />
-      </Link>
+      {/* Estimated premium */}
+      <div className="flex items-end justify-between">
+        <div className="flex flex-col">
+          <span className="eyebrow" style={{ color: "var(--ink-400)", fontSize: 10 }}>EST. ANNUAL PREMIUM</span>
+          <span className="text-2xl font-black text-navy-800" style={{ fontFamily: "var(--font-jakarta)" }}>
+            ฿{annual.toLocaleString()}
+          </span>
+        </div>
+        <span className="text-xs text-ink-500">≈ ฿{monthly.toLocaleString()}/mo</span>
+      </div>
+
+      {/* CTA — carries the quote into the conversation */}
+      <div className="flex flex-col gap-2">
+        <a
+          href={`https://wa.me/66611965363?text=${encodeURIComponent(
+            `Hi! I got a quick quote of about ฿${annual.toLocaleString()}/yr (฿${monthly.toLocaleString()}/mo) for a ${tiers[tier]} plan — age ${age}, ${cover}% coverage. Can we discuss?`
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 w-full py-3 rounded-full text-sm font-semibold text-white transition-all duration-150 hover:opacity-90"
+          style={{ background: "linear-gradient(160deg, #2EDF74, #25D366)" }}
+        >
+          <MessageCircle size={15} strokeWidth={2.5} /> Get this quote on WhatsApp
+        </a>
+        <Link
+          href={`/?q=${encodeURIComponent(`${tiers[tier]} · age ${age} · ${cover}% · ~฿${annual.toLocaleString()}/yr`)}#contact`}
+          className="flex items-center justify-center gap-2 w-full py-2.5 rounded-full text-sm font-semibold text-navy-800 transition-all duration-150 hover:opacity-90"
+          style={{ background: "var(--ink-100)" }}
+        >
+          Or request a callback <ArrowRight size={14} strokeWidth={2.5} />
+        </Link>
+      </div>
     </div>
   )
 }

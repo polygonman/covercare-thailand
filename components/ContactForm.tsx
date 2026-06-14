@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
@@ -57,6 +57,14 @@ export default function ContactForm() {
 
   const selectedSegment = watch("segment")
   const selectedNeeds = watch("needs") ?? []
+
+  // Carry the hero Quick-Quote into the form (e.g. /?q=...#contact)
+  useEffect(() => {
+    try {
+      const q = new URLSearchParams(window.location.search).get("q")
+      if (q) setValue("message", `Quote from site: ${q}`)
+    } catch { /* no-op */ }
+  }, [setValue])
 
   const nextStep = async () => {
     let valid = false
@@ -291,6 +299,9 @@ export default function ContactForm() {
             </div>
           </div>
           {error && <p className="text-sm mt-2" style={{ color: "#D14343" }}>{error}</p>}
+          <p className="text-xs mt-3" style={{ color: "var(--ink-400)", lineHeight: 1.5 }}>
+            By submitting, you agree to be contacted about your enquiry (PDPA). Your details stay with our small team — we never sell your data or send spam.
+          </p>
           <div className="flex gap-3 mt-6">
             <button
               type="button"
