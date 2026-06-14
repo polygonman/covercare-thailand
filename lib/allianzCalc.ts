@@ -4,9 +4,16 @@
 // expected/*.json cases. Do not hand-edit numbers here — they come from the data.
 import RATES from "./data/allianzRates.json"
 
-const D = RATES as Record<string, any>
-
 type AnyRow = { band: string; [k: string]: unknown }
+
+type RateEntry = {
+  type?: string
+  rows?: unknown
+  plans?: unknown[]
+  [k: string]: unknown
+}
+
+const D = RATES as unknown as Record<string, RateEntry>
 
 // Occupation-class loading: classes 1–2 = ×1.0, class 3 ×1.30, class 4 ×1.45.
 // occ_class: 0=class1, 1=class2, 2=class3, 3=class4. Default (standard) = class 1.
@@ -54,23 +61,24 @@ export function calcPrem(prod: string, age: number, gender: "m" | "f", cfg: Cfg 
   const data = D[prod]
   if (!data) return null
   const t = data.type
+  const rows = data.rows as AnyRow[]
   let prem: number | null = null
 
   if (t === "hsmhpdc") {
-    const r = findBand(data.rows, age)
+    const r = findBand(rows, age)
     if (r) {
       const key = (cfg.hsmhpdc_ded || "n") + (cfg.hsmhpdc_plan || "1") + gender
       const v = r[key]
       prem = typeof v === "number" ? v : null
     }
   } else if (t === "hsmfc") {
-    const r = findBand(data.rows, age)
+    const r = findBand(rows, age)
     if (r) {
       const v = gender === "m" ? r.m : r.f
       prem = typeof v === "number" ? v : null
     }
   } else if (t === "opd_plan") {
-    const r = findBand(data.rows, age)
+    const r = findBand(rows, age)
     if (r && data.plans) {
       const arr = (gender === "m" ? r.m : r.f) as (number | null)[] | undefined
       const pi = data.plans.indexOf(cfg.opd_plan ?? data.plans[0])
@@ -78,14 +86,14 @@ export function calcPrem(prod: string, age: number, gender: "m" | "f", cfg: Cfg 
       prem = typeof v === "number" ? v : null
     }
   } else if (t === "opd_mf") {
-    const r = findBand(data.rows, age)
+    const r = findBand(rows, age)
     if (r) {
       const v = gender === "m" ? r.m : r.f
       const u = r.u
       prem = typeof v === "number" ? v : typeof u === "number" ? u : null
     }
   } else if (t === "per1000_mf") {
-    const r = getAgeKey(data.rows, age)
+    const r = getAgeKey(data.rows as Record<string, [number, number]>, age)
     if (r && cfg.sa) {
       const rate = gender === "m" ? r[0] : r[1]
       if (typeof rate === "number") prem = (rate * cfg.sa) / 1000

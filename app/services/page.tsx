@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import FloatingCTA from "@/components/FloatingCTA"
@@ -112,9 +113,9 @@ export default function ServicesPage() {
               See the plans and real rates, or message us and we&apos;ll handle the rest.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
-              <a href="/plans" className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90" style={{ background: "var(--sky-500)", boxShadow: "var(--glow-sky-soft)" }}>
+              <Link href="/plans" className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90" style={{ background: "var(--sky-500)", boxShadow: "var(--glow-sky-soft)" }}>
                 See plans &amp; rates
-              </a>
+              </Link>
               <a href={`https://wa.me/66611965363?text=${encodeURIComponent("Hi! I'd like to know more about your service and the right plan for me.")}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90" style={{ background: "linear-gradient(160deg, #2EDF74, #25D366)" }}>
                 <MessageCircle size={16} strokeWidth={2.5} /> Chat on WhatsApp
               </a>
