@@ -1,157 +1,8 @@
 "use client"
 
-import { useState } from "react"
 import Link from "next/link"
-import { Award, Building2, Clock, ArrowRight, MessageCircle, Zap, Check } from "lucide-react"
-
-const tiers = ["Basic IPD", "IPD + OPD", "Comprehensive", "Executive"]
-const tierBases = [15000, 42800, 68000, 98000]
-
-function HeroCalc() {
-  const [age, setAge] = useState(32)
-  const [cover, setCover] = useState(60)
-  const [tier, setTier] = useState(1)
-
-  const annual = Math.round(tierBases[tier] + (age - 30) * 600 + (cover - 60) * 280)
-  const monthly = Math.round(annual / 12)
-
-  return (
-    <div
-      className="rounded-[32px] p-6 flex flex-col gap-5"
-      style={{
-        background: "var(--glass-bg-strong)",
-        backdropFilter: "var(--blur-lg)",
-        WebkitBackdropFilter: "var(--blur-lg)",
-        border: "1px solid var(--glass-border)",
-        boxShadow: "var(--glass-shadow-lg)",
-      }}
-    >
-      {/* Header */}
-      <div className="flex items-center justify-between">
-        <span className="flex items-center gap-2 text-sm font-semibold text-navy-800">
-          <span
-            className="w-6 h-6 rounded-full flex items-center justify-center"
-            style={{ background: "var(--sky-100)", color: "var(--sky-600)" }}
-          >
-            <Zap size={13} strokeWidth={2.5} />
-          </span>
-          Quick Quote
-        </span>
-        <span className="flex items-center gap-1.5 text-xs font-medium text-ink-500">
-          <span className="dot-live" />
-          Live
-        </span>
-      </div>
-
-      {/* Age */}
-      <div className="flex flex-col gap-2">
-        <div className="flex justify-between items-baseline">
-          <span className="text-xs font-medium text-ink-600">Age</span>
-          <span className="text-lg font-bold text-navy-700" style={{ fontFamily: "var(--font-geist-mono)" }}>
-            {age}
-          </span>
-        </div>
-        <input
-          type="range" min={22} max={75} value={age}
-          onChange={(e) => setAge(+e.target.value)}
-          className="slider"
-          style={{ "--fill": `${((age - 22) / (75 - 22)) * 100}%` } as React.CSSProperties}
-        />
-      </div>
-
-      {/* Coverage */}
-      <div className="flex flex-col gap-2">
-        <div className="flex justify-between items-baseline">
-          <span className="text-xs font-medium text-ink-600">Coverage level</span>
-          <span className="text-lg font-bold text-navy-700" style={{ fontFamily: "var(--font-geist-mono)" }}>
-            {cover}%
-          </span>
-        </div>
-        <input
-          type="range" min={40} max={100} value={cover}
-          onChange={(e) => setCover(+e.target.value)}
-          className="slider"
-          style={{ "--fill": `${((cover - 40) / (100 - 40)) * 100}%` } as React.CSSProperties}
-        />
-      </div>
-
-      {/* Tier pills */}
-      <div className="flex flex-col gap-2">
-        <span className="eyebrow">Plan tier</span>
-        <div className="flex flex-wrap gap-1.5">
-          {tiers.map((t, i) => (
-            <button
-              key={t}
-              onClick={() => setTier(i)}
-              className="text-xs px-3 py-1.5 rounded-full font-medium transition-all duration-150 cursor-pointer border-0"
-              style={
-                tier === i
-                  ? { background: "var(--sky-500)", color: "#fff", boxShadow: "var(--glow-sky-soft)" }
-                  : { background: "var(--ink-100)", color: "var(--ink-700)" }
-              }
-            >
-              {t}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Quote block */}
-      <div
-        className="rounded-2xl p-4 flex items-center justify-between gap-4"
-        style={{ background: "linear-gradient(135deg, var(--navy-800), var(--navy-950))", color: "#fff" }}
-      >
-        <div className="flex flex-col gap-0.5">
-          <span className="text-xs font-medium text-navy-300">Annual premium</span>
-          <span className="text-2xl font-black" style={{ fontFamily: "var(--font-jakarta)", letterSpacing: "-0.04em" }}>
-            ฿{annual.toLocaleString()}
-            <span className="text-base font-medium ml-1 text-navy-300">/yr</span>
-          </span>
-          <span className="text-xs text-navy-400">~ ฿{monthly.toLocaleString()} / month</span>
-        </div>
-        <span
-          className="flex items-center gap-1 text-xs font-semibold px-3 py-1.5 rounded-full flex-shrink-0"
-          style={{ background: "var(--success-soft)", color: "var(--success)" }}
-        >
-          <Check size={11} strokeWidth={3} /> Best fit
-        </span>
-      </div>
-
-      {/* Estimated premium */}
-      <div className="flex items-end justify-between">
-        <div className="flex flex-col">
-          <span className="eyebrow" style={{ color: "var(--ink-400)", fontSize: 10 }}>EST. ANNUAL PREMIUM</span>
-          <span className="text-2xl font-black text-navy-800" style={{ fontFamily: "var(--font-jakarta)" }}>
-            ฿{annual.toLocaleString()}
-          </span>
-        </div>
-        <span className="text-xs text-ink-500">≈ ฿{monthly.toLocaleString()}/mo</span>
-      </div>
-
-      {/* CTA — carries the quote into the conversation */}
-      <div className="flex flex-col gap-2">
-        <a
-          href={`https://wa.me/66611965363?text=${encodeURIComponent(
-            `Hi! I got a quick quote of about ฿${annual.toLocaleString()}/yr (฿${monthly.toLocaleString()}/mo) for a ${tiers[tier]} plan — age ${age}, ${cover}% coverage. Can we discuss?`
-          )}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 w-full py-3 rounded-full text-sm font-semibold text-white transition-all duration-150 hover:opacity-90"
-          style={{ background: "linear-gradient(160deg, #2EDF74, #25D366)" }}
-        >
-          <MessageCircle size={15} strokeWidth={2.5} /> Get this quote on WhatsApp
-        </a>
-        <Link
-          href={`/?q=${encodeURIComponent(`${tiers[tier]} · age ${age} · ${cover}% · ~฿${annual.toLocaleString()}/yr`)}#contact`}
-          className="flex items-center justify-center gap-2 w-full py-2.5 rounded-full text-sm font-semibold text-navy-800 transition-all duration-150 hover:opacity-90"
-          style={{ background: "var(--ink-100)" }}
-        >
-          Or request a callback <ArrowRight size={14} strokeWidth={2.5} />
-        </Link>
-      </div>
-    </div>
-  )
-}
+import { Award, Building2, Clock, ArrowRight, MessageCircle } from "lucide-react"
+import QuickRate from "@/components/QuickRate"
 
 const trustStats = [
   { icon: Award, label: "Allianz Ayudhya Authorised" },
@@ -191,11 +42,11 @@ export default function Hero() {
 
             <div className="flex flex-wrap gap-3 mb-10">
               <Link
-                href="/#contact"
+                href="/plans"
                 className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all duration-150 hover:opacity-90"
                 style={{ background: "var(--sky-500)", boxShadow: "var(--glow-sky-soft)" }}
               >
-                Talk to our team <ArrowRight size={14} strokeWidth={2.5} />
+                See plans &amp; rates <ArrowRight size={14} strokeWidth={2.5} />
               </Link>
               <a
                 href={`https://wa.me/66611965363?text=${encodeURIComponent("Hi! I'm interested in health insurance for foreigners in Thailand.")}`}
@@ -224,8 +75,8 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right: calculator */}
-          <HeroCalc />
+          {/* Right: real quick rate */}
+          <QuickRate compact />
         </div>
 
         {/* Meta pills */}
