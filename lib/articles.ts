@@ -26,9 +26,9 @@ Without proper insurance, that money comes out of your pocket.
 
 ## The Main Options for Expats
 
-As an Allianz Ayudhya authorised advisor, I work primarily with their product range — which covers the full spectrum from basic inpatient-only plans to comprehensive international-grade coverage.
+As an Allianz Ayudhya authorised advisor, I work primarily with their product range — which covers the full spectrum from basic inpatient-only plans to comprehensive top-tier coverage.
 
-### 1. Basic Inpatient (IPD) Plans — From 15,000 THB/year
+### 1. Basic Inpatient (IPD) Plans — From 25,000 THB/year
 
 Best for: Younger expats on a budget, people who mainly want emergency protection.
 
@@ -37,6 +37,7 @@ Best for: Younger expats on a budget, people who mainly want emergency protectio
 - Emergency room treatment
 - Intensive care unit (ICU)
 - Specialist consultations while admitted
+- Accidents are covered from the first 24 hours — no waiting period, unlike illness claims
 
 **What's not covered:**
 - GP visits and outpatient consultations
@@ -45,7 +46,7 @@ Best for: Younger expats on a budget, people who mainly want emergency protectio
 
 **Verdict:** Good safety net. Fine if you're healthy and just want to avoid catastrophic costs.
 
-### 2. Inpatient + Outpatient (IPD+OPD) Plans — From 40,000 THB/year
+### 2. Inpatient + Outpatient (IPD+OPD) Plans — 30,000–45,000 THB/year
 
 Best for: Most working expats, families, anyone who visits doctors regularly.
 
@@ -58,18 +59,18 @@ Best for: Most working expats, families, anyone who visits doctors regularly.
 
 **Verdict:** The most popular tier among foreigners I work with. Covers everyday healthcare, not just emergencies.
 
-### 3. Executive / International Plans — From 80,000 THB/year
+### 3. Premium / Executive Plans — 80,000–150,000 THB/year
 
-Best for: Senior executives, retirees with complex needs, those wanting global coverage.
+Best for: Executives, high-income earners, or anyone who wants to stop thinking about coverage entirely — no matter where in Thailand they need care.
 
 **What's covered:**
-- Everything above, with higher or unlimited limits
-- Private room guaranteed
-- Cancer treatment
-- International emergency evacuation
-- Worldwide coverage options
+- Private room guaranteed and cancer treatment — standard from tier 2 up, but this tier adds real depth
+- Emergency evacuation within Thailand (a domestic benefit — worth knowing this isn't international evacuation)
+- Annual health check-up
+- Vaccinations
+- Some plans in this tier also add dental, a vision allowance, and a maternity/childbirth allowance
 
-**Verdict:** Maximum peace of mind. Worth it if you have ongoing medical needs or travel frequently.
+**Verdict:** Maximum peace of mind for people who don't want to think about limits again. If OPD is your main worry, First Class Ultra takes it off the table entirely with unlimited OPD coverage.
 
 ## Key Things to Compare
 
@@ -77,22 +78,16 @@ When I sit down with a new client, these are the numbers that matter most:
 
 | Factor | What to look for |
 |---|---|
-| Annual limit | Minimum 3,000,000 THB for serious coverage |
-| Room & board | Private room vs. semi-private |
-| OPD annual limit | 30,000+ THB is a good benchmark |
+| Annual limit | Minimum 5,000,000 THB for serious coverage |
+| OPD limit (per visit) | At least 3,000 THB — private hospital OPD visits add up fast |
 | Pre-existing conditions | Declared and reviewed, not blanket excluded |
 | Hospital network | Check your nearest preferred hospital is in-network |
 
 ## How Premiums Work
 
-Allianz Ayudhya premiums are based on your age and chosen plan. A rough guide:
+Premiums are set by plan type, based on your age and gender. Rates step up every five years — at ages ending in 1 and 6 (31, 36, 41...) — with each step a gradual increase rather than a sudden jump.
 
-- Age 25–35: Basic IPD from ~15,000 THB/year
-- Age 35–45: Comprehensive from ~45,000 THB/year
-- Age 45–55: Comprehensive from ~70,000 THB/year
-- Age 55+: Plans available, medical screening usually required
-
-I always run a personalised quote — the numbers above are illustrative only.
+I always run a personalised quote — use the calculator on our [plans page](/plans) for your real number by age, gender, and plan.
 
 ## What Expats Most Often Get Wrong
 
@@ -100,7 +95,7 @@ I always run a personalised quote — the numbers above are illustrative only.
 Every plan has exclusions. Pre-existing conditions, waiting periods, specific procedure limits. I walk every client through these before they sign.
 
 **2. Choosing purely on price**
-The cheapest plan might have a 500,000 THB annual limit — which sounds like a lot until you need bypass surgery.
+The cheapest plan might have a 1,000,000 THB annual limit — which sounds like a lot until you need bypass surgery.
 
 **3. Not declaring medical history**
 Non-disclosure can void your claim. I help clients complete declarations accurately so there are no surprises at claims time.
@@ -243,7 +238,7 @@ Often used as a stay extension by nomads. No insurance requirement, but coverage
 The typical digital nomad I work with is healthy, mobile, and values flexibility over luxury. Here's my honest recommendation:
 
 ### If you're under 35 and healthy
-**Basic IPD + OPD plan (~40,000–55,000 THB/year)**
+**Basic IPD + OPD plan (~30,000–45,000 THB/year)**
 Covers GP visits, urgent care, and hospital admissions. You can see a doctor for common illnesses like respiratory infections, food poisoning, or minor injuries without paying out of pocket. For the cost of a few co-working space memberships, you have full healthcare coverage.
 
 ### If you're 35–50 or have any pre-existing conditions
