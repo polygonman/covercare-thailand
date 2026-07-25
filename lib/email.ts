@@ -30,16 +30,16 @@ export async function sendLeadNotification(lead: Lead) {
 
 export async function sendLeadConfirmation(lead: Lead) {
   await resend.emails.send({
-    from: 'Tonkla at CoverCare Thailand <tonkla@thaicovercare.com>',
+    from: 'CoverCare Thailand <tonkla@thaicovercare.com>',
     to: lead.email,
-    subject: "I'll be in touch soon — CoverCare Thailand",
+    subject: "Our team will be in touch soon — CoverCare Thailand",
     html: `
       <p>Hi ${lead.name},</p>
-      <p>Thank you for reaching out! I'm Tonkla, your dedicated health insurance advisor at CoverCare Thailand.</p>
-      <p>I'll personally follow up within 24 hours to discuss the best Allianz Ayudhya plan for your situation.</p>
-      <p>In the meantime, feel free to WhatsApp me directly at <strong>+66 61 196 5363</strong>.</p>
+      <p>Thank you for reaching out! Our team at CoverCare Thailand — a claims specialist, a hospital nurse, and an Allianz-authorised advisor — has received your details.</p>
+      <p>We'll personally follow up within 24 hours to discuss the best Allianz Ayudhya plan for your situation.</p>
+      <p>In the meantime, feel free to WhatsApp us directly at <strong>+66 61 196 5363</strong>.</p>
       <br/>
-      <p>Best regards,<br/>Tonkla<br/>CoverCare Thailand<br/>
+      <p>Best regards,<br/>The CoverCare Thailand team<br/>
       <a href="https://www.thaicovercare.com">www.thaicovercare.com</a></p>
     `,
   })
