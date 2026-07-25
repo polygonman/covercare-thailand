@@ -18,6 +18,11 @@ export default function PostHogProvider({ children }: { children: React.ReactNod
       persistence: "localStorage",
       // Web Vitals (LCP, INP, CLS) for PostHog performance monitoring
       capture_performance: { web_vitals: true },
+      // The Netlify rewrite corrupts posthog-js's pre-gzipped request body
+      // ("failed to decode request: invalid GZIP data"), silently dropping
+      // every event. Send uncompressed JSON instead — the proxy hop doesn't
+      // need the client-side compression.
+      disable_compression: true,
     })
   }, [])
 
