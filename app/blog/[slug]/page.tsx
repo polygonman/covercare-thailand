@@ -5,6 +5,7 @@ import { marked } from "marked"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import FloatingCTA from "@/components/FloatingCTA"
+import WhatsAppLink from "@/components/WhatsAppLink"
 import { getArticle, getAllSlugs } from "@/lib/articles"
 
 interface Props {
@@ -93,14 +94,13 @@ export default async function ArticlePage({ params }: Props) {
               >
                 Book Free Consultation
               </Link>
-              <a
+              <WhatsAppLink
+                source="blog_article"
                 href={`https://wa.me/66611965363?text=${encodeURIComponent(`Hi! I just read your article "${article.title}" and have a question.`)}`}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors"
               >
                 WhatsApp our team
-              </a>
+              </WhatsAppLink>
             </div>
           </div>
         </section>

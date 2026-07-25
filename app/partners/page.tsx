@@ -3,6 +3,7 @@ import Link from "next/link"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import FloatingCTA from "@/components/FloatingCTA"
+import WhatsAppLink from "@/components/WhatsAppLink"
 import { Handshake, TrendingUp, HeartHandshake, Workflow, Stamp, Calculator, Home, Briefcase, MessageCircle, Check } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -45,9 +46,9 @@ export default function PartnersPage() {
               If you serve foreigners in Thailand — visas, bookkeeping, relocation, anything — your clients all face the same question: &ldquo;what about health insurance?&rdquo; Partner with us, send them our way, and earn while we take great care of them.
             </p>
             <div className="flex flex-wrap gap-3 justify-center mt-7">
-              <a href={wa("Hi! I run a business serving foreigners in Thailand and I'd like to explore partnering with you.")} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-opacity hover:opacity-90" style={{ background: "linear-gradient(160deg,#2EDF74,#25D366)" }}>
+              <WhatsAppLink source="partners_hero" href={wa("Hi! I run a business serving foreigners in Thailand and I'd like to explore partnering with you.")} className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-opacity hover:opacity-90" style={{ background: "linear-gradient(160deg,#2EDF74,#25D366)" }}>
                 <MessageCircle size={16} strokeWidth={2.5} /> Talk on WhatsApp
-              </a>
+              </WhatsAppLink>
               <Link href="/#contact" className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-navy-800" style={{ background: "var(--glass-bg)", border: "1px solid var(--glass-border)" }}>
                 Send an enquiry
               </Link>
@@ -110,9 +111,9 @@ export default function PartnersPage() {
                     <span key={t} className="flex items-center gap-1.5"><Check size={14} style={{ color: "var(--sky-300)" }} /> {t}</span>
                   ))}
                 </div>
-                <a href={wa("Hi! I'd like to become a referral partner. Here's what my business does:")} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-opacity hover:opacity-90" style={{ background: "linear-gradient(160deg,#2EDF74,#25D366)" }}>
+                <WhatsAppLink source="partners_footer" href={wa("Hi! I'd like to become a referral partner. Here's what my business does:")} className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-opacity hover:opacity-90" style={{ background: "linear-gradient(160deg,#2EDF74,#25D366)" }}>
                   <MessageCircle size={16} strokeWidth={2.5} /> Become a partner
-                </a>
+                </WhatsAppLink>
               </div>
             </div>
           </div>

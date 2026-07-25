@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { Award, Building2, Clock, ArrowRight, MessageCircle } from "lucide-react"
 import QuickRate from "@/components/QuickRate"
+import WhatsAppLink from "./WhatsAppLink"
 
 const trustStats = [
   { icon: Award, label: "Allianz Ayudhya Authorised" },
@@ -48,10 +49,9 @@ export default function Hero() {
               >
                 See plans &amp; rates <ArrowRight size={14} strokeWidth={2.5} />
               </Link>
-              <a
+              <WhatsAppLink
+                source="hero"
                 href={`https://wa.me/66611965363?text=${encodeURIComponent("Hi! I'm interested in health insurance for foreigners in Thailand.")}`}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-150 text-navy-800"
                 style={{
                   background: "var(--glass-bg)",
@@ -62,7 +62,7 @@ export default function Hero() {
                 }}
               >
                 <MessageCircle size={15} /> WhatsApp Now
-              </a>
+              </WhatsAppLink>
             </div>
 
             <div className="flex flex-wrap gap-5">

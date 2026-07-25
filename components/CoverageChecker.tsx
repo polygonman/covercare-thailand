@@ -12,6 +12,7 @@ import {
 } from "lucide-react"
 import { hospitals } from "@/lib/hospitals-data"
 import type { Hospital } from "@/lib/hospitals-data"
+import WhatsAppLink from "@/components/WhatsAppLink"
 
 // ─── helpers ─────────────────────────────────────────────────────────────────
 
@@ -174,15 +175,14 @@ export default function CoverageChecker() {
                   This hospital may not be in-network, or the name may be spelled
                   differently. Ask our team to check — takes 2 minutes.
                 </p>
-                <a
+                <WhatsAppLink
+                  source="coverage_checker"
                   href={waUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-navy-700 hover:bg-navy-800 text-white text-sm font-semibold px-5 py-3 rounded-xl transition-colors shadow-sm"
                 >
                   Ask our team on WhatsApp
                   <ChevronRight className="w-4 h-4" />
-                </a>
+                </WhatsAppLink>
               </div>
             )}
           </div>

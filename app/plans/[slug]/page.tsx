@@ -5,8 +5,10 @@ import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import FloatingCTA from "@/components/FloatingCTA"
 import RateTable from "@/components/RateTable"
+import WhatsAppLink from "@/components/WhatsAppLink"
 import { PLAN_CONTENT, planBySlug } from "@/lib/planContent"
 import { Check, AlertCircle, Lightbulb, FileDown, MessageCircle, Phone, Mail, ArrowLeft } from "lucide-react"
+import LineLink from "@/components/LineLink"
 
 const wa = (t: string) => `https://wa.me/66611965363?text=${encodeURIComponent(t)}`
 
@@ -53,9 +55,9 @@ export default async function PlanDetail({ params }: { params: Promise<{ slug: s
         {/* Quick actions */}
         <section className="py-6">
           <div className="max-w-[1100px] mx-auto px-4 sm:px-6 flex flex-wrap gap-3">
-            <a href={wa(`Hi! I'd like a real quote for ${p.name}.`)} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-opacity hover:opacity-90" style={{ background: "linear-gradient(160deg,#2EDF74,#25D366)" }}>
+            <WhatsAppLink source="plan_detail_top" href={wa(`Hi! I'd like a real quote for ${p.name}.`)} className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-opacity hover:opacity-90" style={{ background: "linear-gradient(160deg,#2EDF74,#25D366)" }}>
               <MessageCircle size={16} strokeWidth={2.5} /> Get my real quote
-            </a>
+            </WhatsAppLink>
             <a href={p.brochure} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-opacity hover:opacity-80" style={{ color: "var(--navy-700)", background: "var(--ink-100)" }}>
               <FileDown size={15} /> Download brochure (PDF)
             </a>
@@ -97,8 +99,8 @@ export default async function PlanDetail({ params }: { params: Promise<{ slug: s
               <h2 className="text-2xl md:text-3xl font-black mb-2" style={{ color: "#fff", letterSpacing: "-0.02em" }}>A lot to take in? Just ask us.</h2>
               <p className="text-sm mb-6 max-w-2xl" style={{ color: "var(--navy-300)" }}>You don&apos;t have to decide alone. Tell us about you and we&apos;ll walk you through whether {p.shortName} is the right fit — on whichever channel you prefer.</p>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                <Channel href={wa(`Hi! I have questions about ${p.name}.`)} icon={<MessageCircle size={17} />} label="WhatsApp" sub="~8-min reply" />
-                <Channel href="https://line.me/ti/p/~@covercareTH" icon={<Phone size={17} />} label="LINE" sub="@covercareTH" />
+                <Channel href={wa(`Hi! I have questions about ${p.name}.`)} source="plan_detail_channel" icon={<MessageCircle size={17} />} label="WhatsApp" sub="~8-min reply" />
+                <Channel href="https://line.me/ti/p/~@covercareTH" source="plan_detail_channel" icon={<Phone size={17} />} label="LINE" sub="@covercareTH" />
                 <Channel href="mailto:covercareTH@gmail.com" icon={<Mail size={17} />} label="Email" sub="covercareTH@gmail.com" />
                 <Channel href="/#contact" icon={<ArrowLeft size={17} style={{ transform: "rotate(-90deg)" }} />} label="Contact form" sub="Book a call" />
               </div>
@@ -130,15 +132,29 @@ function Col({ icon, color, bg, title, items }: { icon: React.ReactNode; color: 
   )
 }
 
-function Channel({ href, icon, label, sub }: { href: string; icon: React.ReactNode; label: string; sub: string }) {
+function Channel({ href, icon, label, sub, source }: { href: string; icon: React.ReactNode; label: string; sub: string; source?: string }) {
   const ext = href.startsWith("http")
-  return (
-    <a href={href} {...(ext ? { target: "_blank", rel: "noopener noreferrer" } : {})} className="flex items-center gap-3 p-4 rounded-2xl transition-all hover:-translate-y-0.5" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>
+  const className = "flex items-center gap-3 p-4 rounded-2xl transition-all hover:-translate-y-0.5"
+  const style: React.CSSProperties = { background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }
+  const inner = (
+    <>
       <span className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "rgba(255,255,255,0.1)", color: "var(--sky-300)" }}>{icon}</span>
       <div className="min-w-0">
         <div className="text-sm font-semibold text-white">{label}</div>
         <div className="text-xs truncate" style={{ color: "var(--navy-300)" }}>{sub}</div>
       </div>
+    </>
+  )
+
+  if (href.includes("wa.me")) {
+    return <WhatsAppLink source={source ?? "plan_detail_channel"} href={href} className={className} style={style}>{inner}</WhatsAppLink>
+  }
+  if (href.includes("line.me")) {
+    return <LineLink source={source ?? "plan_detail_channel"} href={href} className={className} style={style}>{inner}</LineLink>
+  }
+  return (
+    <a href={href} {...(ext ? { target: "_blank", rel: "noopener noreferrer" } : {})} className={className} style={style}>
+      {inner}
     </a>
   )
 }

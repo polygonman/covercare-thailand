@@ -3,6 +3,7 @@ import Link from "next/link"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import FloatingCTA from "@/components/FloatingCTA"
+import WhatsAppLink from "@/components/WhatsAppLink"
 import { Headset, CreditCard, FileText, Stethoscope, Sparkles, Users, MessageCircle, Globe, Clock, ShieldCheck, Building2 } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -96,9 +97,9 @@ export default function ServicesPage() {
                 <h2 className="text-2xl md:text-3xl font-black mt-2 mb-2" style={{ color: "var(--navy-950)", letterSpacing: "-0.02em" }}>Company insurance planning &amp; consulting</h2>
                 <p className="text-base" style={{ color: "var(--ink-600)" }}>Running a business in Thailand? We also advise companies on group health and employee-benefit planning at scale — not just individual policies. From a handful of staff to a full team, we design and manage the right Allianz Ayudhya setup for your people.</p>
               </div>
-              <a href={`https://wa.me/66611965363?text=${encodeURIComponent("Hi! I'd like to discuss company insurance planning for my business.")}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white whitespace-nowrap flex-shrink-0 transition-opacity hover:opacity-90" style={{ background: "linear-gradient(160deg,#2EDF74,#25D366)" }}>
+              <WhatsAppLink source="services_company" href={`https://wa.me/66611965363?text=${encodeURIComponent("Hi! I'd like to discuss company insurance planning for my business.")}`} className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white whitespace-nowrap flex-shrink-0 transition-opacity hover:opacity-90" style={{ background: "linear-gradient(160deg,#2EDF74,#25D366)" }}>
                 <MessageCircle size={16} strokeWidth={2.5} /> Talk to me directly
-              </a>
+              </WhatsAppLink>
             </div>
           </div>
         </section>
@@ -116,9 +117,9 @@ export default function ServicesPage() {
               <Link href="/plans" className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90" style={{ background: "var(--sky-500)", boxShadow: "var(--glow-sky-soft)" }}>
                 See plans &amp; rates
               </Link>
-              <a href={`https://wa.me/66611965363?text=${encodeURIComponent("Hi! I'd like to know more about your service and the right plan for me.")}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90" style={{ background: "linear-gradient(160deg, #2EDF74, #25D366)" }}>
+              <WhatsAppLink source="services_cta" href={`https://wa.me/66611965363?text=${encodeURIComponent("Hi! I'd like to know more about your service and the right plan for me.")}`} className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90" style={{ background: "linear-gradient(160deg, #2EDF74, #25D366)" }}>
                 <MessageCircle size={16} strokeWidth={2.5} /> Chat on WhatsApp
-              </a>
+              </WhatsAppLink>
             </div>
           </div>
         </section>

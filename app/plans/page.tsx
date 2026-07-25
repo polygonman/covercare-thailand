@@ -3,6 +3,7 @@ import Link from "next/link"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import FloatingCTA from "@/components/FloatingCTA"
+import WhatsAppLink from "@/components/WhatsAppLink"
 import { PLAN_CONTENT } from "@/lib/planContent"
 import { annualPremium, mainContract, thb } from "@/lib/quickRates"
 import { ArrowRight, FileDown, MessageCircle, Check } from "lucide-react"
@@ -69,9 +70,9 @@ export default function PlansPage() {
                         <a href={p.brochure} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-full text-xs font-semibold transition-opacity hover:opacity-80" style={{ color: "var(--navy-700)", background: "var(--ink-100)" }}>
                           <FileDown size={13} /> Brochure
                         </a>
-                        <a href={wa(`Hi! I'm interested in ${p.name}. Could you send a real quote?`)} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-full text-xs font-semibold text-white transition-opacity hover:opacity-90" style={{ background: "linear-gradient(160deg,#2EDF74,#25D366)" }}>
+                        <WhatsAppLink source="plans_card" href={wa(`Hi! I'm interested in ${p.name}. Could you send a real quote?`)} className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-full text-xs font-semibold text-white transition-opacity hover:opacity-90" style={{ background: "linear-gradient(160deg,#2EDF74,#25D366)" }}>
                           <MessageCircle size={13} /> Quote
-                        </a>
+                        </WhatsAppLink>
                       </div>
                     </div>
                   </div>
@@ -91,9 +92,9 @@ export default function PlansPage() {
                 </div>
               </div>
               <div className="flex gap-2 flex-shrink-0">
-                <a href={wa("Hi! Help me pick the right health plan — here's my age and what matters to me:")} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white whitespace-nowrap transition-opacity hover:opacity-90" style={{ background: "linear-gradient(160deg,#2EDF74,#25D366)" }}>
+                <WhatsAppLink source="plans_not_sure" href={wa("Hi! Help me pick the right health plan — here's my age and what matters to me:")} className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white whitespace-nowrap transition-opacity hover:opacity-90" style={{ background: "linear-gradient(160deg,#2EDF74,#25D366)" }}>
                   <MessageCircle size={16} strokeWidth={2.5} /> WhatsApp us
-                </a>
+                </WhatsAppLink>
                 <Link href="/#contact" className="flex items-center gap-2 px-5 py-3 rounded-full text-sm font-semibold whitespace-nowrap" style={{ background: "rgba(255,255,255,0.1)", color: "#fff" }}>
                   Contact form
                 </Link>
