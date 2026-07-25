@@ -119,12 +119,12 @@ Every expat situation is different. I'll ask you the right questions and find th
     readTime: "6 min",
     tag: "Guide",
     content: `
-## Before You Go: Know Your Card and Your Hospital
+## Before You Go: Your Passport and Your Hospital
 
-Your Allianz Ayudhya insurance card is your most important document at a Thai hospital. Keep it in your wallet — alongside a photo of your policy number.
+Your passport is your most important document at a Thai hospital — the insurance desk checks your coverage against it directly in their system. There's no physical Allianz card anymore; the My Allianz Online app works the same way if your passport isn't on hand.
 
-**In-network vs. out-of-network hospitals matter:**
-- In-network (direct billing hospitals): You pay nothing upfront for covered treatment. The hospital bills Allianz directly.
+**In-network vs. out-of-network matters — for clinics too, not just hospitals:**
+- In-network (direct billing hospitals and clinics): You pay nothing upfront for covered treatment. They bill Allianz directly.
 - Out-of-network: You pay first, then claim reimbursement. Still covered, but requires paperwork.
 
 I always help clients identify the closest in-network hospital to their home and workplace before they ever need it.
@@ -137,14 +137,13 @@ Bangkok's major private hospitals all have dedicated international or insurance 
 
 Tell them:
 - You have Allianz Ayudhya insurance
-- Show your insurance card
-- Provide your policy number
+- Show your insurance card or your passport
 
-They will call Allianz directly to verify your coverage and get pre-authorisation for treatment.
+They check your coverage directly in the system in real time — no phone call needed — which also helps them advise the treating doctor on what can be claimed during your treatment.
 
 ### Step 2 — Pre-Authorisation
 
-For planned admissions (surgery, procedures), pre-authorisation is required before treatment begins. The hospital handles this call with Allianz — you don't need to do it yourself.
+For planned admissions (surgery, procedures), pre-authorisation is required before treatment begins. The hospital coordinates directly with Allianz to request the pre-claim and confirm what's payable in advance — you don't need to do it yourself.
 
 For emergencies, pre-authorisation happens as soon as you're stable. You or a family member should notify Allianz within 24 hours of an emergency admission.
 
@@ -175,6 +174,8 @@ If you went to a hospital outside the Allianz network, you'll need to claim reim
 
 **Timeline:** Submit within 90 days of treatment. Reimbursement typically takes 3–7 days once documents are complete.
 
+**Faster for smaller claims:** Under 20,000 THB, you can submit everything directly through the My Allianz Online app instead of mailing documents in. Same 3–7 day payout, but quicker in practice since you skip getting paperwork to the company.
+
 I help every client I work with to gather documents and submit claims correctly — this is where having a personal advisor makes a real difference.
 
 ## Common Mistakes at Thai Hospitals
@@ -182,8 +183,8 @@ I help every client I work with to gather documents and submit claims correctly 
 **Not going to the insurance desk first**
 If you check in through general admission and the hospital processes you as a self-pay patient, unwinding it later is time-consuming.
 
-**Forgetting your insurance card**
-Without the card, the hospital may ask you to pay upfront and claim later. Always carry it.
+**Forgetting your passport**
+There's no physical Allianz card to carry — the insurance desk checks your coverage against your passport. No passport on you? The My Allianz Online app works the same way.
 
 **Choosing a room above your plan's limit**
 If your plan covers a standard private room but you choose a suite, you pay the difference. Ask the nurse to show you what room tier your plan covers.
