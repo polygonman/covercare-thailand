@@ -169,7 +169,7 @@ export default function HospitalDirectory({ hospitals, provinces }: Props) {
   const [search, setSearch] = useState("")
   const [tier, setTier] = useState<"all" | "Premier" | "Standard">("all")
   const [province, setProvince] = useState("")
-  const [view, setView] = useState<"list" | "map">("list")
+  const [view, setView] = useState<"list" | "map">("map")
 
   const filtered = useMemo(() => {
     const q = search.toLowerCase().trim()
