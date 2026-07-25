@@ -64,7 +64,7 @@ Best for: Most working expats, families, anyone who visits doctors regularly.
 Best for: Executives, high-income earners, or anyone who wants to stop thinking about coverage entirely — no matter where in Thailand they need care.
 
 **What's covered:**
-- Private room guaranteed and cancer treatment — standard from tier 2 up, but this tier adds real depth
+- VIP room guaranteed — a genuine upgrade over the standard private room
 - Emergency evacuation within Thailand (a domestic benefit — worth knowing this isn't international evacuation)
 - Annual health check-up
 - Vaccinations
