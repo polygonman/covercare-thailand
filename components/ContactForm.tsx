@@ -129,6 +129,16 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
+      {/* Eligibility note — Allianz Ayudhya requires the applicant to already be
+          resident in Thailand; this filters pre-arrival inquiries early and gives
+          them a reason to come back once they qualify. */}
+      <div
+        className="text-xs rounded-xl px-4 py-3 mb-6"
+        style={{ background: "var(--sky-50)", border: "1px solid var(--sky-100)", color: "var(--navy-700)", lineHeight: 1.5 }}
+      >
+        <strong>Before you apply:</strong> Allianz Ayudhya requires you to already be in Thailand with a valid visa/work permit and a Thai phone number to issue a policy. Not there yet? Reach out anyway — we&apos;ll tell you exactly what to sort out before you land.
+      </div>
+
       {/* Progress bar */}
       <div className="mb-8">
         <div className="flex justify-between mb-2">
