@@ -283,7 +283,7 @@ I've helped dozens of nomads get set up with the right plan quickly — often wi
     slug: "how-to-file-health-insurance-claim-thailand",
     title: "How to File a Health Insurance Claim in Thailand",
     excerpt:
-      "Documents you need, deadlines to remember, and common mistakes that delay reimbursement.",
+      "Documents you need, how to submit, and common mistakes that delay reimbursement.",
     date: "February 2025",
     readTime: "5 min",
     tag: "Claims",
@@ -293,12 +293,12 @@ I've helped dozens of nomads get set up with the right plan quickly — often wi
 Understanding which type of claim you're making will save you time and frustration.
 
 ### 1. Direct Billing (Cashless)
-You're at an in-network Allianz Ayudhya hospital. The hospital bills Allianz directly. You pay only your co-pay or non-covered items at discharge.
+You're at an in-network Allianz Ayudhya hospital. The hospital bills Allianz directly. You pay only your co-pay, deductible amount, or non-covered items at discharge. If you hold more than one insurance policy, you can coordinate benefits across them — for OPD, tell the payment counter after treatment; for IPD, tell the finance department about your other coverage.
 
-**You don't need to "file" anything** — the hospital handles it. Your job is to present your insurance card and policy number at the insurance desk before treatment begins. This is the most common scenario for in-network hospitals — you present your card, the hospital faxes Allianz, and treatment proceeds without you paying a cent.
+**You don't need to "file" anything** — the hospital handles it. Your job is to present your insurance card or passport at the insurance desk before treatment begins. This is the most common scenario for in-network hospitals — the desk checks your coverage in the system in real time, and treatment proceeds without you paying a cent.
 
 ### 2. Reimbursement Claim
-You paid for treatment yourself — either at an out-of-network hospital, an overseas clinic, or because direct billing wasn't set up in time.
+You paid for treatment yourself — either at an out-of-network hospital in Thailand, or because direct billing wasn't set up in time.
 
 This is when you need to file a claim. Here's exactly how to do it.
 
@@ -311,54 +311,35 @@ Gather these before you start:
 - ✅ Original hospital receipts with itemised breakdown
 - ✅ Doctor's note or medical certificate describing diagnosis and treatment
 - ✅ Copy of your passport (photo page)
-- ✅ Copy of your insurance card / policy document
-
-**For hospital admissions:**
-- ✅ Discharge summary
-- ✅ Operative report (if surgery was performed)
-
-**For prescription reimbursement:**
-- ✅ Original pharmacy receipts
-- ✅ Doctor's prescription showing medication name and dosage
-
-## Deadlines
-
-**Submit within 90 days of the treatment date.**
-
-Missing this deadline is one of the most common reasons claims are rejected. Set a calendar reminder as soon as you're discharged.
 
 ## How to Submit
 
 **Option 1 — Through me (recommended)**
-Send me your documents via WhatsApp or email. I'll check everything is complete and correct before submitting. Missing or incorrect documents are the biggest cause of delays.
+Send me your documents via WhatsApp or email. I'll check everything is complete and correct before submitting, and follow up directly with Allianz if anything is delayed or needs clarification. Missing or incorrect documents are the biggest cause of delays.
 
-**Option 2 — Direct to Allianz Ayudhya**
-Submit to the Allianz Ayudhya claims department directly by post or email. I can provide the current submission address and email to all clients.
+**Option 2 — Through the My Allianz app**
+Submit directly yourself for smaller claims — up to 20,000 THB for IPD, 5,000 THB for OPD.
 
 ## Processing Time
 
 - Standard claims: 3–7 days after documents received
 - Complex claims (surgery, cancer treatment): up to 14 business days
 - Incomplete submissions: Clock stops until missing documents received
+- Major surgery: contact us first to arrange a pre-claim — we'll coordinate directly with Allianz to keep things moving quickly
+- Occasionally, Allianz digs further into your medical history if a condition might have existed before your policy started. This check takes up to 90 days once your full history is received — it's a normal part of the process, and we'll coordinate with Allianz and push to keep it on track
 
 ## Why Claims Get Delayed or Rejected
 
 In my experience, here are the most common reasons:
 
 **Missing original receipts**
-Allianz requires originals, not photocopies or photos. Ask the hospital to reissue if you've lost them.
+Allianz requires originals — not photocopies or photos — and hospitals generally can't reissue them once they're gone. Keep your originals somewhere safe, and photograph them as a backup just in case.
 
 **Diagnosis not clearly stated**
-The medical certificate must clearly state the diagnosis and confirm it's not a pre-existing condition (or that it's a declared, covered condition).
+The medical certificate must clearly state the diagnosis, confirm it's not a pre-existing condition (or that it's a declared, covered condition), and show the treatment was medically necessary under current medical practice. Not sure if yours is clear enough? Ask our team — and if Allianz comes back saying the doctor's notes weren't clear, we can help arrange a follow-up confirmation letter from the doctor.
 
 **Treatment not covered**
 Cosmetic procedures, experimental treatments, and items specifically excluded in your policy won't be covered. Check your policy exclusions with me before treatment if you're unsure.
-
-**Claim submitted too late**
-After 90 days, claims are almost always rejected unless there are exceptional circumstances.
-
-**Incorrect bank details**
-Reimbursement is sent by bank transfer. Double-check your account number before submitting.
 
 ## My Claim Support Service
 
