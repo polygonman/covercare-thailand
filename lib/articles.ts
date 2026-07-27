@@ -314,7 +314,7 @@ Gather these before you start:
 
 ## How to Submit
 
-**Option 1 — Through me (recommended)**
+**Option 1 — Through your agent (recommended)**
 Send me your documents via WhatsApp or email. I'll check everything is complete and correct before submitting, and follow up directly with Allianz if anything is delayed or needs clarification. Missing or incorrect documents are the biggest cause of delays.
 
 **Option 2 — Through the My Allianz app**
